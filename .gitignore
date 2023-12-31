@@ -14,3 +14,7 @@
 compile_commands.json
 .clangd/
 .cache/
+
+# Custom
+.vscode
+compile_commands.json
