@@ -9,3 +9,7 @@
 *.hex
 *.bin
 *.uf2
+
+# Custom
+.vscode
+compile_commands.json
