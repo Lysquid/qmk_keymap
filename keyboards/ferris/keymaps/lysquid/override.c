@@ -18,10 +18,22 @@ const key_override_t override_8 = ko_make_basic(MOD_MASK_GUI, FR_8, G(FR_UNDS));
 const key_override_t override_9 = ko_make_basic(MOD_MASK_GUI, FR_9, G(FR_CCED));
 const key_override_t override_0 = ko_make_basic(MOD_MASK_GUI, FR_0, G(FR_AGRV));
 
+// Azerty shorcuts compatibility
+const key_override_t slash_override = ko_make_basic(MOD_MASK_CS, FR_SLSH, C(KC_PSLS));
+
+// Zoom key
+const key_override_t zoom_override_keypad1 = ko_make_basic(MOD_MASK_AG, KC_PPLS, C(KC_P0));
+const key_override_t zoom_override_keypad2 = ko_make_basic(MOD_MASK_CA, KC_PPLS, C(KC_PMNS));
+const key_override_t zoom_override_keypad3 = ko_make_basic(MOD_MASK_ALT, KC_PPLS, C(KC_PPLS));
+const key_override_t zoom_override1 = ko_make_basic(MOD_MASK_GUI, KC_PPLS, C(FR_0));
+const key_override_t zoom_override2 = ko_make_basic(MOD_MASK_CTRL, KC_PPLS, C(FR_MINS));
+const key_override_t zoom_override3 = ko_make_basic(0, KC_PPLS, C(FR_PLUS));
+
+// Erglace
 const key_override_t colon_override = ko_make_basic(MOD_MASK_SHIFT, FR_COMM, FR_QUES);
 const key_override_t dot_override = ko_make_basic(MOD_MASK_SHIFT, FR_DOT, FR_EXLM);
 const key_override_t minus_override = ko_make_basic(MOD_MASK_SHIFT, FR_MINS, FR_UNDS);
-const key_override_t plus_override = ko_make_basic(MOD_MASK_CG, KC_PPLS, C(FR_MINS));
+
 
 // Media keys combinations
 const key_override_t media_prev_override = ko_make_basic(MOD_MASK_GUI, KC_VOLD, KC_MPRV);
@@ -51,7 +63,6 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &colon_override,
     &dot_override,
     &minus_override,
-    &plus_override,
     &media_prev_override,
     &media_next_override,
     &brightness_down_override,
@@ -61,5 +72,12 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &undo_override,
     &page_up_override,
     &page_down_override,
+    &slash_override,
+    &zoom_override_keypad1,
+    &zoom_override_keypad2,
+    &zoom_override_keypad3,
+    &zoom_override1,
+    &zoom_override2,
+    &zoom_override3,
     NULL
 };
