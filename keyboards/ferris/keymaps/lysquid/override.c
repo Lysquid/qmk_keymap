@@ -2,6 +2,7 @@
 #include "keymap_french.h"
 #include "process_key_override.h"
 #include "quantum_keycodes.h"
+#include "override.h"
 #include "keymap.h"
 #include QMK_KEYBOARD_H
 
@@ -22,16 +23,21 @@ const key_override_t dot_override = ko_make_basic(MOD_MASK_SHIFT, FR_DOT, FR_EXL
 const key_override_t minus_override = ko_make_basic(MOD_MASK_SHIFT, FR_MINS, FR_UNDS);
 const key_override_t plus_override = ko_make_basic(MOD_MASK_CG, KC_PPLS, C(FR_MINS));
 
+// Media keys combinations
 const key_override_t media_prev_override = ko_make_basic(MOD_MASK_GUI, KC_VOLD, KC_MPRV);
 const key_override_t media_next_override = ko_make_basic(MOD_MASK_GUI, KC_VOLU, KC_MNXT);
 const key_override_t brightness_down_override = ko_make_basic(MOD_MASK_ALT, KC_VOLD, KC_BRID);
 const key_override_t brightness_up_override = ko_make_basic(MOD_MASK_ALT, KC_VOLU, KC_BRIU);
-const key_override_t system_sleep_override = ko_make_basic(MOD_MASK_CSG, KC_MPLY, KC_SLEP);
+const key_override_t system_sleep_override = ko_make_basic(6, KC_MPLY, KC_SLEP);
 const key_override_t system_power_override = ko_make_basic(MOD_MASK_CSG, KC_MUTE, KC_PWR);
+
+// Invert page up and page when used with no mod
+const key_override_t page_up_override = ko_make_basic_no_suppressed_mods_with_options(MOD_MASK_CSAG, KC_PGUP, KC_PGDN, ko_option_one_mod);
+const key_override_t page_down_override = ko_make_basic_no_suppressed_mods_with_options(MOD_MASK_CSAG, KC_PGDN, KC_PGUP, ko_option_one_mod);
 
 const key_override_t undo_override = ko_make_basic(MOD_MASK_GUI, C(FR_Z), C(FR_Y));
 
-const key_override_t **key_overrides = (const key_override_t *[]){
+const key_override_t **key_overrides = (const key_override_t *[]) {
     &override_1,
     &override_2,
     &override_3,
@@ -53,5 +59,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &system_sleep_override,
     &system_power_override,
     &undo_override,
+    &page_up_override,
+    &page_down_override,
     NULL
 };
