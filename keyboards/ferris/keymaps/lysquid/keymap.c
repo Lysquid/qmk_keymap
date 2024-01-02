@@ -33,21 +33,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NAV] = LAYOUT(
-        KC_MPLY,    KC_TAB,     KC_VOLD,    KC_VOLU,    KC_MUTE,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
+        KC_MPLY,    TO(MOS),    KC_VOLD,    KC_VOLU,    KC_MUTE,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
         OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
-        C(FR_Z),    C(FR_X),    C(FR_C),    C(FR_V),    C(FR_A),    KC_INS,     KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
+        C(FR_A),    C(FR_X),    C(FR_C),    C(FR_V),    C(FR_Z),    KC_INS,     KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
                                             _______,    _______,    _______,    _______
     ),
 
     [NUM] = LAYOUT(
         KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,     FR_7,       FR_8,       FR_9,       FR_COMM,
-        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_SPC,     XXXXXXX,    FR_4,       FR_5,       FR_6,       FR_0,
+        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_SPC,     FR_4,       FR_5,       FR_6,       FR_0,
         KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F11,     FR_1,       FR_2,       FR_3,       FR_DOT,
                                             _______,    _______,    _______,    _______
     ),
 
     [SPC] = LAYOUT(
-        FR_ITRM,    TO(MOS),    FR_OCRC,    FR_EGRV,    FR_UGRV,    FR_LAQT,    FR_RAQT,    FR_CPRT,    FR_CCED,    FR_TM,
+        FR_ITRM,    TO(DEF),    FR_OCRC,    FR_EGRV,    FR_UGRV,    FR_LAQT,    FR_RAQT,    FR_CPRT,    FR_CCED,    FR_TM,
         FR_ICRC,    FR_SUP2,    FR_ECRC,    FR_EACU,    FR_UCRC,    FR_EURO,    FR_ACRC,    FR_AGRV,    FR_AE,      FR_OE,
         FR_BDOT,    FR_MDOT,    FR_IQES,    FR_ETRM,    FR_UTRM,    FR_LARW,    FR_RARW,    FR_MICR,    FR_DEG,     FR_CROS,
                                             _______,    FR_QUOT,    _______,    _______
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [SPC2] = LAYOUT(
         FR_AE,      FR_EACU,    FR_EGRV,    FR_SUP2,    FR_TM,     FR_UTRM,     FR_UGRV,    FR_ITRM,    FR_OE,      FR_DEG,
         FR_AGRV,    FR_ETRM,    FR_ECRC,    FR_EURO,    FR_LAQT,   FR_RAQT,     FR_UCRC,    FR_ICRC,    FR_OCRC,    FR_IQES,
-        FR_ACRC,    FR_CROS,    FR_CCED,    FR_CPRT,    FR_LARW,   FR_RARW,     FR_MICR,    FR_MDOT,    FR_BDOT,    TO(MOS),
+        FR_ACRC,    FR_CROS,    FR_CCED,    FR_CPRT,    FR_LARW,   FR_RARW,     FR_MICR,    FR_MDOT,    FR_BDOT,    TO(DEF2),
                                             _______,    FR_QUOT,    _______,     _______
     ),
 

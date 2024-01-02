@@ -28,7 +28,7 @@ const key_override_t media_prev_override = ko_make_basic(MOD_MASK_GUI, KC_VOLD, 
 const key_override_t media_next_override = ko_make_basic(MOD_MASK_GUI, KC_VOLU, KC_MNXT);
 const key_override_t brightness_down_override = ko_make_basic(MOD_MASK_ALT, KC_VOLD, KC_BRID);
 const key_override_t brightness_up_override = ko_make_basic(MOD_MASK_ALT, KC_VOLU, KC_BRIU);
-const key_override_t system_sleep_override = ko_make_basic(6, KC_MPLY, KC_SLEP);
+const key_override_t system_sleep_override = ko_make_basic(MOD_MASK_CSG, KC_MPLY, KC_SLEP);
 const key_override_t system_power_override = ko_make_basic(MOD_MASK_CSG, KC_MUTE, KC_PWR);
 
 // Invert page up and page when used with no mod
