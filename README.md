@@ -47,7 +47,7 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ alt │super│shift│ctrl │ esc ┃ ┃ tab │  ←  │  ↓  │  →  │enter┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃ctl+a│ cut │copy │paste│undo ┃ ┃ ins │pgup │pgdwn│menu │pscrn┃
+┃ctl+a│ cut │copy │paste│undo ┃ ┃zoom │pgup │pgdwn│menu │pscrn┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
                   ┃[NAV]│space┃ ┃shift│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛

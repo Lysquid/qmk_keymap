@@ -26,8 +26,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [SYM] = LAYOUT(
-        FR_PERC,    KC_PPLS,    FR_LBRC,    FR_RBRC,    FR_HASH,    FR_1CRC,    FR_COLN,    FR_DQUO,    FR_QUOT,    FR_DLR,
-        FR_LCBR,    FR_LPRN,    FR_RPRN,    FR_RCBR,    KC_PSLS,    FR_EQL,     OS_RCTL,    OS_RSFT,    OS_RGUI,    OS_LALT,
+        FR_PERC,    FR_PLUS,    FR_LBRC,    FR_RBRC,    FR_HASH,    FR_1CRC,    FR_COLN,    FR_DQUO,    FR_QUOT,    FR_DLR,
+        FR_LCBR,    FR_LPRN,    FR_RPRN,    FR_RCBR,    FR_SLSH,    FR_EQL,     OS_RCTL,    OS_RSFT,    OS_RGUI,    OS_LALT,
         FR_TILD,    FR_BSLS,    FR_LABK,    FR_RABK,    FR_PIPE,    FR_AMPR,    FR_SCLN,    FR_ASTR,    FR_GRV,     FR_AT,
                                             _______,    _______,    _______,    _______
     ),
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NAV] = LAYOUT(
         KC_MPLY,    TO(MOS),    KC_VOLD,    KC_VOLU,    KC_MUTE,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
         OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
-        C(FR_A),    C(FR_X),    C(FR_C),    C(FR_V),    C(FR_Z),    KC_INS,     KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
+        C(FR_A),    C(FR_X),    C(FR_C),    C(FR_V),    C(FR_Z),    KC_PPLS,    KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
                                             _______,    _______,    _______,    _______
     ),
 
