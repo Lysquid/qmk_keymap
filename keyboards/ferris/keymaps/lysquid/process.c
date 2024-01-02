@@ -52,6 +52,18 @@ oneshot_state os_ralt_state = os_up_unqueued;
 oneshot_state os_lgui_state = os_up_unqueued;
 oneshot_state os_rgui_state = os_up_unqueued;
 
+// Custom oneshot mod implementation with no timers
+void update_oneshots(uint16_t keycode, keyrecord_t *record) {
+    update_oneshot(&os_lsft_state, KC_LSFT, OS_LSFT, keycode, record);
+    update_oneshot(&os_rsft_state, KC_RSFT, OS_RSFT, keycode, record);
+    update_oneshot(&os_lctl_state, KC_LCTL, OS_LCTL, keycode, record);
+    update_oneshot(&os_rctl_state, KC_RCTL, OS_RCTL, keycode, record);
+    update_oneshot(&os_lalt_state, KC_LALT, OS_LALT, keycode, record);
+    update_oneshot(&os_ralt_state, KC_RALT, OS_RALT, keycode, record);
+    update_oneshot(&os_lgui_state, KC_LGUI, OS_LGUI, keycode, record);
+    update_oneshot(&os_rgui_state, KC_RGUI, OS_RGUI, keycode, record);
+}
+
 // ############
 // # NAV LOCK #
 // ############
@@ -97,13 +109,37 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
     return false;
 }
 
-// #################
-// # QMK FUNCTIONS #
-// #################
+// ########################
+// # SPECIALS LAYER CLEAR #
+// ########################
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    bool override = false;
+// Disable hold one shot layer
+void cancel_one_shot_hold(uint8_t layer) {
+    if (layer == SPC || layer == SPC2) {
+        clear_oneshot_layer_state(ONESHOT_PRESSED);
+    }
+}
 
+// Clear up layers when NAV or SYM are pressed
+void special_layers_clear(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch (keycode)
+        {
+        case MO(NAV):
+        case MO(SYM):
+            layer_off(MOS);
+            layer_off(SPC);
+            layer_off(SPC2);
+            reset_oneshot_layer();
+        }
+    }
+}
+
+// ##########
+// # FRENCH #
+// ##########
+
+void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
     switch (keycode)
     {
     case FR_ACRC: dead_key_accent(FR_A, circonflexe, record); break;
@@ -115,32 +151,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case FR_ITRM: dead_key_accent(FR_I, trema, record); break;
     case FR_UTRM: dead_key_accent(FR_U, trema, record); break;
     }
+}
 
+// #################
+// # QMK FUNCTIONS #
+// #################
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    bool override = false;
+
+    special_layers_clear(keycode, record);
+    dead_key_accents(keycode, record);
     override |= uppercase_accent(keycode, record);
-
     override |= nav_layer_lock(keycode, record);
-
-    // Custom oneshot mod implementation with no timers.
-    update_oneshot(&os_lsft_state, KC_LSFT, OS_LSFT, keycode, record);
-    update_oneshot(&os_rsft_state, KC_RSFT, OS_RSFT, keycode, record);
-    update_oneshot(&os_lctl_state, KC_LCTL, OS_LCTL, keycode, record);
-    update_oneshot(&os_rctl_state, KC_RCTL, OS_RCTL, keycode, record);
-    update_oneshot(&os_lalt_state, KC_LALT, OS_LALT, keycode, record);
-    update_oneshot(&os_ralt_state, KC_RALT, OS_RALT, keycode, record);
-    update_oneshot(&os_lgui_state, KC_LGUI, OS_LGUI, keycode, record);
-    update_oneshot(&os_rgui_state, KC_RGUI, OS_RGUI, keycode, record);
+    update_oneshots(keycode, record);
 
     return !override;
 }
 
 void oneshot_layer_changed_user(uint8_t layer) {
-    // Disable hold one shot layer
-    if (layer == SPC || layer == SPC2) {
-        clear_oneshot_layer_state(ONESHOT_PRESSED);
-    }
+    cancel_one_shot_hold(layer);
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    // TODO disable SPC and MOS later when pressing MO(NAV) or MO(SYM)
     return update_tri_layer_state(state, SYM, NAV, NUM);
 }

@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,     FR_7,       FR_8,       FR_9,       FR_COMM,
         OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_SPC,     XXXXXXX,    FR_4,       FR_5,       FR_6,       FR_0,
         KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F11,     FR_1,       FR_2,       FR_3,       FR_DOT,
-                                            TO(DEF),    _______,    _______,    TO(DEF)
+                                            _______,    _______,    _______,    _______
     ),
 
     [SPC] = LAYOUT(
