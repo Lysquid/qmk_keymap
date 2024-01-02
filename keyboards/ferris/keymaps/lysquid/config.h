@@ -1,11 +1,14 @@
 #pragma once
 
+// Fixes obscure bug where both sides don't communicate
+#define SPLIT_USB_DETECT
+
 // BUG: Must be flashed on each side individually
 #define DEBOUNCE 50
 
 // Fixes the problem where I have to replug the keyboard on boot
 // BUG: Breaks symetry, you can only flash on one side with this option
-#define WAIT_FOR_USB
+// #define WAIT_FOR_USB
 
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
 

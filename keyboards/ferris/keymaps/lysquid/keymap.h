@@ -29,5 +29,5 @@ enum keycodes {
     FR_UCRC,
     FR_ETRM,
     FR_ITRM,
-    FR_UTRM
+    FR_UTRM,
 };
