@@ -1,6 +1,6 @@
 # QMK firmware
 
-This is my firmware for the very cool [Sweep keyboard](https://github.com/davidphilipbarr/Sweep), a split custom keyboard with 34 keys. It makes extensive use of layers to fit all keys.
+This my firmware config for the very cool [Sweep keyboard](https://github.com/davidphilipbarr/Sweep), a split custom keyboard with 34 keys. It makes extensive use of layers to fit all keys.
 
 ## Features
 
@@ -47,7 +47,7 @@ This is my firmware for the very cool [Sweep keyboard](https://github.com/davidp
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ alt │super│shift│ctrl │ esc ┃ ┃ tab │  ←  │  ↓  │  →  │enter┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃undo │ cut │copy │paste│redo ┃ ┃ ins │pgdwn│pgup │menu │pscrn┃
+┃undo │ cut │copy │paste│redo ┃ ┃ ins │pgup │pgdwn│menu │pscrn┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
                   ┃[NAV]│space┃ ┃shift│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
@@ -80,3 +80,16 @@ This is my firmware for the very cool [Sweep keyboard](https://github.com/davidp
                   ┃ DEF │  '  ┃ ┃shift│ DEF ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
 ```
+
+### `MOS` Mouse layer
+
+```
+┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
+┃     │     │     │     │erglc┃ ┃azrty│whl l│  ↑  │whl r│     ┃
+┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
+┃     │r clk│m clk│l clk│     ┃ ┃     │  ←  │  ↓  │  →  │     ┃
+┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
+┃ alt │super│shift│ctrl │rboot┃ ┃boot │whl d│whl u│     │     ┃
+┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
+                  ┃[NAV]│space┃ ┃shift│ SYM ┃
+                  ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
