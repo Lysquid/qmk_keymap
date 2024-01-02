@@ -29,6 +29,8 @@ const key_override_t brightness_up_override = ko_make_basic(MOD_MASK_ALT, KC_VOL
 const key_override_t system_sleep_override = ko_make_basic(MOD_MASK_CSG, KC_MPLY, KC_SLEP);
 const key_override_t system_power_override = ko_make_basic(MOD_MASK_CSG, KC_MUTE, KC_PWR);
 
+const key_override_t undo_override = ko_make_basic(MOD_MASK_GUI, C(FR_Z), C(FR_Y));
+
 const key_override_t **key_overrides = (const key_override_t *[]){
     &override_1,
     &override_2,
@@ -50,5 +52,6 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &brightness_up_override,
     &system_sleep_override,
     &system_power_override,
+    &undo_override,
     NULL
 };
