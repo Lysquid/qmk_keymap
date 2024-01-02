@@ -43,11 +43,11 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ```
 ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
-┃mplay│ tab │vol- │vol+ │mute ┃ ┃home │bkspc│  ↑  │ del │ end ┃
+┃mplay│ MOS │vol- │vol+ │mute ┃ ┃home │bkspc│  ↑  │ del │ end ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ alt │super│shift│ctrl │ esc ┃ ┃ tab │  ←  │  ↓  │  →  │enter┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃undo │ cut │copy │paste│redo ┃ ┃ ins │pgup │pgdwn│menu │pscrn┃
+┃ctl+a│ cut │copy │paste│undo ┃ ┃ ins │pgup │pgdwn│menu │pscrn┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
                   ┃[NAV]│space┃ ┃shift│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
@@ -59,7 +59,7 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
 ┃ F6  │ F7  │  F8 │  F9 │ F10 ┃ ┃ F12 │  7  │  8  │  9  │  ,  ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃ alt │super│shift│ctrl │space┃ ┃     │  4  │  5  │  6  │  0  ┃
+┃ alt │super│shift│ctrl │ esc ┃ ┃space│  4  │  5  │  6  │  0  ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ F1  │ F2  │ F3  │ F4  │ F5  ┃ ┃ F11 │  1  │  2  │  3  │  .  ┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
@@ -71,13 +71,13 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ```
 ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
-┃  ï  │MOUSE│  ô  │  è  │  ù  ┃ ┃  «  │  »  │  ©  │  ç  │  ™  ┃
+┃  ï  │ DEF │  ô  │  è  │  ù  ┃ ┃  «  │  »  │  ©  │  ç  │  ™  ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃  î  │  ²  │  ê  │  é  │  û  ┃ ┃  €  │  â  │  à  │  æ  │  œ  ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃  •  │  ·  │  ¿  │  ë  │  ü  ┃ ┃  ←  │  →  │  μ  │  °  │  ×  ┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
-                  ┃ DEF │  '  ┃ ┃shift│ DEF ┃
+                  ┃ NAV │  '  ┃ ┃shift│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
 ```
 
@@ -91,5 +91,5 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ alt │super│shift│ctrl │rboot┃ ┃boot │whl d│whl u│     │     ┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
-                  ┃[NAV]│space┃ ┃shift│ SYM ┃
+                  ┃ NAV │slow2┃ ┃slow1│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
