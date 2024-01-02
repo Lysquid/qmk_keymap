@@ -82,8 +82,8 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
                     nav_lock = true;
                     return true;
                 } else {
-                    nav_lock = false;
                     layer_off(NAV);
+                    nav_lock = false;
                 }
             } else {
                 shift_unused = true;
@@ -98,11 +98,16 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
             }
         } else {
             if (nav_lock) {
-                nav_lock = false;
                 return true;
             }
         }
         break;
+    case KC_SPC:
+        if (record->event.pressed && IS_LAYER_ON(NAV) && IS_LAYER_OFF(NUM)) {
+            layer_off(NAV);
+            nav_lock = false;
+            return true;
+        }
     default:
         shift_unused = false;
     }
@@ -153,6 +158,26 @@ void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+// ###########
+// # ALT TAB #
+// ###########
+
+// One hand alt tab to use with mouse
+bool alt_tab(uint16_t keycode, keyrecord_t *record) {
+    if (IS_LAYER_ON(NAV) && (
+        (keycode == C(FR_V) && (get_mods() & (MOD_MASK_ALT | MOD_MASK_GUI))) ||
+        (keycode == C(FR_X) && (get_mods() & (MOD_MASK_CTRL)))
+        )) {
+        if (record->event.pressed) {
+            register_code(KC_TAB);
+        } else {
+            unregister_code(KC_TAB);
+        }
+        return true;
+    }
+    return false;
+}
+
 // #################
 // # QMK FUNCTIONS #
 // #################
@@ -164,6 +189,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     dead_key_accents(keycode, record);
     override |= uppercase_accent(keycode, record);
     override |= nav_layer_lock(keycode, record);
+    override |= alt_tab(keycode, record);
     update_oneshots(keycode, record);
 
     return !override;
