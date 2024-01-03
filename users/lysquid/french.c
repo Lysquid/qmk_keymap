@@ -1,6 +1,6 @@
 #include "french.h"
 #include "keymap_french.h"
-#include <modifiers.h>
+#include "modifiers.h"
 #include "keycodes.h"
 
 void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record) {
@@ -20,8 +20,8 @@ void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record) {
     }
 }
 
-bool uppercase_accent(uint16_t keycode, keyrecord_t *record) {
-    if ((get_mods() & MOD_MASK_SHIFT) && record->event.pressed) {
+bool uppercase_accents(uint16_t keycode, keyrecord_t *record) {
+    if (get_mods() & MOD_MASK_SHIFT && record->event.pressed) {
         uint8_t mods;
         switch (keycode)
         {

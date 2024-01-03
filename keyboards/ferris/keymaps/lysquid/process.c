@@ -4,6 +4,7 @@
 #include "oneshot.h"
 #include "french.h"
 #include "keymap.h"
+#include "azerty.h"
 #include QMK_KEYBOARD_H
 
 // #################
@@ -108,14 +109,14 @@ void clear_mouse_layer(uint16_t keycode, keyrecord_t *record) {
 void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
     switch (keycode)
     {
-    case FR_ACRC: dead_key_accent(FR_A, circonflexe, record); break;
-    case FR_ECRC: dead_key_accent(FR_E, circonflexe, record); break;
-    case FR_ICRC: dead_key_accent(FR_I, circonflexe, record); break;
-    case FR_OCRC: dead_key_accent(FR_O, circonflexe, record); break;
-    case FR_UCRC: dead_key_accent(FR_U, circonflexe, record); break;
-    case FR_ETRM: dead_key_accent(FR_E, trema, record); break;
-    case FR_ITRM: dead_key_accent(FR_I, trema, record); break;
-    case FR_UTRM: dead_key_accent(FR_U, trema, record); break;
+    case KF_ACRC: dead_key_accent(FR_A, circonflexe, record); break;
+    case KF_ECRC: dead_key_accent(FR_E, circonflexe, record); break;
+    case KF_ICRC: dead_key_accent(FR_I, circonflexe, record); break;
+    case KF_OCRC: dead_key_accent(FR_O, circonflexe, record); break;
+    case KF_UCRC: dead_key_accent(FR_U, circonflexe, record); break;
+    case KF_ETRM: dead_key_accent(FR_E, trema, record); break;
+    case KF_ITRM: dead_key_accent(FR_I, trema, record); break;
+    case KF_UTRM: dead_key_accent(FR_U, trema, record); break;
     }
 }
 
@@ -126,8 +127,8 @@ void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
 // One hand alt tab to use with mouse
 bool alt_tab(uint16_t keycode, keyrecord_t *record) {
     if (IS_LAYER_ON(NAV) && (
-        (keycode == C(FR_V) && (get_mods() & (MOD_MASK_ALT | MOD_MASK_GUI))) ||
-        (keycode == C(FR_X) && (get_mods() & (MOD_MASK_CTRL)))
+        (keycode == C(KF_V) && (get_mods() & (MOD_MASK_ALT | MOD_MASK_GUI))) ||
+        (keycode == C(KF_X) && (get_mods() & (MOD_MASK_CTRL)))
         )) {
         if (record->event.pressed) {
             register_code(KC_TAB);
@@ -172,10 +173,13 @@ bool oneshot_mouse_buttons(uint16_t keycode, keyrecord_t *record) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     bool override = false;
 
-    special_layers_clear(keycode, record);
+    #ifdef FRENCH
     dead_key_accents(keycode, record);
-    override |= uppercase_accent(keycode, record);
+    override |= uppercase_accents(keycode, record);
     override |= french_caps_word_fix(keycode, record);
+    #endif
+
+    special_layers_clear(keycode, record);
     override |= nav_layer_lock(keycode, record);
     override |= alt_tab(keycode, record);
     override |= oneshot_mouse_buttons(keycode, record);
