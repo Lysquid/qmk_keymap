@@ -47,7 +47,7 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ alt │super│shift│ctrl │ esc ┃ ┃ tab │  ←  │  ↓  │  →  │enter┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃ctl+a│ cut │copy │paste│undo ┃ ┃zoom │pgup │pgdwn│menu │pscrn┃
+┃ctl+a│ cut │copy │paste│undo ┃ ┃capsw│pgup │pgdwn│menu │pscrn┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
                   ┃[NAV]│space┃ ┃shift│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
@@ -59,7 +59,7 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
 ┃ F6  │ F7  │  F8 │  F9 │ F10 ┃ ┃ F12 │  7  │  8  │  9  │  ,  ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃ alt │super│shift│ctrl │ esc ┃ ┃space│  4  │  5  │  6  │  0  ┃
+┃ alt │super│shift│ctrl │space┃ ┃zoom │  4  │  5  │  6  │  0  ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ F1  │ F2  │ F3  │ F4  │ F5  ┃ ┃ F11 │  1  │  2  │  3  │  .  ┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
