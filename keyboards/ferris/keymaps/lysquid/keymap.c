@@ -24,9 +24,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [SYM] = LAYOUT(
-        KF_PERC,    KF_PLUS,    KF_LBRC,    KF_RBRC,    KF_HASH,    KF_CIRC,    KF_COLN,    KF_DQUO,    KF_QUOT,    KF_DLR,
+        KF_TILD,    KF_PLUS,    KF_LBRC,    KF_RBRC,    KF_HASH,    KF_CIRC,    KF_COLN,    KF_DQUO,    KF_QUOT,    KF_DLR,
         KF_LCBR,    KF_LPRN,    KF_RPRN,    KF_RCBR,    KF_SLSH,    KF_EQL,     OS_RCTL,    OS_RSFT,    OS_RGUI,    OS_LALT,
-        KF_TILD,    KF_BSLS,    KF_LABK,    KF_RABK,    KF_PIPE,    KF_AMPR,    KF_SCLN,    KF_ASTR,    KF_GRV,     KF_AT,
+        KF_PERC,    KF_BSLS,    KF_LABK,    KF_RABK,    KF_AMPR,    KF_PIPE,    KF_SCLN,    KF_ASTR,    KF_GRV,     KF_AT,
                                             _______,    _______,    _______,    _______
     ),
 
