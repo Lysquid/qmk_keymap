@@ -22,8 +22,11 @@ const key_override_t system_power_override = ko_make_basic(MOD_MASK_CSG, KC_MUTE
 const key_override_t undo_override = ko_make_basic(MOD_MASK_GUI, C(KF_Z), C(KF_Y));
 
 // Invert page up and page when used with no mod
-const key_override_t page_up_override = ko_make_basic_no_suppressed_mods_with_options(MOD_MASK_CSAG, KC_PGUP, KC_PGDN, ko_option_one_mod);
-const key_override_t page_down_override = ko_make_basic_no_suppressed_mods_with_options(MOD_MASK_CSAG, KC_PGDN, KC_PGUP, ko_option_one_mod);
+const key_override_t page_up_override = ko_make_basic_no_suppressed_mods_with_options(MOD_MASK_CAG, KC_PGUP, KC_PGDN, ko_option_one_mod);
+const key_override_t page_down_override = ko_make_basic_no_suppressed_mods_with_options(MOD_MASK_CAG, KC_PGDN, KC_PGUP, ko_option_one_mod);
+
+// Disable shifted variant
+const key_override_t quote_override = ko_make_basic(MOD_MASK_SHIFT, KF_QUOT, KF_QUOT);
 
 
 #ifdef FRENCH
@@ -68,6 +71,7 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &colon_override,
     &dot_override,
     &minus_override,
+    &quote_override,
     &media_prev_override,
     &media_next_override,
     &brightness_down_override,
