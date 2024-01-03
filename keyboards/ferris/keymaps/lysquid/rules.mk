@@ -7,3 +7,4 @@ UNICODEMAP_ENABLE = yes
 DEBOUNCE_TYPE = sym_eager_pk
 SRC += override.c
 SRC += process.c
+SRC += nav_lock.c
