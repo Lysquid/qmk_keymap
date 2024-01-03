@@ -8,7 +8,7 @@
 
 // Fixes the problem where I have to replug the keyboard on boot
 // BUG: Breaks symetry, you can only flash on one side with this option
-// #define WAIT_FOR_USB
+#define WAIT_FOR_USB
 
 #define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX
 
