@@ -30,4 +30,7 @@ enum keycodes {
     FR_ETRM,
     FR_ITRM,
     FR_UTRM,
+    OS_BTN1,
+    OS_BTN2,
+    OS_BTN3,
 };
