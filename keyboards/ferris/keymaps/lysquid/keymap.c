@@ -3,61 +3,59 @@
 #include "quantum_keycodes.h"
 #include "french.h"
 #include "keymap.h"
-#include "unicodes.h"
+#include "azerty.h"
+#include "sendstring_french.h"
 #include QMK_KEYBOARD_H
-
-// TODO switch layer keys with space/shift (at least try this setup)
-// TODO better position for ctrl+Z, useful macro instead of insert
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [DEF] = LAYOUT(
-        FR_Y,       OSL(SPC),   FR_O,       FR_F,       FR_K,       FR_B,       FR_P,       FR_L,       FR_C,       FR_W,
-        FR_I,       FR_A,       FR_E,       FR_U,       FR_COMM,    FR_G,       FR_T,       FR_N,       FR_S,       FR_R,
-        FR_J,       FR_DOT,     FR_MINS,    FR_H,       FR_Z,       FR_Q,       FR_D,       FR_M,       FR_V,       FR_X,
+        KF_Y,       OSL(SPC),   KF_O,       KF_F,       KF_K,       KF_B,       KF_P,       KF_L,       KF_C,       KF_W,
+        KF_I,       KF_A,       KF_E,       KF_U,       KF_COMM,    KF_G,       KF_T,       KF_N,       KF_S,       KF_R,
+        KF_J,       KF_DOT,     KF_MINS,    KF_H,       KF_Z,       KF_Q,       KF_D,       KF_M,       KF_V,       KF_X,
                                             MO(NAV),    KC_SPC,     KC_RSFT,    MO(SYM)
     ),
 
     [DEF2] = LAYOUT(
-        FR_A,       FR_Z,       FR_E,       FR_R,       FR_T,       FR_Y,       FR_U,       FR_I,       FR_O,       FR_P,
-        FR_Q,       FR_S,       FR_D,       FR_F,       FR_G,       FR_H,       FR_J,       FR_K,       FR_L,       FR_M,
-        FR_W,       FR_X,       FR_C,       FR_V,       FR_B,       FR_N,       FR_COMM,    FR_DOT,     FR_MINS,    OSL(SPC2),
+        KF_A,       KF_Z,       KF_E,       KF_R,       KF_T,       KF_Y,       KF_U,       KF_I,       KF_O,       KF_P,
+        KF_Q,       KF_S,       KF_D,       KF_F,       KF_G,       KF_H,       KF_J,       KF_K,       KF_L,       KF_M,
+        KF_W,       KF_X,       KF_C,       KF_V,       KF_B,       KF_N,       KF_COMM,    KF_DOT,     KF_MINS,    OSL(SPC2),
                                             MO(NAV),    KC_SPC,     KC_RSFT,    MO(SYM)
     ),
 
     [SYM] = LAYOUT(
-        FR_PERC,    FR_PLUS,    FR_LBRC,    FR_RBRC,    FR_HASH,    FR_1CRC,    FR_COLN,    FR_DQUO,    FR_QUOT,    FR_DLR,
-        FR_LCBR,    FR_LPRN,    FR_RPRN,    FR_RCBR,    FR_SLSH,    FR_EQL,     OS_RCTL,    OS_RSFT,    OS_RGUI,    OS_LALT,
-        FR_TILD,    FR_BSLS,    FR_LABK,    FR_RABK,    FR_PIPE,    FR_AMPR,    FR_SCLN,    FR_ASTR,    FR_GRV,     FR_AT,
+        KF_PERC,    KF_PLUS,    KF_LBRC,    KF_RBRC,    KF_HASH,    KF_CIRC,    KF_COLN,    KF_DQUO,    KF_QUOT,    KF_DLR,
+        KF_LCBR,    KF_LPRN,    KF_RPRN,    KF_RCBR,    KF_SLSH,    KF_EQL,     OS_RCTL,    OS_RSFT,    OS_RGUI,    OS_LALT,
+        KF_TILD,    KF_BSLS,    KF_LABK,    KF_RABK,    KF_PIPE,    KF_AMPR,    KF_SCLN,    KF_ASTR,    KF_GRV,     KF_AT,
                                             _______,    _______,    _______,    _______
     ),
 
     [NAV] = LAYOUT(
         KC_MPLY,    TO(MOS),    KC_VOLD,    KC_VOLU,    KC_MUTE,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
         OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
-        C(FR_A),    C(FR_X),    C(FR_C),    C(FR_V),    C(FR_Z),    CW_TOGG,    KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
+        C(KF_A),    C(KF_X),    C(KF_C),    C(KF_V),    C(KF_Z),    CW_TOGG,    KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
                                             _______,    _______,    _______,    _______
     ),
 
     [NUM] = LAYOUT(
-        KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,     FR_7,       FR_8,       FR_9,       FR_COMM,
-        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_SPC,     KC_PPLS,     FR_4,       FR_5,       FR_6,       FR_0,
-        KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F11,     FR_1,       FR_2,       FR_3,       FR_DOT,
+        KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,     KF_7,       KF_8,       KF_9,       KF_COMM,
+        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_SPC,     KC_PPLS,    KF_4,       KF_5,       KF_6,       KF_0,
+        KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F11,     KF_1,       KF_2,       KF_3,       KF_DOT,
                                             _______,    _______,    _______,    _______
     ),
 
     [SPC] = LAYOUT(
-        FR_ITRM,    TO(DEF),    FR_OCRC,    FR_EGRV,    FR_UGRV,    FR_LAQT,    FR_RAQT,    FR_CPRT,    FR_CCED,    FR_TM,
-        FR_ICRC,    FR_SUP2,    FR_ECRC,    FR_EACU,    FR_UCRC,    FR_EURO,    FR_ACRC,    FR_AGRV,    FR_AE,      FR_OE,
-        FR_BDOT,    FR_MDOT,    FR_IQES,    FR_ETRM,    FR_UTRM,    FR_LARW,    FR_RARW,    FR_MICR,    FR_DEG,     FR_CROS,
-                                            _______,    FR_QUOT,    _______,    _______
+        KF_ITRM,    TO(DEF),    KF_OCRC,    KF_EGRV,    KF_UGRV,    KF_LAQT,    KF_RAQT,    KF_CPRT,    KF_CCED,    KF_TM,
+        KF_ICRC,    KF_SUP2,    KF_ECRC,    KF_EACU,    KF_UCRC,    KF_EURO,    KF_ACRC,    KF_AGRV,    KF_AE,      KF_OE,
+        KF_BDOT,    KF_MDOT,    KF_IQES,    KF_ETRM,    KF_UTRM,    KF_LARW,    KF_RARW,    KF_MICR,    KF_DEG,     KF_CROS,
+                                            _______,    KF_QUOT,    _______,    _______
     ),
 
     [SPC2] = LAYOUT(
-        FR_AE,      FR_EACU,    FR_EGRV,    FR_SUP2,    FR_TM,     FR_UTRM,     FR_UGRV,    FR_ITRM,    FR_OE,      FR_DEG,
-        FR_AGRV,    FR_ETRM,    FR_ECRC,    FR_EURO,    FR_LAQT,   FR_RAQT,     FR_UCRC,    FR_ICRC,    FR_OCRC,    FR_IQES,
-        FR_ACRC,    FR_CROS,    FR_CCED,    FR_CPRT,    FR_LARW,   FR_RARW,     FR_MICR,    FR_MDOT,    FR_BDOT,    TO(DEF2),
-                                            _______,    FR_QUOT,    _______,     _______
+        KF_AE,      KF_EACU,    KF_EGRV,    KF_SUP2,    KF_TM,     KF_UTRM,     KF_UGRV,    KF_ITRM,    KF_OE,      KF_DEG,
+        KF_AGRV,    KF_ETRM,    KF_ECRC,    KF_EURO,    KF_LAQT,   KF_RAQT,     KF_UCRC,    KF_ICRC,    KF_OCRC,    KF_IQES,
+        KF_ACRC,    KF_CROS,    KF_CCED,    KF_CPRT,    KF_LARW,   KF_RARW,     KF_MICR,    KF_MDOT,    KF_BDOT,    TO(DEF2),
+                                            _______,    KF_QUOT,    _______,     _______
     ),
 
     [MOS] = LAYOUT(
