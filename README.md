@@ -4,7 +4,7 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ## Features
 
-- Custom layout optimized for French and English, [Erglace](https://github.com/Lysquid/Erglace)
+- Custom layout optimized for French and English, [Erglace](https://github.com/Lysquid/Erglace) (or AZERTY)
 - A layer for all symbols
 - A layer for navigation keys, like the arrow keys
 - A tri layer for numbers and function keys
@@ -12,6 +12,15 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 - One shot layer for French accents and useful Unicode characters, inspired by [QWERTY Lafayette](https://qwerty-lafayette.org/)
 - A layer to emulate a mouse
 - Compiled for QWERTY or AZERTY depending on a flag in the config
+
+## Installation
+
+- Install the [QMK CLI](https://docs.qmk.fm/#/newbs_getting_started?id=set-up-your-environment) (available on Arch repos as `qmk`)
+- Grab the latest [release](/releases)
+- Run `qmk flash ferris_sweep_lysquid.hex`
+- Put your keyboard in bootloader mode (with a `boot` key or a reset button)
+- If you are flashing your keyboard for the first time, you must flash the two sides separately with the flags `-bl avrdude-split-left` and `-bl avrdude-split-right`
+
 
 ## Layers
 
