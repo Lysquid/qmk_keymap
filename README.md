@@ -85,9 +85,9 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ```
 ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
-┃     │     │     │     │erglc┃ ┃azrty│whl l│  ↑  │whl r│     ┃
+┃     │r osc│m osc│l osc│erglc┃ ┃azrty│whl l│  ↑  │whl r│     ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃     │r clk│m clk│l clk│     ┃ ┃     │  ←  │  ↓  │  →  │     ┃
+┃m bck│r clk│m clk│l clk│m fwd┃ ┃     │  ←  │  ↓  │  →  │     ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ alt │super│shift│ctrl │rboot┃ ┃boot │whl d│whl u│     │     ┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
