@@ -17,4 +17,6 @@ compile_commands.json
 
 # Custom
 .vscode
+.cache
+.idea
 compile_commands.json
