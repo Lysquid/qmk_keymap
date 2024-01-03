@@ -43,3 +43,31 @@ bool uppercase_accent(uint16_t keycode, keyrecord_t *record) {
     }
     return false;
 }
+
+bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
+    if (is_caps_word_on()) {
+        uint16_t keycode_override = 0;
+        switch (keycode)
+        {
+        case FR_MINS:
+            keycode_override = FR_UNDS;
+            break;
+        case FR_M:
+            keycode_override = FR_M;
+            set_oneshot_mods(MOD_BIT(KC_LSFT));
+            break;
+        case FR_COMM:
+            caps_word_off();
+            break;
+        }
+        if (keycode_override) {
+            if (record->event.pressed) {
+                register_code(keycode_override);
+            } else {
+                unregister_code(keycode_override);
+            }
+            return true;
+        }
+    }
+    return false;
+}

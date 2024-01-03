@@ -64,56 +64,6 @@ void update_oneshots(uint16_t keycode, keyrecord_t *record) {
     update_oneshot(&os_rgui_state, KC_RGUI, OS_RGUI, keycode, record);
 }
 
-// ############
-// # NAV LOCK #
-// ############
-
-bool nav_lock = false;
-bool nav_down = false;
-bool shift_unused = false;
-
-bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode)
-    {
-    case KC_RSFT:
-        if (record->event.pressed) {
-            if (IS_LAYER_ON(NAV)) {
-                if (nav_down) {
-                    nav_lock = true;
-                    return true;
-                } else {
-                    layer_off(NAV);
-                    nav_lock = false;
-                }
-            } else {
-                shift_unused = true;
-            }
-        }
-        break;
-    case MO(NAV):
-        nav_down = record->event.pressed;
-        if (record->event.pressed) {
-            if (shift_unused) {
-                nav_lock = true;
-            }
-        } else {
-            if (nav_lock) {
-                return true;
-            }
-        }
-        break;
-    case KC_SPC:
-        if (record->event.pressed && IS_LAYER_ON(NAV) && IS_LAYER_OFF(NUM)) {
-            layer_off(NAV);
-            nav_lock = false;
-            return true;
-        }
-    default:
-        shift_unused = false;
-    }
-    return false;
-}
-
 // ########################
 // # SPECIALS LAYER CLEAR #
 // ########################
@@ -125,7 +75,7 @@ void cancel_one_shot_hold(uint8_t layer) {
     }
 }
 
-// Clear up layers when NAV or SYM are pressed
+// Clear up higher layers when NAV or SYM are pressed
 void special_layers_clear(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode)
@@ -167,34 +117,6 @@ void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
     case FR_ITRM: dead_key_accent(FR_I, trema, record); break;
     case FR_UTRM: dead_key_accent(FR_U, trema, record); break;
     }
-}
-
-bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
-    if (is_caps_word_on()) {
-        uint16_t keycode_override = 0;
-        switch (keycode)
-        {
-        case FR_MINS:
-            keycode_override = FR_UNDS;
-            break;
-        case FR_M:
-            keycode_override = FR_M;
-            set_oneshot_mods(MOD_BIT(KC_LSFT));
-            break;
-        case FR_COMM:
-            caps_word_off();
-            break;
-        }
-        if (keycode_override) {
-            if (record->event.pressed) {
-                register_code(keycode_override);
-            } else {
-                unregister_code(keycode_override);
-            }
-            return true;
-        }
-    }
-    return false;
 }
 
 // ###########

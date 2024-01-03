@@ -34,3 +34,5 @@ enum keycodes {
     OS_BTN2,
     OS_BTN3,
 };
+
+bool nav_layer_lock(uint16_t keycode, keyrecord_t *record);
