@@ -21,7 +21,6 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 - Put your keyboard in bootloader mode (with a `boot` key or a reset button)
 - If you are flashing your keyboard for the first time, you must flash the two sides separately with the flags `-bl avrdude-split-left` and `-bl avrdude-split-right`
 
-
 ## Layers
 
 ### `DEF` Default layer

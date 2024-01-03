@@ -38,4 +38,5 @@ enum keycodes {
     #endif
 };
 
+// Lock the NAV layer with MO(NAV) + shift
 bool nav_layer_lock(uint16_t keycode, keyrecord_t *record);
