@@ -35,13 +35,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NAV] = LAYOUT(
         KC_MPLY,    TO(MOS),    KC_VOLD,    KC_VOLU,    KC_MUTE,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
         OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
-        C(FR_A),    C(FR_X),    C(FR_C),    C(FR_V),    C(FR_Z),    KC_PPLS,    KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
+        C(FR_A),    C(FR_X),    C(FR_C),    C(FR_V),    C(FR_Z),    CW_TOGG,    KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
                                             _______,    _______,    _______,    _______
     ),
 
     [NUM] = LAYOUT(
         KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,     FR_7,       FR_8,       FR_9,       FR_COMM,
-        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_SPC,     FR_4,       FR_5,       FR_6,       FR_0,
+        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_SPC,     KC_PPLS,     FR_4,       FR_5,       FR_6,       FR_0,
         KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F11,     FR_1,       FR_2,       FR_3,       FR_DOT,
                                             _______,    _______,    _______,    _______
     ),
