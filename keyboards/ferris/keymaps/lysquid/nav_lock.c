@@ -20,6 +20,7 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
                     // If shift is pressed while the layer is locked, exit the layer
                     layer_off(NAV);
                     lock_nav = false;
+                    shift_unused = true;
                 }
             } else {
                 shift_unused = true;

@@ -44,7 +44,7 @@ bool uppercase_accents(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
-    if (0) {
+    if (is_caps_word_on()) {
         uint16_t keycode_override = 0;
         switch (keycode)
         {
@@ -56,7 +56,7 @@ bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
             set_oneshot_mods(MOD_BIT(KC_LSFT));
             break;
         case FR_COMM:
-            // caps_word_off();
+            caps_word_off();
             break;
         }
         if (keycode_override) {

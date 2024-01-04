@@ -47,16 +47,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [SPC2] = LAYOUT(
-        KF_AE,      KF_EACU,    KF_EGRV,    KF_SUP2,    KF_TM,     KF_UTRM,     KF_UGRV,    KF_ITRM,    KF_OE,      KF_DEG,
-        KF_AGRV,    KF_ETRM,    KF_ECRC,    KF_EURO,    KF_LAQT,   KF_RAQT,     KF_UCRC,    KF_ICRC,    KF_OCRC,    KF_IQES,
-        KF_ACRC,    KF_CROS,    KF_CCED,    KF_CPRT,    KF_LARW,   KF_RARW,     KF_MICR,    KF_MDOT,    KF_BDOT,    TO(DEF2),
+        KF_AE,      KF_EACU,    KF_EGRV,    KF_SUP2,    KF_TM,      KF_UTRM,     KF_UGRV,    KF_ITRM,    KF_OE,      KF_DEG,
+        KF_AGRV,    KF_ETRM,    KF_ECRC,    KF_EURO,    KF_LAQT,    KF_RAQT,     KF_UCRC,    KF_ICRC,    KF_OCRC,    KF_IQES,
+        KF_ACRC,    KF_CROS,    KF_CCED,    KF_CPRT,    KF_LARW,    KF_RARW,     KF_MICR,    KF_MDOT,    KF_BDOT,    TO(DEF2),
                                             _______,    KF_QUOT,    _______,     _______
     ),
 
     [MOS] = LAYOUT(
-        XXXXXXX,    OS_BTN2,    OS_BTN3,    OS_BTN1,    DF(DEF),    DF(DEF2),   KC_WH_L,    KC_MS_U,    KC_WH_R,    QK_BOOT,
+        XXXXXXX,    OS_BTN2,    OS_BTN3,    OS_BTN1,    DF(DEF),    DF(DEF2),   KC_WH_L,    KC_MS_U,    KC_WH_R,    ,
         KC_BTN4,    KC_BTN2,    KC_BTN3,    KC_BTN1,    KC_BTN5,    XXXXXXX,    KC_MS_L,    KC_MS_D,    KC_MS_R,    XXXXXXX,
-        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    XXXXXXX,    XXXXXXX,    KC_WH_D,    KC_WH_U,    XXXXXXX,    XXXXXXX,
+        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    QK_RBT,     QK_BOOT,    KC_WH_D,    KC_WH_U,    XXXXXXX,    XXXXXXX,
                                             _______,    KC_ACL0,    KC_ACL1,    _______
     ),
 
