@@ -97,11 +97,11 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ```
 ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
-┃     │r osc│m osc│l osc│erglc┃ ┃azrty│whl l│  ↑  │whl r│boot ┃
+┃     │r osc│m osc│l osc│erglc┃ ┃azrty│whl l│  ↑  │whl r│     ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃m bck│r clk│m clk│l clk│m fwd┃ ┃     │  ←  │  ↓  │  →  │     ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃ alt │super│shift│ctrl │     ┃ ┃     │whl d│whl u│     │     ┃
+┃ alt │super│shift│ctrl │rboot┃ ┃boot │whl d│whl u│     │     ┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
                   ┃ NAV │slow2┃ ┃slow1│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
@@ -140,7 +140,7 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 #### Others
 
-- `ctrl`+`vol+` shuts down the computer, and `ctrl`+`vol+` puts it to sleep. It cannot really be pressed by accident because those keys use the same finger.
+- `ctrl`+`vol+` shuts down the computer, and `ctrl`+`vol+` puts it to sleep. They are unlikely te be pressed by accident because those keys use the same finger.
 - `pgup` and `pgdwn` are inverted when used with `ctrl`, `super`, or `alt` because it feels more natural to me.
 - Note: `redo` and `undo` are in this order because `undo` is used much more often, so it is better on a stronger and faster finger. Plus, it must be combined with `shift` to do a redo in certain apps.
 
