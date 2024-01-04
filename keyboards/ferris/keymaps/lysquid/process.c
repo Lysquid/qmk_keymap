@@ -116,26 +116,6 @@ void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-// ###########
-// # ALT TAB #
-// ###########
-
-// One hand alt tab to use with mouse
-bool alt_tab(uint16_t keycode, keyrecord_t *record) {
-    if (IS_LAYER_ON(NAV) && (
-        (keycode == C(KF_V) && (get_mods() & (MOD_MASK_ALT | MOD_MASK_GUI))) ||
-        (keycode == C(KF_X) && (get_mods() & (MOD_MASK_CTRL)))
-        )) {
-        if (record->event.pressed) {
-            register_code(KC_TAB);
-        } else {
-            unregister_code(KC_TAB);
-        }
-        return true;
-    }
-    return false;
-}
-
 // ##########################
 // # ONE SHOT MOUSE BUTTONS #
 // ##########################
@@ -177,7 +157,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     special_layers_clear(keycode, record);
     override |= nav_layer_lock(keycode, record);
-    override |= alt_tab(keycode, record);
     override |= oneshot_mouse_buttons(keycode, record);
     update_oneshots(keycode, record);
 
