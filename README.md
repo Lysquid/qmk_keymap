@@ -55,11 +55,11 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ```
 ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
-┃mplay│ MOS │vol- │vol+ │mute ┃ ┃home │bkspc│  ↑  │ del │ end ┃
+┃ MOS │ esc │redo │undo │vol+ ┃ ┃home │bkspc│  ↑  │ del │ end ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃ alt │super│shift│ctrl │ esc ┃ ┃ tab │  ←  │  ↓  │  →  │enter┃
+┃ alt │super│shift│ctrl │vol- ┃ ┃ tab │  ←  │  ↓  │  →  │enter┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃ctl+a│ cut │copy │paste│undo ┃ ┃capsw│pgup │pgdwn│menu │pscrn┃
+┃ctl+a│ cut │copy │paste│play ┃ ┃capsw│pgup │pgdwn│menu │pscrn┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
                   ┃[NAV]│space┃ ┃shift│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
@@ -97,11 +97,11 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ```
 ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓ ┏━━━━━┯━━━━━┯━━━━━┯━━━━━┯━━━━━┓
-┃     │r osc│m osc│l osc│erglc┃ ┃azrty│whl l│  ↑  │whl r│     ┃
+┃     │r osc│m osc│l osc│erglc┃ ┃azrty│whl l│  ↑  │whl r│boot ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃m bck│r clk│m clk│l clk│m fwd┃ ┃     │  ←  │  ↓  │  →  │     ┃
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
-┃ alt │super│shift│ctrl │rboot┃ ┃boot │whl d│whl u│     │     ┃
+┃ alt │super│shift│ctrl │     ┃ ┃     │whl d│whl u│     │     ┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
                   ┃ NAV │slow2┃ ┃slow1│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
@@ -119,13 +119,30 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ### Key overrides
 
-- `super`+`undo` does `redo`
-- `alt`+`paste` does `alt`+`tab`, to be able to do this useful shortcut with one hand while the other is on the mouse.
-- Similarly, `ctrl`+`ctrl+a` does `ctrl`+`tab`
-- `super`+`vol+` plays the next song, and `super`+`vol-` the previous one.
-- `alt`+`vol+` increases the brightness, and `super`+`vol` decreases it.
-- `zoom` zooms in, `ctrl`+`zoom` zooms out, and `super`+`zoom` resets the zoom.
+#### Alt+Tab
+
+- `alt`+`undo` does `alt`+`tab`, to be able to do this useful shortcut with one hand while the other is on the mouse. It can be combined with `shift`
+- `super`+`undo` does `super`+`tab`
+- `ctrl`+`esc` does `ctrl`+`tab`
+
+#### Media keys
+
+- `super`+`vol+` plays the next song, `super`+`vol-` the previous one, and `super`+`play` mutes the sound.
+- `super`+`shift`+`vol+` increases the brightness, and `super`+`shift`+`vol-` decreases it.
+- `ctrl`+`vol+` goes forward in a browser, `ctrl`+`vol-` goes backward, and `ctrl`+`play` does a refresh.
+- `alt`+`vol+` zooms in, `alt`+`vol-` zooms out, and `alt`+`play` resets the zoom.
+
+#### Shortcuts
+
+- `ctrl`+`copy` does `ctrl`+`shift`+`c`, to copy in a terminal.
+- `ctrl`+`cut` does `ctrl`+`s` to save a file.
+- `ctrl`+`redo` closes a browser tab.
+
+#### Others
+
+- `ctrl`+`vol+` shuts down the computer, and `ctrl`+`vol+` puts it to sleep. It cannot really be pressed by accident because those keys use the same finger.
 - `pgup` and `pgdwn` are inverted when used with `ctrl`, `super`, or `alt` because it feels more natural to me.
+- Note: `redo` and `undo` are in this order because `undo` is used much more often, so it is better on a stronger and faster finger. Plus, it must be combined with `shift` to do a redo in certain apps.
 
 ### Navigation lock
 

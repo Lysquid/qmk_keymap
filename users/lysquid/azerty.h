@@ -104,6 +104,10 @@
 #define KF_DEG  FR_DEG          // °
 #define KF_CROS SAGR(FR_SCLN)   // ×
 
+// Custom
+#define KF_ZOOM_IN      C(FR_EQL)
+#define KF_ZOOM_OUT     C(FR_MINS)
+
 #else
 
 #define KF_A    KC_A    // A
@@ -212,4 +216,26 @@
 #define KF_DEG  UM(DEG)     // °
 #define KF_CROS UM(CROSS)   // ×
 
+// Custom
+#define KF_ZOOM_IN      C(KC_PLUS)
+#define KF_ZOOM_OUT     C(KC_MINS)
+
 #endif
+
+// Custom
+#define KF_COPY         C(KF_C)
+#define KF_CUT          C(KF_X)
+#define KF_PASTE        C(KF_V)
+#define KF_SELECT_ALL   C(KF_A)
+#define KF_UNDO         C(KF_Z)
+#define KF_REDO         C(KF_Y)
+#define KF_SAVE         C(KF_S)
+#define KF_CLOSE        C(KF_W)
+#define KF_ZOOM_RESET   C(KF_0)
+// Shorthands
+#define KF_ZIN  KF_ZOOM_IN
+#define KF_ZOUT KF_ZOOM_OUT
+#define KF_ZRST KF_ZOOM_RESET
+#define KF_PSTE KF_PASTE
+#define KF_SLCT KF_SELECT_ALL
+#define KF_CLSE KF_CLOSE
