@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
-#include "keycodes.h"
 #include "keymap.h"
+#include "keycodes.h"
 
 bool lock_nav = false;  // skip process next time MO(NAV) goes up
 bool nav_down = false;

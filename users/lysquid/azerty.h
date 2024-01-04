@@ -2,7 +2,6 @@
 
 #include "keymap_french.h"
 #include "unicodes.h"
-#include QMK_KEYBOARD_H
 
 #ifdef FRENCH
 

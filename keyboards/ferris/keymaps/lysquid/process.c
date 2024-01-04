@@ -1,11 +1,7 @@
-#include "keycodes.h"
-#include "keymap_french.h"
-#include "quantum_keycodes.h"
+#include "azerty.h"
 #include "oneshot.h"
 #include "french.h"
 #include "keymap.h"
-#include "azerty.h"
-#include QMK_KEYBOARD_H
 
 // #################
 // # ONE SHOT MODS #

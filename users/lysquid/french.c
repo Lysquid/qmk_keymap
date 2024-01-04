@@ -1,6 +1,5 @@
 #include "french.h"
 #include "keymap_french.h"
-#include "modifiers.h"
 #include "keycodes.h"
 
 void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record) {
@@ -45,7 +44,7 @@ bool uppercase_accents(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
-    if (is_caps_word_on()) {
+    if (0) {
         uint16_t keycode_override = 0;
         switch (keycode)
         {
@@ -57,7 +56,7 @@ bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
             set_oneshot_mods(MOD_BIT(KC_LSFT));
             break;
         case FR_COMM:
-            caps_word_off();
+            // caps_word_off();
             break;
         }
         if (keycode_override) {
