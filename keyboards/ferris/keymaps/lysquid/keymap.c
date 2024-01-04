@@ -1,11 +1,6 @@
-#include "keycodes.h"
-#include "keymap_french.h"
-#include "quantum_keycodes.h"
-#include "french.h"
 #include "keymap.h"
 #include "azerty.h"
 #include "sendstring_french.h"
-#include QMK_KEYBOARD_H
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
