@@ -72,7 +72,7 @@ void cancel_one_shot_hold(uint8_t layer) {
     }
 }
 
-// Clear up higher layers when NAV or SYM are pressed
+// Clear up higher layers when NAV, SYM or shift are pressed
 void special_layers_clear(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode)
@@ -83,6 +83,10 @@ void special_layers_clear(uint16_t keycode, keyrecord_t *record) {
             layer_off(SPC);
             layer_off(SPC2);
             reset_oneshot_layer();
+            break;
+        case KC_RSFT:
+            layer_off(MOS);
+            break;
         }
     }
 }
