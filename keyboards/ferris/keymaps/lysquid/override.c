@@ -110,6 +110,18 @@ const key_override_t override_9 = ko_make_disable_shifted_ver(KC_9);
 const key_override_t override_0 = ko_make_disable_shifted_ver(KC_0);
 #endif
 
+// Azerty specials
+#ifdef FRENCH
+const key_override_t rarw_override  = ko_make_disable_shifted_ver(KF_RARW);
+const key_override_t larw_override  = ko_make_disable_shifted_ver(KF_LARW);
+const key_override_t raqt_override  = ko_make_disable_shifted_ver(KF_RAQT);
+const key_override_t laqt_override  = ko_make_disable_shifted_ver(KF_LAQT);
+const key_override_t mdot_override  = ko_make_disable_shifted_ver(KF_MDOT);
+const key_override_t bdot_override  = ko_make_disable_shifted_ver(KF_BDOT);
+const key_override_t euro_override  = ko_make_disable_shifted_ver(KF_EURO);
+const key_override_t sup2_override  = ko_make_disable_shifted_ver(KF_SUP2);
+#endif
+
 const key_override_t **key_overrides = (const key_override_t *[]) {
     &def_comma_override,
     &def_dot_override,
@@ -175,5 +187,15 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &override_8,
     &override_9,
     &override_0,
+    #ifdef FRENCH
+    &rarw_override,
+    &larw_override,
+    &raqt_override,
+    &laqt_override,
+    &mdot_override,
+    &bdot_override,
+    &euro_override,
+    &sup2_override,
+    #endif
     NULL
 };
