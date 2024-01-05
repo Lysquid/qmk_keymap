@@ -103,7 +103,7 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 ┠─────┼─────┼─────┼─────┼─────┨ ┠─────┼─────┼─────┼─────┼─────┨
 ┃ alt │super│shift│ctrl │rboot┃ ┃boot │whl d│whl u│     │     ┃
 ┗━━━━━┷━━━━━┷━━━━━╅─────┼─────┨ ┠─────┼─────╆━━━━━┷━━━━━┷━━━━━┛
-                  ┃ NAV │slow2┃ ┃slow1│ SYM ┃
+                  ┃ NAV │slow ┃ ┃shift│ SYM ┃
                   ┗━━━━━┷━━━━━┛ ┗━━━━━┷━━━━━┛
 ```
 
@@ -153,7 +153,7 @@ This my firmware config for the very cool [Sweep keyboard](https://github.com/da
 
 ### Mouse layer
 
+- `slow` button make the cursor speed slower for more precision.
 - `osc` buttons stand for 'one shot click'. The mouse layer is disabled after the button is clicked, unlike the other buttons.
-- `slow` buttons make the cursor speed slower for more precision.
-- A tap on `NAV` or `SYM` exits the mouse layer.
+- A tap on `NAV`, `SYM` or `shift` exits the mouse layer.
 - `erglc` stands for Erglace, my keyboard layout, and `azrty` for AZERTY. Those keys changes the layout (including the one shot special characters layer, see the [keymap definition](keyboards/ferris/keymaps/lysquid/keymap.c)).
