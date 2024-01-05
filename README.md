@@ -24,35 +24,19 @@ This my firmware config for the [Sweep keyboard](https://github.com/davidphilipb
 - The one shot modifiers are on the `NAV` and `SYM` layers. When a mod is tapped, it is queued and will be applied to the next key (for exemple a letter on the base layer).
 - Pressing `NAV` or `SYM` again cancels any queued modifier.
 - To do the same shortcut multiple times, the modifier can be held. It stays active even if the layer changes.
-- `caps word` is QMK [caps word](https://docs.qmk.fm/#/feature_caps_word): it enables caps lock for one word only, useful to write constants.
+- `caps word` is a [QMK feature](https://docs.qmk.fm/#/feature_caps_word) that enables caps lock for one word only, useful to write constants.
 - Accented letters from the one shot layer can be made uppercase with `shift`.
 
 ### Key overrides
 
-#### Alt+Tab
+Quite a few keys on the left part of the `NAV` layer have a different behavior when used with a modifier. This is meant to fit useful shortcuts, especially those that are usually done with one hand, while the other is on the mouse. For example:
 
-- `alt`+`undo` does `alt`+`tab`, to be able to do this useful shortcut with one hand while the other is on the mouse. It can be combined with `shift`
-- `super`+`undo` does `super`+`tab`
-- `ctrl`+`esc` does `ctrl`+`tab`
+- `alt`+`undo` does `alt`+`tab`, and `alt`+`redo` does `alt`+`shift`+`tab`
+- `super`+`undo` goes to the next tab, and `super`+`redo` to the previous one.
+- `shift`+`vol+` plays the next song, `shift`+`vol-` the previous one, and `shift`+`play` mutes the sound.
+- `ctrl`+`vol+` shuts down the computer, and `ctrl`+`vol-` puts it to sleep (unlikely te be pressed by accident because they use the same finger).
 
-#### Media keys
-
-- `super`+`vol+` plays the next song, `super`+`vol-` the previous one, and `super`+`play` mutes the sound.
-- `super`+`shift`+`vol+` increases the brightness, and `super`+`shift`+`vol-` decreases it.
-- `ctrl`+`vol+` goes forward in a browser, `ctrl`+`vol-` goes backward, and `ctrl`+`play` does a refresh.
-- `alt`+`vol+` zooms in, `alt`+`vol-` zooms out, and `alt`+`play` resets the zoom.
-
-#### Shortcuts
-
-- `ctrl`+`copy` does `ctrl`+`shift`+`c`, to copy in a terminal.
-- `ctrl`+`cut` does `ctrl`+`s` to save a file.
-- `ctrl`+`redo` closes a browser tab.
-
-#### Others
-
-- `ctrl`+`vol+` shuts down the computer, and `ctrl`+`vol+` puts it to sleep. They are unlikely te be pressed by accident because those keys use the same finger.
-- `page up` and `page down` are inverted when used with `ctrl`, `super`, or `alt` because it feels more natural to me.
-- Note: `redo` and `undo` are in this order because `undo` is used much more often, so it is better on a stronger and faster finger. Plus, it must be combined with `shift` to do a redo in certain apps.
+You can see the full list in [overrides.c](keyboards/ferris/keymaps/lysquid/override.c).
 
 ### Navigation lock
 

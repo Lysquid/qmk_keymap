@@ -1,10 +1,7 @@
 #pragma once
 
 #define ko_make_disable_shifted_ver(trigger_key) \
-    ko_make_mod_only(MOD_MASK_SHIFT, trigger_key, trigger_key)
-
-#define ko_make_mod_only(trigger_mods, trigger_key, replacement_key) \
-    ko_make_mod_only_with_layers(trigger_mods, trigger_key, replacement_key, ~0)
+    ko_make_mod_only_with_layers(MOD_MASK_SHIFT, trigger_key, trigger_key, ~0)
 
 #define ko_make_mod_only_with_layers(trigger_mods, trigger_key, replacement_key, layers) \
     ko_make_with_layers_and_negmods(trigger_mods, trigger_key, replacement_key, layers, (unsigned char) (~(trigger_mods)))
