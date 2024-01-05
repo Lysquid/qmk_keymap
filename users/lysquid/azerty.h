@@ -223,15 +223,20 @@
 #endif
 
 // Custom
-#define KF_COPY         C(KF_C)
-#define KF_CUT          C(KF_X)
-#define KF_PASTE        C(KF_V)
-#define KF_SELECT_ALL   C(KF_A)
-#define KF_UNDO         C(KF_Z)
-#define KF_REDO         C(KF_Y)
-#define KF_SAVE         C(KF_S)
-#define KF_CLOSE        C(KF_W)
-#define KF_ZOOM_RESET   C(KF_0)
+#define KF_COPY             C(KF_C)
+#define KF_CUT              C(KF_X)
+#define KF_PASTE            C(KF_V)
+#define KF_SELECT_ALL       C(KF_A)
+#define KF_UNDO             C(KF_Z)
+#define KF_REDO             C(KF_Y)
+#define KF_SAVE             C(KF_S)
+#define KF_CLOSE            C(KF_W)
+#define KF_ZOOM_RESET       C(KF_0)
+#define KF_KP_ZOOM_IN       C(KC_KP_PLUS)
+#define KF_KP_ZOOM_OUT      C(KC_KP_MINUS)
+#define KF_KP_ZOOM_RESET    C(KC_KP_0)
+#define KF_BROWSER_NEXT     C(KC_PGDN)
+#define KF_BROWSER_PREV     C(KC_PGUP)
 // Shorthands
 #define KF_ZIN  KF_ZOOM_IN
 #define KF_ZOUT KF_ZOOM_OUT
