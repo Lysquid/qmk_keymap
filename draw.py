@@ -25,7 +25,7 @@ STYLE = """
     }
 
     .held {
-        fill: #fdd;
+        fill: #fbb;
     }
 """
 
