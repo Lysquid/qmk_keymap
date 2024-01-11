@@ -1,6 +1,6 @@
-# QMK firmware
+# Lysquid's QMK keymap
 
-This my firmware config for the [Sweep keyboard](https://github.com/davidphilipbarr/Sweep), a split custom keyboard with 34 keys. It makes extensive use of layers to fit all keys.
+This my firmware config for the [Sweep keyboard](https://github.com/davidphilipbarr/Sweep), a split custom keyboard with 34 keys. It makes extensive use of layers to fit all keys, and uses callum-style mods.
 
 ## Features
 
