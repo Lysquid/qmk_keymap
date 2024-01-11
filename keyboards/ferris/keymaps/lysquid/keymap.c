@@ -5,9 +5,9 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [DEF] = LAYOUT(
-        KF_Y,       OSL(SPC),   KF_O,       KF_F,       KF_K,       KF_B,       KF_P,       KF_L,       KF_C,       KF_W,
+        KF_Y,       OSL(SPC),   KF_O,       KF_F,       KF_K,       KF_V,       KF_P,       KF_L,       KF_C,       KF_Q,
         KF_I,       KF_A,       KF_E,       KF_U,       KF_COMM,    KF_G,       KF_T,       KF_N,       KF_S,       KF_R,
-        KF_J,       KF_DOT,     KF_MINS,    KF_H,       KF_Z,       KF_Q,       KF_D,       KF_M,       KF_V,       KF_X,
+        KF_J,       KF_DOT,     KF_MINS,    KF_H,       KF_Z,       KF_B,       KF_D,       KF_M,       KF_W,       KF_X,
                                             MO(NAV),    KC_SPC,     KC_RSFT,    MO(SYM)
     ),
 
