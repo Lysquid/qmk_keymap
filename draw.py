@@ -56,7 +56,7 @@ KEYMAP = [
         ],
         "right": [
             ["^", ":", "\"", "'", "$"],
-            ["#", "ctrl", "shift", "super", "alt"],
+            ["=", "ctrl", "shift", "super", "alt"],
             ["|", ";", "*", "`", "@"],
         ],
         "thumbs": {"left": ["NAV", "space"], "right": ["shift", held("SYM")],},
