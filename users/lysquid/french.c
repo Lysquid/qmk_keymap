@@ -19,28 +19,40 @@ void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record) {
     }
 }
 
-bool uppercase_accents(uint16_t keycode, keyrecord_t *record) {
-    if (get_mods() & MOD_MASK_SHIFT && record->event.pressed) {
-        uint8_t mods;
-        switch (keycode)
-        {
-        case FR_EACU:
-        case FR_EGRV:
-        case FR_CCED:
-        case FR_AGRV:
-        case FR_UGRV:
-            mods = get_mods();
-            del_mods(MOD_MASK_SHIFT);
-            register_code(KC_CAPS);
-            unregister_code(KC_CAPS);
-            tap_code(keycode);
-            set_mods(mods);
-            register_code(KC_CAPS);
-            unregister_code(KC_CAPS);
-            return true;
-        }
+bool is_upper_case_accent(uint16_t keycode) {
+    switch (keycode)
+    {
+    case FR_EACU:
+    case FR_EGRV:
+    case FR_CCED:
+    case FR_AGRV:
+    case FR_UGRV:
+        return true;
     }
     return false;
+}
+
+bool processing_uppercase_accent = false;
+uint8_t saved_shift_mod;
+
+void process_uppercase_accents(uint16_t keycode, keyrecord_t *record) {
+    if (is_upper_case_accent(keycode) && get_mods() & MOD_MASK_SHIFT && record->event.pressed) {
+        saved_shift_mod = get_mods() & MOD_MASK_SHIFT;
+        del_mods(MOD_MASK_SHIFT);
+        // I don't use tap_code here because it takes longer for caps lock, for Mac compatibility
+        register_code(KC_CAPS);
+        unregister_code(KC_CAPS);
+        processing_uppercase_accent = true;
+    }
+}
+
+void post_process_uppercase_accents(uint16_t keycode, keyrecord_t *record) {
+    if (processing_uppercase_accent) {
+        add_mods(saved_shift_mod);
+        register_code(KC_CAPS);
+        unregister_code(KC_CAPS);
+        processing_uppercase_accent = false;
+    }
 }
 
 bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {

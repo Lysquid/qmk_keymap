@@ -24,6 +24,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     switch (keycode) {
     case MO(SYM):
     case MO(NAV):
+    case OSL(SPC):
     case KC_LSFT:
     case KC_RSFT:
     case OS_LSFT:
@@ -153,22 +154,25 @@ bool oneshot_mouse_buttons(uint16_t keycode, keyrecord_t *record) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     bool override = false;
 
-    #ifdef FRENCH
-    dead_key_accents(keycode, record);
-    override |= uppercase_accents(keycode, record);
-    override |= french_caps_word_fix(keycode, record);
-    #endif
-
     special_layers_clear(keycode, record);
     override |= nav_layer_lock(keycode, record);
     override |= oneshot_mouse_buttons(keycode, record);
     update_oneshots(keycode, record);
+
+    #ifdef FRENCH
+    dead_key_accents(keycode, record);
+    override |= french_caps_word_fix(keycode, record);
+    process_uppercase_accents(keycode, record); // saves shift mods, so must be at the end
+    #endif
 
     return !override;
 }
 
 void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
     clear_mouse_layer(keycode, record);
+    #ifdef FRENCH
+    post_process_uppercase_accents(keycode, record);
+    #endif
 }
 
 void oneshot_layer_changed_user(uint8_t layer) {
