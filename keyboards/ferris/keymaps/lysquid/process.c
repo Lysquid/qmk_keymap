@@ -62,6 +62,36 @@ void update_oneshots(uint16_t keycode, keyrecord_t *record) {
     update_oneshot(&os_rgui_state, KC_RGUI, OS_RGUI, keycode, record);
 }
 
+// #############
+// # CAPS WORD #
+// #############
+
+bool caps_word_press_user(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        #ifdef FRENCH
+        case KC_A ... KC_L:
+        case KC_N ... KC_Z:
+        case FR_M:
+        #else
+        case KC_A ... KC_Z:
+        case KC_MINS:
+        #endif
+            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
+            return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KF_1 ... KF_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+            return true;
+
+        default:
+            return false;  // Deactivate Caps Word.
+    }
+}
+
 // ########################
 // # SPECIALS LAYER CLEAR #
 // ########################

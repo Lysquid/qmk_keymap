@@ -56,29 +56,18 @@ void post_process_uppercase_accents(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
-    if (is_caps_word_on()) {
-        uint16_t keycode_override = 0;
-        switch (keycode)
-        {
-        case FR_MINS:
-            keycode_override = FR_UNDS;
-            break;
-        case FR_M:
-            keycode_override = FR_M;
-            set_oneshot_mods(MOD_BIT(KC_LSFT));
-            break;
-        case FR_COMM:
-            caps_word_off();
-            break;
+    // Key overrides doesn't work with caps word
+    // Setting a one shot mod works but is unreliable when typing fast
+     if (is_caps_word_on() && keycode == FR_MINS) {
+        uint8_t saved_shift_mod = get_mods() & MOD_MASK_SHIFT;
+        del_mods(MOD_MASK_SHIFT);
+        if (record->event.pressed) {
+            register_code(FR_UNDS);
+        } else {
+            unregister_code(FR_UNDS);
         }
-        if (keycode_override) {
-            if (record->event.pressed) {
-                register_code(keycode_override);
-            } else {
-                unregister_code(keycode_override);
-            }
-            return true;
-        }
+        add_mods(saved_shift_mod);
+        return true;
     }
     return false;
 }
