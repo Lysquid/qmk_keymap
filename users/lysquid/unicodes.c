@@ -38,6 +38,8 @@ const uint32_t unicode_map[] PROGMEM = {
     [EURO] = 0x20AC,
     [LAQOT] = 0x00AB,
     [RAQOT] = 0x00BB,
+    [LDQOT] = 0x201C,
+    [RDQOT] = 0x201D,
     [MDOT] = 0x00B7,
     [BDOT] = 0x2022,
     [ELIPS] = 0x2026,
@@ -52,5 +54,7 @@ const uint32_t unicode_map[] PROGMEM = {
     [LAROW] = 0x2190,
     [RAROW] = 0x2192,
     [POUND] = 0x00A3,
-    [SQUAR] = 0x00B2
+    [SQUAR] = 0x00B2,
+    [DIFF] = 0x2260,
+    [PSMS] = 0x00B1
 };
