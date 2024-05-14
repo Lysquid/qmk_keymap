@@ -38,7 +38,7 @@ void update_oneshot(
                 unregister_code(mod);
             }
             if (!is_oneshot_ignored_key(keycode)) {
-                // On non-ignored keyup, consider the oneshot used.
+                // On non-ignored keydown, consider the oneshot used.
                 switch (*state) {
                 case os_down_unused:
                     *state = os_down_used;
@@ -46,6 +46,18 @@ void update_oneshot(
                 case os_up_queued:
                     *state = os_up_to_unqueued;
                     break;
+                case os_up_to_unqueued:
+                    *state = os_up_unqueued;
+                    unregister_code(mod);
+                    break;
+                default:
+                    break;
+                }
+            }
+        } else {
+            if (!is_oneshot_ignored_key(keycode)) {
+                // On non-ignored keyup, consider the oneshot used.
+                switch (*state) {
                 case os_up_to_unqueued:
                     *state = os_up_unqueued;
                     unregister_code(mod);
