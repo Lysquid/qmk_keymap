@@ -37,6 +37,8 @@ enum unicode_names {
     EURO,
     LAQOT,
     RAQOT,
+    LDQOT,
+    RDQOT,
     MDOT,
     BDOT,
     ELIPS,
@@ -51,5 +53,7 @@ enum unicode_names {
     LAROW,
     RAROW,
     POUND,
-    SQUAR
+    SQUAR,
+    DIFF,
+    PSMS
 };

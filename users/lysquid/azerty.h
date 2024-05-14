@@ -80,6 +80,7 @@
 #define KF_SCLN FR_SCLN // ;
 #define KF_AT   FR_AT   // @
 #define KF_BSLS FR_BSLS // (backslash)
+#define KF_DIAE FR_DIAE // ¨ (dead)
 
 // Specials
 #define KF_AGRV FR_AGRV         // à
@@ -94,6 +95,8 @@
 #define KF_IQES SAGR(FR_RPRN)   // ¿
 #define KF_LAQT ALGR(FR_Z)      // «
 #define KF_RAQT ALGR(FR_X)      // »
+#define KF_LDQT ALGR(FR_B)      // “
+#define KF_RDQT ALGR(FR_N)      // ”
 #define KF_CPRT SAGR(FR_C)      // ©
 #define KF_TM   SAGR(FR_8)      // ™
 #define KF_SUP2 FR_SUP2         // ²
@@ -103,6 +106,8 @@
 #define KF_RARW ALGR(FR_I)      // →
 #define KF_DEG  FR_DEG          // °
 #define KF_CROS SAGR(FR_SCLN)   // ×
+#define KF_DIFF UM(DIFF)        // ≠
+#define KF_PSMS SAGR(FR_9)      // ±
 
 // Custom
 #define KF_ZOOM_IN      C(FR_EQL)
@@ -184,6 +189,7 @@
 #define KF_SCLN KC_SCLN // ;
 #define KF_AT   KC_AT   // @
 #define KF_BSLS KC_BSLS // (backslash)
+#define KF_DIAE XXXXXXX // ¨ (dead)
 
 // Specials
 #define KF_AGRV UP(AG1,AG2) // à
@@ -206,6 +212,8 @@
 #define KF_IQES UM(IQEST)   // ¿
 #define KF_LAQT UM(LAQOT)   // «
 #define KF_RAQT UM(RAQOT)   // »
+#define KF_LDQT UM(LDQOT)   // “
+#define KF_RDQT UM(RDQOT)   // ”
 #define KF_CPRT UM(CPYRT)   // ©
 #define KF_TM   UM(TM)      // ™
 #define KF_SUP2 UM(SQUAR)   // ²
@@ -215,6 +223,8 @@
 #define KF_RARW UM(RAROW)   // →
 #define KF_DEG  UM(DEG)     // °
 #define KF_CROS UM(CROSS)   // ×
+#define KF_DIFF UM(DIFF)    // ≠
+#define KF_PSMS UM(PSMS)    // ±
 
 // Custom
 #define KF_ZOOM_IN      C(KC_PLUS)
