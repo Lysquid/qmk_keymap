@@ -61,3 +61,36 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
     }
     return false;
 }
+
+static uint16_t key_timer;
+static bool nav_block = false;
+
+bool nav_time_block(uint16_t keycode, keyrecord_t *record) {
+    if (keycode == MO(NAV)) {
+        if (record->event.pressed) {
+            // If NAV has been pressed, start the timer
+            key_timer = timer_read();
+        } else {
+            // If NAV has been released, disable the block
+            nav_block = false;
+        }
+    }
+    if (nav_down && keycode == MO(SYM) && !record->event.pressed) {
+        // If we are typing numbers, reset the timer once we get back to the NAV layer
+        key_timer = timer_read();
+    }
+    if (nav_down && timer_elapsed(key_timer) > 1000 && IS_LAYER_OFF(NUM)) {
+        // If NAV is down, the timer is elapsed and the NUM layer is off, block further keys on the NAV layer
+        nav_block = true;
+    }
+    if (nav_block && record->event.pressed) {
+        if (keycode == KC_RSFT) {
+            // If shift is pressed while the block is active, disable the block
+            nav_block = false;
+        } else {
+            // If any other key is pressed while the block is active, ignore it
+            return true;
+        }
+    }
+    return false;
+}
