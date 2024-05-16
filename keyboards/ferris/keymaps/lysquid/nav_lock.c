@@ -31,8 +31,9 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
         nav_down = record->event.pressed;
         if (record->event.pressed) {
             if (shift_unused) {
-                // If NAV if pressed while shift is down and was not used for any letter, lock the layer
+                // If NAV is pressed while shift is down and was not used for any letter, lock the layer
                 lock_nav = true;
+                unregister_code(KC_RSFT);
             }
         } else {
             if (lock_nav) {
