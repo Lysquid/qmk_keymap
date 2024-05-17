@@ -26,6 +26,7 @@ enum keycodes {
     OS_BTN1,
     OS_BTN2,
     OS_BTN3,
+    KC_HSCL,
     #ifdef FRENCH
     KF_ACRC,
     KF_ECRC,
