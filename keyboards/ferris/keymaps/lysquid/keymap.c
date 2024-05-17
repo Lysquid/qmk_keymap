@@ -1,6 +1,8 @@
 #include "keymap.h"
 #include "azerty.h"
+#ifdef FRENCH
 #include "sendstring_french.h"
+#endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 

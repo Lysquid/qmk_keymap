@@ -1,4 +1,7 @@
+#include "action_util.h"
 #include "azerty.h"
+#include "keymap_french.h"
+#include "modifiers.h"
 #include "oneshot.h"
 #include "french.h"
 #include "keymap.h"
@@ -67,6 +70,12 @@ void update_oneshots(uint16_t keycode, keyrecord_t *record) {
 // #############
 
 bool caps_word_press_user(uint16_t keycode) {
+    #ifdef FRENCH
+    // There is a special function to handle dead key accents, so we don't have to apply caps word
+    if (is_uppercase_dk_accent(keycode)) {
+        return true;
+    }
+    #endif
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
         #ifdef FRENCH
@@ -77,14 +86,30 @@ bool caps_word_press_user(uint16_t keycode) {
         case KC_A ... KC_Z:
         case KC_MINS:
         #endif
-            add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key.
+        case KF_AGRV:
+        case KF_ACRC:
+        case KF_EDIA:
+        case KF_EACU:
+        case KF_EGRV:
+        case KF_ECRC:
+        case KF_ICRC:
+        case KF_IDIA:
+        case KF_OCRC:
+        case KF_UGRV:
+        case KF_UCRC:
+        case KF_UDIA:
+        case KF_AE:
+        case KF_OE:
+        case KF_CCED:
+            add_weak_mods(MOD_BIT_LSHIFT);  // Apply shift to next key.
             return true;
 
         // Keycodes that continue Caps Word, without shifting.
         case KF_1 ... KF_0:
         case KC_BSPC:
         case KC_DEL:
-        case KC_UNDS:
+        case KF_UNDS:
+        case KF_MDOT:
             return true;
 
         default:
@@ -140,14 +165,14 @@ void clear_mouse_layer(uint16_t keycode, keyrecord_t *record) {
 void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
     switch (keycode)
     {
-    case KF_ACRC: dead_key_accent(FR_A, circonflexe, record); break;
-    case KF_ECRC: dead_key_accent(FR_E, circonflexe, record); break;
-    case KF_ICRC: dead_key_accent(FR_I, circonflexe, record); break;
-    case KF_OCRC: dead_key_accent(FR_O, circonflexe, record); break;
-    case KF_UCRC: dead_key_accent(FR_U, circonflexe, record); break;
-    case KF_ETRM: dead_key_accent(FR_E, trema, record); break;
-    case KF_ITRM: dead_key_accent(FR_I, trema, record); break;
-    case KF_UTRM: dead_key_accent(FR_U, trema, record); break;
+    case KF_ACRC: dead_key_accent(FR_A, circumflex, record); break;
+    case KF_ECRC: dead_key_accent(FR_E, circumflex, record); break;
+    case KF_ICRC: dead_key_accent(FR_I, circumflex, record); break;
+    case KF_OCRC: dead_key_accent(FR_O, circumflex, record); break;
+    case KF_UCRC: dead_key_accent(FR_U, circumflex, record); break;
+    case KF_EDIA: dead_key_accent(FR_E, diaeresis, record); break;
+    case KF_IDIA: dead_key_accent(FR_I, diaeresis, record); break;
+    case KF_UDIA: dead_key_accent(FR_U, diaeresis, record); break;
     }
 }
 
@@ -193,7 +218,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     #ifdef FRENCH
     dead_key_accents(keycode, record);
     override |= french_caps_word_fix(keycode, record);
-    process_uppercase_accents(keycode, record); // saves shift mods, so must be at the end
+    process_uppercase_dk_accents(keycode, record); // saves shift mods, so must be at the end
     #endif
 
     return !override;
@@ -202,7 +227,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
     clear_mouse_layer(keycode, record);
     #ifdef FRENCH
-    post_process_uppercase_accents(keycode, record);
+    post_process_uppercase_dk_accents(keycode, record);
     #endif
 }
 

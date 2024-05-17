@@ -32,9 +32,9 @@ enum keycodes {
     KF_OCRC,
     KF_ICRC,
     KF_UCRC,
-    KF_ETRM,
-    KF_ITRM,
-    KF_UTRM,
+    KF_EDIA,
+    KF_IDIA,
+    KF_UDIA,
     #endif
 };
 
