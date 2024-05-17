@@ -39,14 +39,14 @@ bool is_uppercase_dk_accent(uint16_t keycode) {
     return false;
 }
 
-bool processing_uppercase_accent = false;
-uint8_t saved_shift_mod;
+static bool processing_uppercase_accent = false;
+static uint8_t saved_shift_mod;
 
 void process_uppercase_dk_accents(uint16_t keycode, keyrecord_t *record) {
     if (is_uppercase_dk_accent(keycode) && record->event.pressed &&
             (get_mods() & MOD_MASK_SHIFT || is_caps_word_on())) {
         saved_shift_mod = get_mods() & MOD_MASK_SHIFT;
-        del_mods(MOD_MASK_SHIFT);
+        del_mods(saved_shift_mod);
         // I don't use tap_code for caps lock because it takes longer, due to Mac compatibility
         register_code(KC_CAPS);
         unregister_code(KC_CAPS);
@@ -68,7 +68,7 @@ bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
     // Setting a one shot mod works but is unreliable when typing fast
      if (is_caps_word_on() && keycode == FR_MINS) {
         uint8_t saved_shift_mod = get_mods() & MOD_MASK_SHIFT;
-        del_mods(MOD_MASK_SHIFT);
+        del_mods(saved_shift_mod);
         if (record->event.pressed) {
             register_code(FR_UNDS);
         } else {
@@ -80,7 +80,8 @@ bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
     return false;
 }
 
-bool next_key_diaeresis = false;
+static bool next_key_diaeresis = false;
+
 bool diaeresis_accent(uint16_t keycode, keyrecord_t *record, uint16_t diaeresis_keycode) {
     if (record->event.pressed) {
         if (keycode == diaeresis_keycode) {
