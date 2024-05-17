@@ -156,7 +156,8 @@
 <rect rx="6" ry="6" x="411.0" y="390.0" width="55" height="45" class="held" />
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="412.5">SYM</text>
 <rect rx="6" ry="6" x="29.5" y="461.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="484.0">MOUS</text>
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="475.0">prnt</text>
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="493.0">scrn</text>
 <rect rx="6" ry="6" x="88.5" y="461.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="116.0" y="484.0">esc</text>
 <rect rx="6" ry="6" x="147.5" y="461.5" width="55" height="45" class="" />
@@ -208,8 +209,6 @@
 <rect rx="6" ry="6" x="588.0" y="510.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="615.5" y="533.0">enter</text>
 <rect rx="6" ry="6" x="352.0" y="559.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="379.5" y="573.0">caps</text>
-<text text-anchor="middle" dominant-baseline="middle" x="379.5" y="591.0">word</text>
 <rect rx="6" ry="6" x="411.0" y="559.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="573.0">page</text>
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="591.0">down</text>
@@ -219,8 +218,7 @@
 <rect rx="6" ry="6" x="529.0" y="559.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="556.5" y="582.0">menu</text>
 <rect rx="6" ry="6" x="588.0" y="559.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="615.5" y="573.0">prnt</text>
-<text text-anchor="middle" dominant-baseline="middle" x="615.5" y="591.0">scrn</text>
+<text text-anchor="middle" dominant-baseline="middle" x="615.5" y="582.0">MOUS</text>
 <rect rx="6" ry="6" x="206.5" y="608.5" width="55" height="45" class="held" />
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="631.0">NAV</text>
 <rect rx="6" ry="6" x="265.5" y="608.5" width="55" height="45" class="" />
@@ -378,7 +376,7 @@
 <rect rx="6" ry="6" x="411.0" y="1045.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="1068.0">SYM</text>
 <rect rx="6" ry="6" x="29.5" y="1117.0" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1139.5">²</text>
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1139.5">œ</text>
 <rect rx="6" ry="6" x="88.5" y="1117.0" width="55" height="45" class="held" />
 <text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1139.5">SPEC</text>
 <rect rx="6" ry="6" x="147.5" y="1117.0" width="55" height="45" class="" />
@@ -398,7 +396,7 @@
 <rect rx="6" ry="6" x="265.5" y="1166.0" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="293.0" y="1188.5">û</text>
 <rect rx="6" ry="6" x="29.5" y="1215.0" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1237.5">±</text>
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1237.5">²</text>
 <rect rx="6" ry="6" x="88.5" y="1215.0" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1237.5">•</text>
 <rect rx="6" ry="6" x="147.5" y="1215.0" width="55" height="45" class="" />
@@ -426,7 +424,8 @@
 <rect rx="6" ry="6" x="529.0" y="1166.0" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="556.5" y="1188.5">_</text>
 <rect rx="6" ry="6" x="588.0" y="1166.0" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="615.5" y="1188.5">œ</text>
+<text text-anchor="middle" dominant-baseline="middle" x="615.5" y="1179.5">caps</text>
+<text text-anchor="middle" dominant-baseline="middle" x="615.5" y="1197.5">word</text>
 <rect rx="6" ry="6" x="352.0" y="1215.0" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="379.5" y="1237.5">“</text>
 <rect rx="6" ry="6" x="411.0" y="1215.0" width="55" height="45" class="" />
