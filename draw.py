@@ -70,7 +70,7 @@ KEYMAP = [
         "right": [
             ["home", "bksp", "up", "del", "end"],
             ["tab", "left", "down", "right", "enter"],
-            ["", "page down", "page up", "menu", "MOUS"],
+            ["half scrol", "page down", "page up", "menu", "MOUS"],
         ],
         "thumbs": {"left": [held("NAV"), "space"], "right": ["shift", "SYM"],},
     },
@@ -92,14 +92,14 @@ KEYMAP = [
     },
     {
         "left": [
-            [held("MOUS"), "right onesht", "middle onesht", "left onesht", "erglce"],
+            ["", "right onesht", "middle onesht", "left onesht", "erglce"],
             ["mouse back", "right click", "middle click", "left click", "mouse fwd"],
             ["alt", "super", "shift", "ctrl", "reboot"],
         ],
         "right": [
             ["azerty", "wheel left", "mouse up", "wheel right", ""],
             ["", "mouse left", "mouse down", "mouse right", ""],
-            ["boot", "wheel down", "wheel up", "", ""],
+            ["boot", "wheel down", "wheel up", "", held("MOUS")],
         ],
         "thumbs": {
             "left": ["NAV", "slow mouse"],
