@@ -1,5 +1,6 @@
 #include "keymap.h"
 #include "azerty.h"
+#include "keycodes.h"
 #ifdef FRENCH
 #include "sendstring_french.h"
 #endif
@@ -28,9 +29,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NAV] = LAYOUT(
-        TO(MOS),    KC_ESC,     KF_REDO,    KF_UNDO,    KC_VOLU,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
+        KC_PSCR,    KC_ESC,     KF_REDO,    KF_UNDO,    KC_VOLU,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
         OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_VOLD,    KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
-        KF_SLCT,    KF_CUT,     KF_COPY,    KF_PSTE,    KC_MPLY,    CW_TOGG,    KC_PGDN,    KC_PGUP,    KC_APP,     KC_PSCR,
+        KF_SLCT,    KF_CUT,     KF_COPY,    KF_PSTE,    KC_MPLY,    XXXXXXX,    KC_PGDN,    KC_PGUP,    KC_APP,     TO(MOS),
                                             _______,    _______,    _______,    _______
     ),
 
@@ -42,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [SPC] = LAYOUT(
-        KF_SUP2,    KF_DIAE,    KF_OCRC,    KF_EGRV,    KF_UGRV,    KF_LAQT,    KF_RAQT,    KF_MDOT,    KF_CCED,    KF_DEG,
-        KF_ICRC,    KF_AE,      KF_ECRC,    KF_EACU,    KF_UCRC,    KF_EURO,    KF_AGRV,    KF_ACRC,    KF_UNDS,    KF_OE,
-        KF_PSMS,    KF_BDOT,    KF_IQES,    KF_LARW,    KF_RARW,    KF_LDQT,    KF_RDQT,    KF_MICR,    KF_DIFF,    KF_CROS,
+        KF_OE,      KF_DIAE,    KF_OCRC,    KF_EGRV,    KF_UGRV,    KF_LAQT,    KF_RAQT,    KF_MDOT,    KF_CCED,    KF_DEG,
+        KF_ICRC,    KF_AE,      KF_ECRC,    KF_EACU,    KF_UCRC,    KF_EURO,    KF_AGRV,    KF_ACRC,    KF_UNDS,    CW_TOGG,
+        KF_SUP2,    KF_BDOT,    KF_IQES,    KF_LARW,    KF_RARW,    KF_LDQT,    KF_RDQT,    KF_MICR,    KF_DIFF,    KF_CROS,
                                             _______,    KF_QUOT,    _______,    _______
     ),
 
