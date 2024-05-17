@@ -2,9 +2,9 @@
 #include "keymap.h"
 #include "keycodes.h"
 
-bool lock_nav = false;  // skip process next time MO(NAV) goes up
-bool nav_down = false;
-bool shift_unused = false;  // whether shift was used for a letter, so it does not lock the layer accidentally
+static bool lock_nav = false;  // skip process next time MO(NAV) goes up
+static bool nav_down = false;
+static bool shift_unused = false;  // whether shift was used for a letter, so it does not lock the layer accidentally
 
 bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
     switch (keycode)

@@ -226,16 +226,16 @@ bool oneshot_mouse_buttons(uint16_t keycode, keyrecord_t *record) {
 void half_scroll(uint16_t keycode, keyrecord_t *record) {
     if (keycode == KC_HSCL && record->event.pressed) {
         uint16_t direction;
-        uint8_t mods = get_mods();
-        if (mods & MOD_MASK_CTRL) {
+        uint8_t saved_ctrl_mod = get_mods() & MOD_MASK_CTRL;
+        if (saved_ctrl_mod) {
             direction = KC_MS_WH_UP;
         } else {
             direction = KC_MS_WH_DOWN;
         }
-        unregister_mods(MOD_MASK_CTRL);
+        unregister_mods(saved_ctrl_mod);
         tap_code(direction);
         tap_code(direction);
-        register_mods(mods);
+        register_mods(saved_ctrl_mod);
     }
 }
 
