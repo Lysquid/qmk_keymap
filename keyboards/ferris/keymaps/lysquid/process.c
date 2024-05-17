@@ -219,6 +219,26 @@ bool oneshot_mouse_buttons(uint16_t keycode, keyrecord_t *record) {
     return false;
 }
 
+// ###############
+// # HALF SCROLL #
+// ###############
+
+void half_scroll(uint16_t keycode, keyrecord_t *record) {
+    if (keycode == KC_HSCL && record->event.pressed) {
+        uint16_t direction;
+        uint8_t mods = get_mods();
+        if (mods & MOD_MASK_CTRL) {
+            direction = KC_MS_WH_UP;
+        } else {
+            direction = KC_MS_WH_DOWN;
+        }
+        unregister_mods(MOD_MASK_CTRL);
+        tap_code(direction);
+        tap_code(direction);
+        register_mods(mods);
+    }
+}
+
 // #################
 // # QMK FUNCTIONS #
 // #################
@@ -231,6 +251,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     override |= nav_time_block(keycode, record);
     override |= oneshot_mouse_buttons(keycode, record);
     update_oneshots(keycode, record);
+    half_scroll(keycode, record);
 
     #ifdef FRENCH
     dead_key_accents(keycode, record);
