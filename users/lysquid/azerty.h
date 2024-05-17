@@ -189,7 +189,6 @@
 #define KF_SCLN KC_SCLN // ;
 #define KF_AT   KC_AT   // @
 #define KF_BSLS KC_BSLS // (backslash)
-#define KF_DIAE XXXXXXX // ¨ (dead)
 
 // Specials
 #define KF_AGRV UP(AG1,AG2) // à
@@ -197,13 +196,13 @@
 #define KF_EACU UP(EA1,EA2) // é
 #define KF_EGRV UP(EG1,EG2) // è
 #define KF_ECRC UP(EC1,EC2) // ê
-#define KF_EDIA UP(ET1,ET2) // ë
+#define KF_EDIA UP(ED1,ED2) // ë
 #define KF_ICRC UP(IC1,IC2) // î
-#define KF_IDIA UP(IT1,IT2) // ï
+#define KF_IDIA UP(ID1,ID2) // ï
 #define KF_OCRC UP(OC1,OC2) // ô
 #define KF_UGRV UP(UG1,UG2) // ù
 #define KF_UCRC UP(UC1,UC2) // û
-#define KF_UDIA UP(UT1,UT2) // ü
+#define KF_UDIA UP(UD1,UD2) // ü
 #define KF_AE   UP(AE1,AE2) // æ
 #define KF_OE   UP(OE1,OE2) // œ
 #define KF_CCED UP(CC1,CC2) // ç

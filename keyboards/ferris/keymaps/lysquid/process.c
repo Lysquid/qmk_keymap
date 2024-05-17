@@ -1,10 +1,14 @@
+#include "action.h"
 #include "action_util.h"
 #include "azerty.h"
+#include "keycodes.h"
 #include "keymap_french.h"
 #include "modifiers.h"
 #include "oneshot.h"
 #include "french.h"
 #include "keymap.h"
+#include "quantum.h"
+#include "unicodes.h"
 
 // #################
 // # ONE SHOT MODS #
@@ -176,6 +180,19 @@ void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+uint16_t diaeresis_conversion(uint16_t keycode, bool lowercase) {
+    switch (keycode)
+    {
+    case KF_A: return lowercase ? AD1 : AD2;
+    case KF_E: return lowercase ? ED1 : ED2;
+    case KF_I: return lowercase ? ID1 : ID2;
+    case KF_O: return lowercase ? OD1 : OD2;
+    case KF_U: return lowercase ? UD1 : UD2;
+    case KF_Y: return lowercase ? YD1 : YD2;
+    default: return 0;
+    }
+}
+
 // ##########################
 // # ONE SHOT MOUSE BUTTONS #
 // ##########################
@@ -219,6 +236,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     dead_key_accents(keycode, record);
     override |= french_caps_word_fix(keycode, record);
     process_uppercase_dk_accents(keycode, record); // saves shift mods, so must be at the end
+    #else
+    override |= diaeresis_accent(keycode, record, KF_DIAE);
     #endif
 
     return !override;
