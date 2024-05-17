@@ -83,6 +83,7 @@ const key_override_t ampr_override  = ko_make_disable_shifted_ver(KF_AMPR);
 const key_override_t pipe_override  = ko_make_disable_shifted_ver(KF_PIPE);
 const key_override_t grv_override   = ko_make_disable_shifted_ver(KF_GRV);
 const key_override_t at_override    = ko_make_disable_shifted_ver(KF_AT);
+const key_override_t under_unds     = ko_make_disable_shifted_ver(KF_UNDS);
 #ifdef FRENCH
 // Keypad variants to fix some shortcuts
 const key_override_t slsh_override  = ko_make_basic(MOD_MASK_SHIFT, FR_SLSH, KC_KP_SLASH);
@@ -193,6 +194,7 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &pipe_override,
     &grv_override,
     &at_override,
+    &under_unds,
     &slsh_override,
     &astr_override,
     &plus_override,
