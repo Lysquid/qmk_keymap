@@ -8,6 +8,7 @@
 #include "french.h"
 #include "keymap.h"
 #include "quantum.h"
+#include "unicodemap.h"
 #include "unicodes.h"
 
 // #################
@@ -239,6 +240,20 @@ void half_scroll(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+// ##########################
+// # OVERRIDES WITH UNICODE #
+// ##########################
+
+bool overrides_with_unicode(uint16_t keycode, keyrecord_t *record) {
+    if (keycode == KF_QUOT && get_mods() & MOD_MASK_SHIFT && (IS_LAYER_ON(SPC) || IS_LAYER_ON(SPC2))) {
+        if (record->event.pressed) {
+            register_unicodemap(NNBSP);
+        }
+        return true;
+    }
+    return false;
+}
+
 // #################
 // # QMK FUNCTIONS #
 // #################
@@ -250,6 +265,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     override |= nav_layer_lock(keycode, record);
     override |= nav_time_block(keycode, record);
     override |= oneshot_mouse_buttons(keycode, record);
+    override |= overrides_with_unicode(keycode, record);
     update_oneshots(keycode, record);
     half_scroll(keycode, record);
 

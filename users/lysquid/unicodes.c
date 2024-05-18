@@ -56,11 +56,12 @@ const uint32_t unicode_map[] PROGMEM = {
     [TM]    = 0x2122,
     [DEG]   = 0x00B0,
     [IQEST] = 0x00BF,
-    [NBSPC] = 0x00A0,
     [LAROW] = 0x2190,
     [RAROW] = 0x2192,
     [POUND] = 0x00A3,
     [SQUAR] = 0x00B2,
     [DIFF]  = 0x2260,
-    [PSMS]  = 0x00B1
+    [PSMS]  = 0x00B1,
+    [NBSPC] = 0x00A0,
+    [NNBSP] = 0x202f,
 };
