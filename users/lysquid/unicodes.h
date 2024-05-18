@@ -55,11 +55,12 @@ enum unicode_names {
     TM,
     DEG,
     IQEST,
-    NBSPC,
     LAROW,
     RAROW,
     POUND,
     SQUAR,
     DIFF,
-    PSMS
+    PSMS,
+    NBSPC,
+    NNBSP,
 };
