@@ -31,7 +31,7 @@ const key_override_t brightness_down_override   = ko_make_mod_only_with_layers(M
 const key_override_t system_power_override      = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  KC_VOLU, KC_SYSTEM_POWER,     NAV_MASK);
 const key_override_t system_sleep_override      = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  KC_VOLD, KC_SYSTEM_SLEEP,     NAV_MASK);
 // Screenshot
-const key_override_t print_screen_override      = ko_make_mod_only_with_layers(MOD_MASK_CSG,   KC_PSCR, A(KC_PSCR),          NAV_MASK);
+const key_override_t print_screen_override      = ko_make_mod_only_with_layers(MOD_MASK_SG,    KC_PSCR, A(KC_PSCR),          NAV_MASK);
 
 // NAV combinations
 const key_override_t close_override             = ko_make_mod_only_with_layers(MOD_MASK_CTRL, KF_REDO, KF_CLOSE,   NAV_MASK);
