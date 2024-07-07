@@ -264,7 +264,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     special_layers_clear(keycode, record);
     override |= nav_layer_lock(keycode, record);
-    override |= nav_time_block(keycode, record);
     override |= oneshot_mouse_buttons(keycode, record);
     override |= overrides_with_unicode(keycode, record);
     update_oneshots(keycode, record);
