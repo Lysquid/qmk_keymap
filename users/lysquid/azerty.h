@@ -90,6 +90,7 @@
 #define KF_AE   ALGR(FR_A)      // æ
 #define KF_OE   UP(OE1,OE2)     // œ
 #define KF_CCED FR_CCED         // ç
+#define KF_NTLD UP(NT1,NT2)     // ñ
 #define KF_MICR FR_MICR         // µ
 #define KF_EURO FR_EURO         // €
 #define KF_IQES SAGR(FR_RPRN)   // ¿
@@ -206,6 +207,7 @@
 #define KF_AE   UP(AE1,AE2) // æ
 #define KF_OE   UP(OE1,OE2) // œ
 #define KF_CCED UP(CC1,CC2) // ç
+#define KF_NTLD UP(NT1,NT2) // ñ
 #define KF_MICR UM(MU)      // µ
 #define KF_EURO UM(EURO)    // €
 #define KF_IQES UM(IQEST)   // ¿
