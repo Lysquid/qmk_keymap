@@ -6,8 +6,8 @@
 
 
 enum layers {
-    DEF,
     DEF2,
+    DEF,
     SYM,
     SYM_SFT,
     NAV,

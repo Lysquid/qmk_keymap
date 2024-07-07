@@ -28,7 +28,7 @@ A QMK keymap for the [Sweep][sweep], a split keyboard with 34 keys. It makes ext
 [Full version][keymap-full], with mouse layer and key overrides.
 
 [keymap]: keymap.svg
-[keymap-full]: https://raw.githubusercontent.com/Lysquid/qmk_keymap/lysquid/keymap_full.svg
+[keymap-full]: https://raw.githubusercontent.com/Lysquid/qmk_keymap/inwardBrume/keymap_full.svg
 
 ## Special behaviors
 

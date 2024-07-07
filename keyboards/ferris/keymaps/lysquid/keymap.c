@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KF_Y,       OSL(SPC),   KF_O,       KF_F,       KF_K,       KF_V,       KF_P,       KF_L,       KF_C,       KF_Q,
     KF_I,       KF_A,       KF_E,       KF_U,       KF_COMM,    KF_G,       KF_T,       KF_N,       KF_S,       KF_R,
     KF_J,       KF_DOT,     KF_MINS,    KF_H,       KF_Z,       KF_B,       KF_D,       KF_M,       KF_W,       KF_X,
-                                        MO(NAV),    KC_SPC,     KC_RSFT,    MO(SYM)
+                                        MO(NAV),    KC_SPC,     KC_BSPC,    MO(SYM)
 ),
 
 [SPC] = LAYOUT(
@@ -20,16 +20,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [DEF2] = LAYOUT(
-    KF_A,       KF_Z,       KF_E,       KF_R,       KF_T,       KF_Y,       KF_U,       KF_I,       KF_O,       KF_P,
-    KF_Q,       KF_S,       KF_D,       KF_F,       KF_G,       KF_H,       KF_J,       KF_K,       KF_L,       KF_M,
-    KF_W,       KF_X,       KF_C,       KF_V,       KF_B,       KF_N,       KF_COMM,    KF_DOT,     KF_MINS,    OSL(SPC2),
-                                        MO(NAV),    KC_SPC,     KC_RSFT,    MO(SYM)
+    KF_B,       KF_M,       KF_P,       KF_O,       KF_W,       KF_Z,       KF_V,       KF_D,       KF_L,       KF_J,
+    KF_A,       KF_U,       KF_I,       KF_E,       KF_COMM,    KF_C,       KF_T,       KF_S,       KF_R,       KF_N,
+    KF_MINS,    KF_Y,       KF_X,       KF_DOT,     KF_K,       OSL(SPC2),  KF_Q,       KF_G,       KF_H,       KF_F,
+                                        MO(NAV),    KC_SPC,     KC_BSPC,    MO(SYM)
 ),
 
 [SPC2] = LAYOUT(
-    KF_AE,      KF_EACU,    KF_EGRV,    KF_SUP2,    KF_LDQT,    KF_RDQT,     KF_UGRV,    KF_DIFF,    KF_OE,      KF_DEG,
-    KF_AGRV,    KF_ACRC,    KF_ECRC,    KF_EURO,    KF_LAQT,    KF_RAQT,     KF_UCRC,    KF_ICRC,    KF_OCRC,    KF_IQES,
-    KF_PSMS,    KF_CROS,    KF_CCED,    KF_UNDS,    KF_LARW,    KF_RARW,     KF_MICR,    KF_MDOT,    KF_BDOT,    KF_DIAE,
+    KF_ACRC,    KF_UCRC,    KF_ICRC,    KF_OCRC,    KF_OE,      KF_LARW,     KF_RARW,    KF_LDQT,    KF_RDQT,    KF_DEG,
+    KF_AGRV,    KF_UGRV,    KF_EACU,    KF_EGRV,    KF_ECRC,    KF_CCED,     KF_EURO,    KF_LAQT,    KF_RAQT,    KF_NTLD,
+    KF_MINS,    KF_IQES,    KF_UNDS,    KF_MDOT,    KF_AE,      KF_DIAE,     KF_BDOT,    KF_MICR,    KF_DIFF,    KF_CROS,
                                         _______,    KF_QUOT,    _______,     _______
 ),
 
@@ -48,10 +48,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [NAV] = LAYOUT(
-    SW_GRV,     SW_ESC,     SW_TAB,     KF_UNDO,    KF_REDO,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
+    SW_GRV,     SW_ESC,     SW_TAB,     KF_UNDO,    KF_REDO,    KC_HOME,    CW_TOGG,    KC_UP,      KC_DEL,     KC_END,
     OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
     KF_SLCT,    KF_CUT,     KF_COPY,    KF_PSTE,    KC_PSCR,    KC_HSCL,    KC_PGUP,    KC_PGDN,    KC_APP,     TO(MOS),
-                                        _______,    _______,    _______,    _______
+                                        _______,    _______,    C(KC_BSPC), _______
 ),
 
 [NAV_ALT] = LAYOUT(
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,     KF_7,       KF_8,       KF_9,       KF_COMM,
     OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_SPC,     KC_TAB,     KF_4,       KF_5,       KF_6,       KF_0,
     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F11,     KF_1,       KF_2,       KF_3,       KF_DOT,
-                                        _______,    _______,    _______,    _______
+                                        _______,    _______,    KC_BSPC,    _______
 ),
 
 [NUM_SFT] = LAYOUT(
