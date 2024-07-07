@@ -1,4 +1,4 @@
-# Lysquid's QMK keymap
+# inwardBrume's QMK keymap
 
 This my firmware config for the [Sweep keyboard][sweep], a split custom keyboard with 34 keys. It makes extensive use of layers to fit all keys, and uses callum-style mods.
 
@@ -30,7 +30,7 @@ This my firmware config for the [Sweep keyboard][sweep], a split custom keyboard
 [Full version][keymap-full], with mouse layer and key overrides.
 
 [keymap]: keymap.svg
-[keymap-full]: https://raw.githubusercontent.com/Lysquid/qmk_keymap/lysquid/keymap_full.svg
+[keymap-full]: https://raw.githubusercontent.com/Lysquid/qmk_keymap/inwardBrume/keymap_full.svg
 
 ## Special behaviors
 

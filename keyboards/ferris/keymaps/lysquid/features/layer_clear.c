@@ -23,6 +23,9 @@ void clear_special_layers(uint16_t keycode, keyrecord_t *record) {
         case KC_RSFT:
             layer_off(MOS);
             break;
+        case CW_TOGG:
+            layer_off(NAV);
+            break;
         }
     }
 }

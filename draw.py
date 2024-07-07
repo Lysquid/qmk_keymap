@@ -46,16 +46,16 @@ def held(key):
 KEYMAP = [
     {
         "left": [
-            ["Y", "SPEC", "O", "F", "K"],
-            ["I", "A", "E", "U", "? ,"],
-            ["J", "! .", "_ -", "H", "Z"],
+            ["B", "M", "P", "O", "W"],
+            ["A", "U", "I", "E", "? ,"],
+            ["_ -", "Y", "X", "! .", "K"],
         ],
         "right": [
-            ["V", "P", "L", "C", "Q"],
-            ["G", "T", "N", "S", "R"],
-            ["B", "D", "M", "W", "X"],
+            ["Z", "V", "D", "L", "J"],
+            ["C", "T", "S", "R", "N"],
+            ["SPEC", "Q", "G", "H", "F"],
         ],
-        "thumbs": {"left": ["NAV", "space"], "right": ["shift", "SYM"],},
+        "thumbs": {"left": ["NAV", "space"], "right": ["bksp", "SYM"],},
     },
     {
         "left": [
@@ -68,7 +68,7 @@ KEYMAP = [
             ["=", "ctrl", "shift", "super", "alt"],
             ["|", ";", "*", "`", "@"],
         ],
-        "thumbs": {"left": ["NAV", "space"], "right": ["shift", held("SYM")],},
+        "thumbs": {"left": ["NAV", "space"], "right": ["bksp", held("SYM")],},
     },
     {
         "left": [
@@ -77,11 +77,11 @@ KEYMAP = [
             ["selct all", "cut", "copy", "paste", "prnt scrn"],
         ],
         "right": [
-            ["home", "bksp", "up", "del", "end"],
+            ["home", "caps word", "up", "del", "end"],
             ["tab", "left", "down", "right", "enter"],
             ["half scrol", "page up", "page down", "menu", "MOUS"],
         ],
-        "thumbs": {"left": [held("NAV"), "space"], "right": ["shift", "SYM"],},
+        "thumbs": {"left": [held("NAV"), "space"], "right": ["ctrl bksp", "SYM"],},
     },
     {
         "left": [
@@ -96,21 +96,21 @@ KEYMAP = [
         ],
         "thumbs": {
             "left": [held("NAV"), "space"],
-            "right": ["shift", held("SYM")],
+            "right": ["bksp", held("SYM")],
         },
     },
     {
         "left": [
-            ["œ", held("SPEC"), "ô", "è", "ù"],
-            ["î", "æ", "ê", "é", "û"],
-            ["²", "•", "¿", "←", "→"],
+            ["â", "û", "î", "ô", "œ"],
+            ["à", "ù", "é", "è", "ê"],
+            ["-", "¿", "_", "·", "æ"],
         ],
         "right": [
-            ["«", "»", "·", "ç", "°"],
-            ["€", "à", "â", "_", "caps word"],
-            ["“", "”", "µ", "≠", "×"],
+            ["←", "→", "“", "”", "°"],
+            ["ç", "€", "«", "»", "ñ"],
+            [held("SPEC"), "•", "µ", "≠", "×"],
         ],
-        "thumbs": {"left": ["NAV", "'"], "right": ["shift", "SYM"],},
+        "thumbs": {"left": ["NAV", "'"], "right": ["bksp", "SYM"],},
     },
     {
         "optional": True,
@@ -120,13 +120,13 @@ KEYMAP = [
             ["alt", "super", "shift", "ctrl", "reboot"],
         ],
         "right": [
-            ["azerty", "wheel left", "mouse up", "wheel right", ""],
+            ["bépo", "wheel left", "mouse up", "wheel right", ""],
             ["erglce", "mouse left", "mouse down", "mouse right", ""],
             ["boot", "wheel up", "wheel down", "", held("MOUS")],
         ],
         "thumbs": {
             "left": ["NAV", "slow mouse"],
-            "right": ["shift", "SYM"],
+            "right": ["bksp", "SYM"],
         },
     },
     {
