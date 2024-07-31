@@ -41,6 +41,10 @@ enum keycodes {
     #endif
 };
 
+#define SW_ESC KC_F22
+#define SW_TAB KC_F23
+#define SW_GRV KC_F24
+
 // Lock the NAV layer with MO(NAV) + shift
 bool nav_layer_lock(uint16_t keycode, keyrecord_t *record);
 

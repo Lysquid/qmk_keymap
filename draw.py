@@ -1,4 +1,4 @@
-# Stolen from Callum
+# Stolen from Callum:
 # https://github.com/callum-oakley/keymap
 
 KEY_W = 55
@@ -63,14 +63,14 @@ KEYMAP = [
     },
     {
         "left": [
-            ["prnt scrn", "esc", "redo", "undo", "vol+"],
-            ["alt", "super", "shift", "ctrl", "vol-"],
-            ["selct all", "cut", "copy", "paste", "play pause"],
+            ["alt grave", "alt esc", "alt tab", "undo", "redo"],
+            ["alt", "super", "shift", "ctrl", "esc"],
+            ["selct all", "cut", "copy", "paste", "prnt scrn"],
         ],
         "right": [
             ["home", "bksp", "up", "del", "end"],
             ["tab", "left", "down", "right", "enter"],
-            ["half scrol", "page down", "page up", "menu", "MOUS"],
+            ["half scrol", "page up", "page down", "menu", "MOUS"],
         ],
         "thumbs": {"left": [held("NAV"), "space"], "right": ["shift", "SYM"],},
     },
@@ -92,13 +92,13 @@ KEYMAP = [
     },
     {
         "left": [
-            ["", "right onesht", "middle onesht", "left onesht", "erglce"],
-            ["mouse back", "right click", "middle click", "left click", "mouse fwd"],
+            ["", "right onesht", "middle onesht", "left onesht", "bright up"],
+            ["", "right click", "middle click", "left click", "bright down"],
             ["alt", "super", "shift", "ctrl", "reboot"],
         ],
         "right": [
             ["azerty", "wheel left", "mouse up", "wheel right", ""],
-            ["", "mouse left", "mouse down", "mouse right", ""],
+            ["erglce", "mouse left", "mouse down", "mouse right", ""],
             ["boot", "wheel down", "wheel up", "", held("MOUS")],
         ],
         "thumbs": {
@@ -119,6 +119,45 @@ KEYMAP = [
         ],
         "thumbs": {"left": ["NAV", "'"], "right": ["shift", "SYM"],},
     },
+    {
+        "left": [
+            ["", "play pause", "vol down", "vol up", "mute"],
+            [held("alt"), "super", "shift", "ctrl", ""],
+            ["", "", "media prev", "media next", ""],
+        ],
+        "right": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+        ],
+        "thumbs": {"left": [held("NAV"), ""], "right": ["", ""],},
+    },
+    {
+        "left": [
+            ["", "", "brswr back", "brswr frwrd", "refrsh"],
+            ["alt", held("super"), "shift", "ctrl", ""],
+            ["", "", "tab prev", "tab next", ""],
+        ],
+        "right": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+        ],
+        "thumbs": {"left": [held("NAV"), ""], "right": ["", ""],},
+    },
+        {
+    "left": [
+            ["", "save", "close tab", "", ""],
+            ["alt", "super", "shift", held("ctrl"), ""],
+            ["del", "close app", "term copy", "power off", ""],
+        ],
+        "right": [
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+            ["", "", "", "", ""],
+        ],
+        "thumbs": {"left": [held("NAV"), ""], "right": ["", ""],},
+    },
 ]
 
 KEYSPACE_W = KEY_W + 2 * INNER_PAD_W
@@ -128,7 +167,7 @@ HAND_H = 4 * KEYSPACE_H
 LAYER_W = 2 * HAND_W + OUTER_PAD_W
 LAYER_H = HAND_H
 BOARD_W = LAYER_W + 2 * OUTER_PAD_W
-BOARD_H = 6 * LAYER_H + 7 * OUTER_PAD_H
+BOARD_H = len(KEYMAP) * (LAYER_H + OUTER_PAD_H) + OUTER_PAD_H
 
 
 def print_key(x, y, key):
