@@ -1,4 +1,4 @@
-<svg width="672.5" height="1333.5" viewBox="0 0 672.5 1333.5" xmlns="http://www.w3.org/2000/svg">
+<svg width="672.5" height="1989.0" viewBox="0 0 672.5 1989.0" xmlns="http://www.w3.org/2000/svg">
 <style>
     svg {
         font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
@@ -156,16 +156,18 @@
 <rect rx="6" ry="6" x="411.0" y="390.0" width="55" height="45" class="held" />
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="412.5">SYM</text>
 <rect rx="6" ry="6" x="29.5" y="461.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="475.0">prnt</text>
-<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="493.0">scrn</text>
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="475.0">alt</text>
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="493.0">grave</text>
 <rect rx="6" ry="6" x="88.5" y="461.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="484.0">esc</text>
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="475.0">alt</text>
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="493.0">esc</text>
 <rect rx="6" ry="6" x="147.5" y="461.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="484.0">redo</text>
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="475.0">alt</text>
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="493.0">tab</text>
 <rect rx="6" ry="6" x="206.5" y="461.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="484.0">undo</text>
 <rect rx="6" ry="6" x="265.5" y="461.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="484.0">vol+</text>
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="484.0">redo</text>
 <rect rx="6" ry="6" x="29.5" y="510.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="57.0" y="533.0">alt</text>
 <rect rx="6" ry="6" x="88.5" y="510.5" width="55" height="45" class="" />
@@ -175,7 +177,7 @@
 <rect rx="6" ry="6" x="206.5" y="510.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="533.0">ctrl</text>
 <rect rx="6" ry="6" x="265.5" y="510.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="533.0">vol-</text>
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="533.0">esc</text>
 <rect rx="6" ry="6" x="29.5" y="559.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="57.0" y="573.0">selct</text>
 <text text-anchor="middle" dominant-baseline="middle" x="57.0" y="591.0">all</text>
@@ -186,8 +188,8 @@
 <rect rx="6" ry="6" x="206.5" y="559.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="582.0">paste</text>
 <rect rx="6" ry="6" x="265.5" y="559.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="573.0">play</text>
-<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="591.0">pause</text>
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="573.0">prnt</text>
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="591.0">scrn</text>
 <rect rx="6" ry="6" x="352.0" y="461.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="379.5" y="484.0">home</text>
 <rect rx="6" ry="6" x="411.0" y="461.5" width="55" height="45" class="" />
@@ -213,10 +215,10 @@
 <text text-anchor="middle" dominant-baseline="middle" x="379.5" y="591.0">scrol</text>
 <rect rx="6" ry="6" x="411.0" y="559.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="573.0">page</text>
-<text text-anchor="middle" dominant-baseline="middle" x="438.5" y="591.0">down</text>
+<text text-anchor="middle" dominant-baseline="middle" x="438.5" y="591.0">up</text>
 <rect rx="6" ry="6" x="470.0" y="559.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="497.5" y="573.0">page</text>
-<text text-anchor="middle" dominant-baseline="middle" x="497.5" y="591.0">up</text>
+<text text-anchor="middle" dominant-baseline="middle" x="497.5" y="591.0">down</text>
 <rect rx="6" ry="6" x="529.0" y="559.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="556.5" y="582.0">menu</text>
 <rect rx="6" ry="6" x="588.0" y="559.5" width="55" height="45" class="" />
@@ -308,10 +310,9 @@
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="912.0">left</text>
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="930.0">onesht</text>
 <rect rx="6" ry="6" x="265.5" y="898.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="921.0">erglce</text>
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="912.0">bright</text>
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="930.0">up</text>
 <rect rx="6" ry="6" x="29.5" y="947.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="961.0">mouse</text>
-<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="979.0">back</text>
 <rect rx="6" ry="6" x="88.5" y="947.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="116.0" y="961.0">right</text>
 <text text-anchor="middle" dominant-baseline="middle" x="116.0" y="979.0">click</text>
@@ -322,8 +323,8 @@
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="961.0">left</text>
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="979.0">click</text>
 <rect rx="6" ry="6" x="265.5" y="947.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="961.0">mouse</text>
-<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="979.0">fwd</text>
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="961.0">bright</text>
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="979.0">down</text>
 <rect rx="6" ry="6" x="29.5" y="996.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1019.0">alt</text>
 <rect rx="6" ry="6" x="88.5" y="996.5" width="55" height="45" class="" />
@@ -347,6 +348,7 @@
 <text text-anchor="middle" dominant-baseline="middle" x="556.5" y="930.0">right</text>
 <rect rx="6" ry="6" x="588.0" y="898.5" width="55" height="45" class="" />
 <rect rx="6" ry="6" x="352.0" y="947.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="379.5" y="970.0">erglce</text>
 <rect rx="6" ry="6" x="411.0" y="947.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="961.0">mouse</text>
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="979.0">left</text>
@@ -446,4 +448,151 @@
 <text text-anchor="middle" dominant-baseline="middle" x="379.5" y="1286.5">shift</text>
 <rect rx="6" ry="6" x="411.0" y="1264.0" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="1286.5">SYM</text>
+<rect rx="6" ry="6" x="29.5" y="1335.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="88.5" y="1335.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1349.0">play</text>
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1367.0">pause</text>
+<rect rx="6" ry="6" x="147.5" y="1335.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1349.0">vol</text>
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1367.0">down</text>
+<rect rx="6" ry="6" x="206.5" y="1335.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1349.0">vol</text>
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1367.0">up</text>
+<rect rx="6" ry="6" x="265.5" y="1335.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="1358.0">mute</text>
+<rect rx="6" ry="6" x="29.5" y="1384.5" width="55" height="45" class="held" />
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1407.0">alt</text>
+<rect rx="6" ry="6" x="88.5" y="1384.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1407.0">super</text>
+<rect rx="6" ry="6" x="147.5" y="1384.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1407.0">shift</text>
+<rect rx="6" ry="6" x="206.5" y="1384.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1407.0">ctrl</text>
+<rect rx="6" ry="6" x="265.5" y="1384.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="29.5" y="1433.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="88.5" y="1433.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="147.5" y="1433.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1447.0">media</text>
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1465.0">prev</text>
+<rect rx="6" ry="6" x="206.5" y="1433.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1447.0">media</text>
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1465.0">next</text>
+<rect rx="6" ry="6" x="265.5" y="1433.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1335.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1335.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1335.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1335.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1335.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1384.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1384.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1384.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1384.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1384.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1433.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1433.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1433.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1433.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1433.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="206.5" y="1482.5" width="55" height="45" class="held" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1505.0">NAV</text>
+<rect rx="6" ry="6" x="265.5" y="1482.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1482.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1482.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="29.5" y="1554.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="88.5" y="1554.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="147.5" y="1554.0" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1567.5">brswr</text>
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1585.5">back</text>
+<rect rx="6" ry="6" x="206.5" y="1554.0" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1567.5">brswr</text>
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1585.5">frwrd</text>
+<rect rx="6" ry="6" x="265.5" y="1554.0" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="293.0" y="1576.5">refrsh</text>
+<rect rx="6" ry="6" x="29.5" y="1603.0" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1625.5">alt</text>
+<rect rx="6" ry="6" x="88.5" y="1603.0" width="55" height="45" class="held" />
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1625.5">super</text>
+<rect rx="6" ry="6" x="147.5" y="1603.0" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1625.5">shift</text>
+<rect rx="6" ry="6" x="206.5" y="1603.0" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1625.5">ctrl</text>
+<rect rx="6" ry="6" x="265.5" y="1603.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="29.5" y="1652.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="88.5" y="1652.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="147.5" y="1652.0" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1665.5">tab</text>
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1683.5">prev</text>
+<rect rx="6" ry="6" x="206.5" y="1652.0" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1665.5">tab</text>
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1683.5">next</text>
+<rect rx="6" ry="6" x="265.5" y="1652.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1554.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1554.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1554.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1554.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1554.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1603.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1603.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1603.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1603.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1603.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1652.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1652.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1652.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1652.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1652.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="206.5" y="1701.0" width="55" height="45" class="held" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1723.5">NAV</text>
+<rect rx="6" ry="6" x="265.5" y="1701.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1701.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1701.0" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="29.5" y="1772.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="88.5" y="1772.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1795.0">save</text>
+<rect rx="6" ry="6" x="147.5" y="1772.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1786.0">close</text>
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1804.0">tab</text>
+<rect rx="6" ry="6" x="206.5" y="1772.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="265.5" y="1772.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="29.5" y="1821.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1844.0">alt</text>
+<rect rx="6" ry="6" x="88.5" y="1821.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1844.0">super</text>
+<rect rx="6" ry="6" x="147.5" y="1821.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1844.0">shift</text>
+<rect rx="6" ry="6" x="206.5" y="1821.5" width="55" height="45" class="held" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1844.0">ctrl</text>
+<rect rx="6" ry="6" x="265.5" y="1821.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="29.5" y="1870.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1893.0">del</text>
+<rect rx="6" ry="6" x="88.5" y="1870.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1884.0">close</text>
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1902.0">app</text>
+<rect rx="6" ry="6" x="147.5" y="1870.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1884.0">term</text>
+<text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1902.0">copy</text>
+<rect rx="6" ry="6" x="206.5" y="1870.5" width="55" height="45" class="" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1884.0">power</text>
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1902.0">off</text>
+<rect rx="6" ry="6" x="265.5" y="1870.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1772.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1772.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1772.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1772.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1772.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1821.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1821.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1821.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1821.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1821.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1870.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1870.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="470.0" y="1870.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="529.0" y="1870.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="588.0" y="1870.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="206.5" y="1919.5" width="55" height="45" class="held" />
+<text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1942.0">NAV</text>
+<rect rx="6" ry="6" x="265.5" y="1919.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="352.0" y="1919.5" width="55" height="45" class="" />
+<rect rx="6" ry="6" x="411.0" y="1919.5" width="55" height="45" class="" />
 </svg>

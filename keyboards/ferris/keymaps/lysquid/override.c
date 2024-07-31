@@ -16,39 +16,28 @@ const key_override_t def_comma_override         = ko_make_with_layers(MOD_MASK_S
 const key_override_t def_dot_override           = ko_make_with_layers(MOD_MASK_SHIFT, KF_DOT,  KF_EXLM, DEF_MASK);
 const key_override_t def_minus_override         = ko_make_with_layers(MOD_MASK_SHIFT, KF_MINS, KF_UNDS, DEF_MASK);
 
-// Media keys
-const key_override_t media_next_override        = ko_make_mod_only_with_layers(MOD_MASK_SHIFT, KC_VOLU, KC_MEDIA_NEXT_TRACK, NAV_MASK);
-const key_override_t media_previous_override    = ko_make_mod_only_with_layers(MOD_MASK_SHIFT, KC_VOLD, KC_MEDIA_PREV_TRACK, NAV_MASK);
-const key_override_t mute_override              = ko_make_mod_only_with_layers(MOD_MASK_SHIFT, KC_MPLY, KC_MUTE,             NAV_MASK);
+// Audio
+const key_override_t volume_down_override       = ko_make_no_suppressed_mods_with_layers(   MOD_MASK_ALT,   SW_TAB,     KC_AUDIO_VOL_DOWN,  NAV_MASK);
+const key_override_t volume_up_override         = ko_make_no_suppressed_mods_with_layers(   MOD_MASK_ALT,   KF_UNDO,    KC_AUDIO_VOL_UP,    NAV_MASK);
+const key_override_t mute_override              = ko_make_no_suppressed_mods_with_layers(   MOD_MASK_ALT,   KF_REDO,    KC_MUTE,            NAV_MASK);
+const key_override_t media_previous_override    = ko_make_with_layers(                      MOD_MASK_ALT,   KF_COPY,    KC_MEDIA_PREV_TRACK,NAV_MASK);
+const key_override_t media_next_override        = ko_make_with_layers(                      MOD_MASK_ALT,   KF_PASTE,   KC_MEDIA_NEXT_TRACK,NAV_MASK);
+const key_override_t media_play_override        = ko_make_with_layers(                      MOD_MASK_ALT,   SW_ESC,     KC_MEDIA_PLAY_PAUSE,NAV_MASK);
+
 // Browser
-const key_override_t browser_forward_override   = ko_make_mod_only_with_layers(MOD_MASK_GUI,   KC_VOLU, KC_WWW_FORWARD,      NAV_MASK);
-const key_override_t browser_backward_override  = ko_make_mod_only_with_layers(MOD_MASK_GUI,   KC_VOLD, KC_WWW_BACK,         NAV_MASK);
-const key_override_t browser_refresh_override   = ko_make_mod_only_with_layers(MOD_MASK_GUI,   KC_MPLY, KC_WWW_REFRESH,      NAV_MASK);
-// Brightness
-const key_override_t brightness_up_override     = ko_make_mod_only_with_layers(MOD_MASK_SG,    KC_VOLU, KC_BRIGHTNESS_UP,    NAV_MASK);
-const key_override_t brightness_down_override   = ko_make_mod_only_with_layers(MOD_MASK_SG,    KC_VOLD, KC_BRIGHTNESS_DOWN,  NAV_MASK);
-// Power
-const key_override_t system_power_override      = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  KC_VOLU, KC_SYSTEM_POWER,     NAV_MASK);
-const key_override_t system_sleep_override      = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  KC_VOLD, KC_SYSTEM_SLEEP,     NAV_MASK);
-// Screenshot
-const key_override_t print_screen_override      = ko_make_mod_only_with_layers(MOD_MASK_SG,    KC_PSCR, A(KC_PSCR),          NAV_MASK);
+const key_override_t browser_previous_override  = ko_make_mod_only_with_layers(             MOD_MASK_GUI,   KF_COPY,    KF_BROWSER_PREV,    NAV_MASK);
+const key_override_t browser_next_override      = ko_make_mod_only_with_layers(             MOD_MASK_GUI,   KF_PASTE,   KF_BROWSER_NEXT,    NAV_MASK);
+const key_override_t browser_backward_override  = ko_make_no_suppressed_mods_with_layers(   MOD_MASK_GUI,   SW_TAB,     KC_WWW_BACK,        NAV_MASK);
+const key_override_t browser_forward_override   = ko_make_no_suppressed_mods_with_layers(   MOD_MASK_GUI,   KF_UNDO,    KC_WWW_FORWARD,     NAV_MASK);
+const key_override_t browser_refresh_override   = ko_make_no_suppressed_mods_with_layers(   MOD_MASK_GUI,   KF_REDO,    KC_WWW_REFRESH,     NAV_MASK);
 
 // NAV combinations
-const key_override_t close_override             = ko_make_mod_only_with_layers(MOD_MASK_CTRL, KF_REDO, KF_CLOSE,   NAV_MASK);
-const key_override_t copy_override              = ko_make_mod_only_with_layers(MOD_MASK_CTRL, KF_COPY, S(KF_COPY), NAV_MASK);
-const key_override_t save_override              = ko_make_mod_only_with_layers(MOD_MASK_CTRL, KF_CUT,  KF_SAVE,    NAV_MASK);
-// Browser
-const key_override_t browser_next_override      = ko_make_mod_only_with_layers(MOD_MASK_GUI,  KF_UNDO, KF_BROWSER_NEXT, NAV_MASK);
-const key_override_t browser_previous_override  = ko_make_mod_only_with_layers(MOD_MASK_GUI,  KF_REDO, KF_BROWSER_PREV, NAV_MASK);
-// Alt+Tab like behavior
-const key_override_t alt_shift_tab_override     = ko_make_with_layers(MOD_MASK_ALT,  KF_REDO, LSA(KC_TAB), NAV_MASK);
-const key_override_t alt_tab_override           = ko_make_with_layers(MOD_MASK_ALT,  KF_UNDO, A(KC_TAB),   NAV_MASK);
-const key_override_t alt_shift_esc_override     = ko_make_with_layers(MOD_MASK_ALT,  KC_VOLU, LSA(KC_ESC), NAV_MASK);
-const key_override_t alt_esc_override           = ko_make_with_layers(MOD_MASK_ALT,  KC_VOLD, A(KC_ESC),   NAV_MASK);
-const key_override_t ctrl_tab_override          = ko_make_with_layers(MOD_MASK_CTRL, KC_ESC,  C(KC_TAB),   NAV_MASK);
-// Invert page up and page when used with no mod
-const key_override_t page_up_override           = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, KC_PGUP, KC_PGDN, ko_option_one_mod);
-const key_override_t page_down_override         = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, KC_PGDN, KC_PGUP, ko_option_one_mod);
+const key_override_t system_power_override      = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  KF_PASTE,KC_SYSTEM_POWER,NAV_MASK);
+const key_override_t close_tab_override         = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  SW_TAB,  KF_CLOSE,       NAV_MASK);
+const key_override_t close_app_override         = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  KF_CUT,  A(KC_F4),       NAV_MASK);
+const key_override_t delete_override            = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  KF_SLCT, KC_DELETE,      NAV_MASK);
+const key_override_t save_override              = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  SW_ESC,  KF_SAVE,        NAV_MASK);
+const key_override_t copy_override              = ko_make_mod_only_with_layers(MOD_MASK_CTRL,  KF_COPY, S(KF_COPY),     NAV_MASK);
 
 // Zoom
 const key_override_t zoom_in_override           = ko_make_with_layers_and_negmods(MOD_MASK_GUI, KF_RBRC, KF_ZOOM_IN,    SYM_MASK, MOD_MASK_CTRL);
@@ -144,17 +133,23 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &def_comma_override,
     &def_dot_override,
     &def_minus_override,
-    &media_next_override,
-    &media_previous_override,
+    &volume_down_override,
+    &volume_up_override,
     &mute_override,
-    &browser_forward_override,
-    &browser_backward_override,
+    &media_previous_override,
+    &media_next_override,
+    &media_play_override,
     &browser_previous_override,
-    &brightness_up_override,
-    &brightness_down_override,
-    &system_sleep_override,
+    &browser_next_override,
+    &browser_backward_override,
+    &browser_forward_override,
+    &browser_refresh_override,
     &system_power_override,
-    &print_screen_override,
+    &close_tab_override,
+    &close_app_override,
+    &delete_override,
+    &save_override,
+    &copy_override,
     &zoom_in_kp_override,
     &zoom_out_kp_override,
     &zoom_reset_kp_override,
@@ -163,18 +158,6 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     &zoom_reset_override,
     &zoom_reset_override2,
     &zoom_reset_kp_override2,
-    &close_override,
-    &copy_override,
-    &save_override,
-    &browser_refresh_override,
-    &browser_next_override,
-    &alt_shift_tab_override,
-    &alt_tab_override,
-    &alt_shift_esc_override,
-    &alt_esc_override,
-    &ctrl_tab_override,
-    &page_up_override,
-    &page_down_override,
     &lbrc_override,
     &rbrc_override,
     &lprn_override,

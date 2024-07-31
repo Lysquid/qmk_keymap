@@ -5,6 +5,7 @@
 #include "keymap_french.h"
 #include "modifiers.h"
 #include "oneshot.h"
+#include "swapper.h"
 #include "french.h"
 #include "keymap.h"
 #include "quantum.h"
@@ -70,6 +71,68 @@ void update_oneshots(uint16_t keycode, keyrecord_t *record) {
     update_oneshot(&os_rgui_state, KC_RGUI, OS_RGUI, keycode, record);
 }
 
+// ############
+// # SWAPPERS #
+// ############
+
+bool sw_tab_active = false;
+bool sw_esc_active = false;
+bool sw_grv_active = false;
+
+bool is_swapper_ignored_key(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode)
+    {
+    case KC_LEFT:
+    case KC_RIGHT:
+    case KC_UP:
+    case KC_DOWN:
+    case SW_TAB:
+    case SW_ESC:
+    case SW_GRV:
+        return true;
+    case KC_ESC:
+        if (record->event.pressed) {
+            return true;
+        }
+    default:
+        return false;
+    }
+}
+
+// Alt+Tab like behaviors with one key
+bool update_swappers(uint16_t keycode, keyrecord_t *record) {
+    // If a modifier is down, don't interfere with key overrides
+    if (os_lalt_state != os_up_unqueued ||
+        os_lgui_state != os_up_unqueued ||
+        os_lsft_state != os_up_unqueued ||
+        os_lctl_state != os_up_unqueued
+    ) {
+        return false;
+    }
+    bool override = false;
+    override |= update_swapper(
+        &sw_tab_active, KC_LALT, KC_TAB, SW_TAB, SW_ESC,
+        keycode, record
+    );
+    if (!sw_tab_active) {
+        override |= update_swapper(
+            &sw_esc_active, KC_LALT, KC_ESC, SW_ESC, SW_GRV,
+            keycode, record
+        );
+    }
+    if (!sw_esc_active) {
+        override |= update_swapper(
+            &sw_grv_active, KC_LALT, KC_GRV, SW_GRV, XXXXXXX,
+            keycode, record
+        );
+    }
+    // Canceling Alt+Tab with Escape requires not to override
+    if (keycode == KC_ESC) {
+        return false;
+    }
+    return override;
+}
+
 // #############
 // # CAPS WORD #
 // #############
@@ -81,44 +144,45 @@ bool caps_word_press_user(uint16_t keycode) {
         return true;
     }
     #endif
-    switch (keycode) {
-        // Keycodes that continue Caps Word, with shift applied.
-        #ifdef FRENCH
-        case KC_A ... KC_L:
-        case KC_N ... KC_Z:
-        case FR_M:
-        #else
-        case KC_A ... KC_Z:
-        case KC_MINS:
-        #endif
-        case KF_AGRV:
-        case KF_ACRC:
-        case KF_EDIA:
-        case KF_EACU:
-        case KF_EGRV:
-        case KF_ECRC:
-        case KF_ICRC:
-        case KF_IDIA:
-        case KF_OCRC:
-        case KF_UGRV:
-        case KF_UCRC:
-        case KF_UDIA:
-        case KF_AE:
-        case KF_OE:
-        case KF_CCED:
-            add_weak_mods(MOD_BIT_LSHIFT);  // Apply shift to next key.
-            return true;
+    switch (keycode)
+    {
+    // Keycodes that continue Caps Word, with shift applied.
+    #ifdef FRENCH
+    case KC_A ... KC_L:
+    case KC_N ... KC_Z:
+    case FR_M:
+    #else
+    case KC_A ... KC_Z:
+    case KC_MINS:
+    #endif
+    case KF_AGRV:
+    case KF_ACRC:
+    case KF_EDIA:
+    case KF_EACU:
+    case KF_EGRV:
+    case KF_ECRC:
+    case KF_ICRC:
+    case KF_IDIA:
+    case KF_OCRC:
+    case KF_UGRV:
+    case KF_UCRC:
+    case KF_UDIA:
+    case KF_AE:
+    case KF_OE:
+    case KF_CCED:
+        add_weak_mods(MOD_BIT_LSHIFT);  // Apply shift to next key.
+        return true;
 
-        // Keycodes that continue Caps Word, without shifting.
-        case KF_1 ... KF_0:
-        case KC_BSPC:
-        case KC_DEL:
-        case KF_UNDS:
-        case KF_MDOT:
-            return true;
+    // Keycodes that continue Caps Word, without shifting.
+    case KF_1 ... KF_0:
+    case KC_BSPC:
+    case KC_DEL:
+    case KF_UNDS:
+    case KF_MDOT:
+        return true;
 
-        default:
-            return false;  // Deactivate Caps Word.
+    default:
+        return false;  // Deactivate Caps Word.
     }
 }
 
@@ -267,6 +331,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     override |= oneshot_mouse_buttons(keycode, record);
     override |= overrides_with_unicode(keycode, record);
     update_oneshots(keycode, record);
+    override |= update_swappers(keycode, record);
     half_scroll(keycode, record);
 
     #ifdef FRENCH

@@ -2,6 +2,9 @@
 
 #include QMK_KEYBOARD_H
 
+// Based on Callum's keymap:
+// https://github.com/qmk/qmk_firmware/tree/user-keymaps-still-present/users/callum
+
 // Represents the four states a oneshot key can be in
 typedef enum {
     os_up_unqueued,
