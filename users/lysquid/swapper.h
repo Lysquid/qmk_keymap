@@ -13,7 +13,7 @@
 //     nav down, trigger, nav up -> nav down, cmd down, tab, cmd up, nav up
 //
 // This behaviour is useful for more than just cmd-tab, hence: cmdish, tabish.
-bool update_swapper(
+void update_swapper(
     bool *active,
     uint16_t cmdish,
     uint16_t tabish,
