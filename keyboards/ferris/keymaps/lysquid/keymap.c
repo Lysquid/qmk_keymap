@@ -28,6 +28,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             _______,    _______,    _______,    _______
     ),
 
+    [SYM_SFT] = LAYOUT(
+        _______,    ZOM2_RS,    ZOM2_OU,    ZOM2_IN,    _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    ZOM1_RS,    ZOM1_OU,    ZOM1_IN,    _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+                                            _______,    _______,    _______,    _______
+    ),
+
     [NAV] = LAYOUT(
         SW_GRV,     SW_ESC,     SW_TAB,     KF_UNDO,    KF_REDO,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
         OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
@@ -35,10 +42,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             _______,    _______,    _______,    _______
     ),
 
+    [NAV_ALT] = LAYOUT(
+        _______,    KC_MPLY,    KC_VOLD,    KC_VOLU,    KC_MUTE,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    KC_MPRV,    KC_MNXT,    _______,    _______,    _______,    _______,    _______,    _______,
+                                            _______,    _______,    _______,    _______
+    ),
+
+    [NAV_GUI] = LAYOUT(
+        _______,    _______,    KF_WPRV,    KF_WNXT,    KC_WREF,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    KC_WBAK,    KC_WFWD,    _______,    _______,    _______,    _______,    _______,    _______,
+                                            _______,    _______,    _______,    _______
+    ),
+
+    [NAV_CTL] = LAYOUT(
+        _______,    KF_SAVE,    KF_CLTB,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+        KC_DEL,     KF_CLAP,    S(KF_COPY), _______,    _______,    _______,    _______,    _______,    _______,    _______,
+                                            _______,    _______,    _______,    _______
+    ),
+
     [NUM] = LAYOUT(
         KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F12,     KF_7,       KF_8,       KF_9,       KF_COMM,
         OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_SPC,     KC_TAB,     KF_4,       KF_5,       KF_6,       KF_0,
         KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F11,     KF_1,       KF_2,       KF_3,       KF_DOT,
+                                            _______,    _______,    _______,    _______
+    ),
+
+    [NUM_SFT] = LAYOUT(
+        _______,    _______,    _______,    _______,    _______,    _______,    KF_MWP1,    KF_MWP2,    KF_MWP3,    KF_MWP4,
+        _______,    _______,    _______,    _______,    _______,    _______,    KF_GWP1,    KF_GWP2,    KF_GWP3,    KF_GWP4,
+        _______,    _______,    _______,    _______,    _______,    _______,    KF_GWPP,    KF_GWPN,    KF_MWPP,    KF_MWPN,
                                             _______,    _______,    _______,    _______
     ),
 
@@ -59,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MOS] = LAYOUT(
         XXXXXXX,    OS_BTN2,    OS_BTN3,    OS_BTN1,    KC_BRIU,    DF(DEF2),   KC_WH_L,    KC_MS_U,    KC_WH_R,    XXXXXXX,
         XXXXXXX,    KC_BTN2,    KC_BTN3,    KC_BTN1,    KC_BRID,    DF(DEF),    KC_MS_L,    KC_MS_D,    KC_MS_R,    XXXXXXX,
-        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    QK_RBT,     QK_BOOT,    KC_WH_D,    KC_WH_U,    XXXXXXX,    XXXXXXX,
+        OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    QK_RBT,     QK_BOOT,    KC_WH_U,    KC_WH_D,    XXXXXXX,    XXXXXXX,
                                             _______,    KC_ACL0,    _______,    _______
     ),
 

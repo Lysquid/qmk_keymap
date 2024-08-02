@@ -7,8 +7,13 @@ enum layers {
     DEF,
     DEF2,
     SYM,
+    SYM_SFT,
     NAV,
+    NAV_ALT,
+    NAV_CTL,
+    NAV_GUI,
     NUM,
+    NUM_SFT,
     SPC,
     SPC2,
     MOS,
@@ -26,6 +31,9 @@ enum keycodes {
     OS_BTN1,
     OS_BTN2,
     OS_BTN3,
+    SW_ESC,
+    SW_TAB,
+    SW_GRV,
     KC_HSCL,
     #ifdef FRENCH
     KF_ACRC,
@@ -40,10 +48,6 @@ enum keycodes {
     KF_DIAE,
     #endif
 };
-
-#define SW_ESC KC_F22
-#define SW_TAB KC_F23
-#define SW_GRV KC_F24
 
 // Lock the NAV layer with MO(NAV) + shift
 bool nav_layer_lock(uint16_t keycode, keyrecord_t *record);

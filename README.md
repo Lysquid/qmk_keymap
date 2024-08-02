@@ -6,7 +6,7 @@ This my firmware config for the [Sweep keyboard][sweep], a split custom keyboard
 
 ## Features
 
-- Custom layout optimized for French and English, [Erglace][erglace] (can be switched with AZERTY)
+- Custom layout optimized for French and English, [Erglace][erglace] (can be dynamically switched with AZERTY)
 - A layer for all symbols
 - A layer for navigation keys, like the arrow keys
 - A [tri layer][tri layer] for numbers and function keys
@@ -14,8 +14,8 @@ This my firmware config for the [Sweep keyboard][sweep], a split custom keyboard
 - One shot layer for French accents and useful Unicode characters, inspired by [QWERTY Lafayette][lafayette]
 - Swapper keys to emulate Alt+Tab like behaviors with one key, once again from [Callum's keymap][callum]
 - A layer to emulate a mouse
-- [Key overrides][key overrides] with modifiers to fit all media keys and one hand shortcuts on the left split
-- Compilation for QWERTY or AZERTY depending on a config flag (by default, the computer must be set to AZERTY)
+- [Key overrides][key overrides] with modifiers to fit media keys and useful shortcuts
+- Compilation for QWERTY or AZERTY depending on a config flag (by default, the computer should be set to French input)
 
 [erglace]: https://github.com/Lysquid/Erglace
 [tri layer]: https://docs.qmk.fm/features/tri_layer
@@ -25,7 +25,12 @@ This my firmware config for the [Sweep keyboard][sweep], a split custom keyboard
 
 ## Layers
 
-![keymap](keymap.svg)
+![keymap][keymap]
+
+[Full version][keymap-full], with mouse layer and key overrides.
+
+[keymap]: keymap.svg
+[keymap-full]: https://raw.githubusercontent.com/Lysquid/qmk_keymap/lysquid/keymap_full.svg
 
 ## Special behaviors
 

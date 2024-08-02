@@ -17,20 +17,25 @@
 // #################
 
 bool is_oneshot_cancel_key(uint16_t keycode) {
-    switch (keycode) {
+    switch (keycode)
+    {
     case MO(SYM):
         return IS_LAYER_OFF(NAV);
-        break;
     case MO(NAV):
         return IS_LAYER_OFF(SYM);
-        break;
+    case KC_MPLY:
+    case KC_MNXT:
+    case KC_MPRV:
+        // Won't work without cancelling the mod on Gnome
+        return true;
     default:
         return false;
     }
 }
 
 bool is_oneshot_ignored_key(uint16_t keycode) {
-    switch (keycode) {
+    switch (keycode)
+    {
     case MO(SYM):
     case MO(NAV):
     case OSL(SPC):
@@ -82,6 +87,16 @@ bool sw_grv_active = false;
 bool is_swapper_ignored_key(uint16_t keycode, keyrecord_t *record) {
     switch (keycode)
     {
+    case KC_LSFT:
+    case KC_RSFT:
+    case OS_LSFT:
+    case OS_RSFT:
+    case OS_LCTL:
+    case OS_RCTL:
+    case OS_LALT:
+    case OS_RALT:
+    case OS_LGUI:
+    case OS_RGUI:
     case KC_LEFT:
     case KC_RIGHT:
     case KC_UP:
@@ -100,37 +115,23 @@ bool is_swapper_ignored_key(uint16_t keycode, keyrecord_t *record) {
 }
 
 // Alt+Tab like behaviors with one key
-bool update_swappers(uint16_t keycode, keyrecord_t *record) {
-    // If a modifier is down, don't interfere with key overrides
-    if (os_lalt_state != os_up_unqueued ||
-        os_lgui_state != os_up_unqueued ||
-        os_lsft_state != os_up_unqueued ||
-        os_lctl_state != os_up_unqueued
-    ) {
-        return false;
-    }
-    bool override = false;
-    override |= update_swapper(
+void update_swappers(uint16_t keycode, keyrecord_t *record) {
+    update_swapper(
         &sw_tab_active, KC_LALT, KC_TAB, SW_TAB, SW_ESC,
         keycode, record
     );
     if (!sw_tab_active) {
-        override |= update_swapper(
+        update_swapper(
             &sw_esc_active, KC_LALT, KC_ESC, SW_ESC, SW_GRV,
             keycode, record
         );
     }
     if (!sw_esc_active) {
-        override |= update_swapper(
+        update_swapper(
             &sw_grv_active, KC_LALT, KC_GRV, SW_GRV, XXXXXXX,
             keycode, record
         );
     }
-    // Canceling Alt+Tab with Escape requires not to override
-    if (keycode == KC_ESC) {
-        return false;
-    }
-    return override;
 }
 
 // #############
@@ -319,6 +320,185 @@ bool overrides_with_unicode(uint16_t keycode, keyrecord_t *record) {
     return false;
 }
 
+// #####################
+// # INCOMPATIBLE MODS #
+// #####################
+
+uint8_t saved_mods;
+
+void save_incompatible_mods(uint16_t keycode, keyrecord_t *record) {
+
+    if (!record->event.pressed) {
+        return;
+    }
+
+    bool mod_layer_on =
+        IS_LAYER_ON(SYM_SFT) ||
+        IS_LAYER_ON(NAV_ALT) ||
+        IS_LAYER_ON(NAV_GUI) ||
+        IS_LAYER_ON(NAV_CTL) ||
+        IS_LAYER_ON(NUM_SFT);
+
+    uint8_t removed_mods = 0;
+
+    switch (keycode)
+    {
+    case KC_WBAK:
+    case KC_WFWD:
+    case KC_WREF:
+        if (mod_layer_on) {
+            removed_mods = MOD_MASK_CSAG;
+        }
+        break;
+    case KF_WPRV:
+    case KF_WNXT:
+        if (mod_layer_on) {
+            removed_mods = MOD_MASK_AG;
+        }
+        break;
+    case KF_CLAP:
+        if (mod_layer_on) {
+            removed_mods = MOD_MASK_CSG;
+        }
+        break;
+    case KF_GWP1:
+    case KF_GWP2:
+    case KF_GWP3:
+    case KF_GWP4:
+    case KF_GWPP:
+    case KF_GWPN:
+    case ZOM1_IN:
+    case ZOM1_OU:
+    case ZOM1_RS:
+    case ZOM2_IN:
+    case ZOM2_OU:
+    case ZOM2_RS:
+        if (mod_layer_on) {
+            removed_mods = MOD_MASK_CSA;
+        }
+        break;
+    case KF_MWP1:
+    case KF_MWP2:
+    case KF_MWP3:
+    case KF_MWP4:
+    case KF_MWPP:
+    case KF_MWPN:
+        if (mod_layer_on) {
+            removed_mods = MOD_MASK_CA;
+        }
+        break;
+    case KC_DELETE:
+        if (mod_layer_on && record->event.key.row < 3) {
+            removed_mods = MOD_MASK_CAG;
+        }
+        break;
+    #ifdef FRENCH
+    case KF_RARW:
+    case KF_LARW:
+    case KF_RAQT:
+    case KF_LAQT:
+    case KF_MDOT:
+    case KF_BDOT:
+    case KF_EURO:
+    case KF_SUP2:
+    case KF_UNDS:
+        if (IS_LAYER_ON(SPC) || IS_LAYER_ON(SPC2)) {
+            removed_mods = MOD_MASK_SHIFT;
+        }
+        break;
+    #endif
+    }
+
+    // Disable shift on symbol layer
+    if ((get_mods() & MOD_MASK_SHIFT) == get_mods() && (
+        get_highest_layer(layer_state) == SYM ||
+        get_highest_layer(layer_state) == SYM_SFT
+    )) {
+        removed_mods = MOD_MASK_SHIFT;
+    }
+
+    saved_mods = get_mods() & removed_mods;
+    del_mods(saved_mods);
+}
+
+void restore_incompatible_mods(void) {
+    if (saved_mods) {
+        add_mods(saved_mods);
+        saved_mods = 0;
+    }
+}
+
+// ######################
+// # TRI LAYER WITH KEY #
+// ######################
+
+void update_key_tri_layer(
+    uint8_t layer,
+    uint16_t key,
+    uint8_t tri_layer,
+    bool* key_down,
+    uint16_t keycode,
+    keyrecord_t *record,
+    uint8_t mod_blacklist
+) {
+    if (keycode == key) {
+        *key_down = record->event.pressed;
+    }
+    if (IS_LAYER_ON(layer) && *key_down && !(get_mods() & mod_blacklist)) {
+        if (IS_LAYER_OFF(tri_layer)) {
+            layer_on(tri_layer);
+        }
+    } else {
+        if (IS_LAYER_ON(tri_layer)) {
+            layer_off(tri_layer);
+        }
+    }
+}
+
+bool sym_sft_key_down = false;
+bool nav_alt_key_down = false;
+bool nav_gui_key_down = false;
+bool nav_ctl_key_down = false;
+bool num_sft_key_down = false;
+
+void update_key_tri_layers(uint16_t keycode, keyrecord_t *record) {
+    update_key_tri_layer(SYM, OS_RSFT, SYM_SFT,
+        &sym_sft_key_down, keycode, record, MOD_MASK_CAG
+    );
+    update_key_tri_layer(NAV, OS_LALT, NAV_ALT,
+        &num_sft_key_down, keycode, record, 0
+    );
+    update_key_tri_layer(NAV, OS_LGUI, NAV_GUI,
+        &nav_alt_key_down, keycode, record, 0
+    );
+    update_key_tri_layer(NAV, OS_LCTL, NAV_CTL,
+        &nav_gui_key_down, keycode, record, 0
+    );
+    update_key_tri_layer(NUM, OS_LSFT, NUM_SFT,
+        &num_sft_key_down, keycode, record, MOD_MASK_CAG
+    );
+}
+
+// ###############
+// # INSTANT GUI #
+// ###############
+
+void instant_gui(uint16_t keycode, keyrecord_t *record) {
+
+    if (os_lgui_state == os_down_unused && os_lctl_state == os_down_unused) {
+        unregister_code(KC_LCTL);
+        unregister_code(KC_LGUI);
+        uint8_t saved_shift = get_mods() & MOD_BIT_LSHIFT;
+        del_mods(saved_shift);
+        tap_code(KC_LGUI);
+        add_mods(saved_shift);
+        register_code(KC_LCTL);
+        register_code(KC_LGUI);
+        os_lgui_state = os_down_used;
+        os_lctl_state = os_down_used;
+    }
+}
+
 // #################
 // # QMK FUNCTIONS #
 // #################
@@ -331,8 +511,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     override |= oneshot_mouse_buttons(keycode, record);
     override |= overrides_with_unicode(keycode, record);
     update_oneshots(keycode, record);
-    override |= update_swappers(keycode, record);
+    update_swappers(keycode, record);
     half_scroll(keycode, record);
+    instant_gui(keycode, record);
 
     #ifdef FRENCH
     dead_key_accents(keycode, record);
@@ -342,10 +523,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     override |= diaeresis_accent(keycode, record, KF_DIAE);
     #endif
 
+    save_incompatible_mods(keycode, record);
     return !override;
 }
 
 void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+    restore_incompatible_mods();
+    update_key_tri_layers(keycode, record);
     clear_mouse_layer(keycode, record);
     #ifdef FRENCH
     post_process_uppercase_dk_accents(keycode, record);

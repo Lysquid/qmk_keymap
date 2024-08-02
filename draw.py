@@ -1,6 +1,8 @@
 # Stolen from Callum:
 # https://github.com/callum-oakley/keymap
 
+from contextlib import redirect_stdout
+
 KEY_W = 55
 KEY_H = 45
 KEY_RX = 6
@@ -26,6 +28,13 @@ STYLE = """
 
     .held {
         fill: #fbb;
+    }
+"""
+
+STYLE_FULL = """
+    svg {
+        background-color: #1f1f1f;
+        margin: auto;
     }
 """
 
@@ -92,22 +101,6 @@ KEYMAP = [
     },
     {
         "left": [
-            ["", "right onesht", "middle onesht", "left onesht", "bright up"],
-            ["", "right click", "middle click", "left click", "bright down"],
-            ["alt", "super", "shift", "ctrl", "reboot"],
-        ],
-        "right": [
-            ["azerty", "wheel left", "mouse up", "wheel right", ""],
-            ["erglce", "mouse left", "mouse down", "mouse right", ""],
-            ["boot", "wheel down", "wheel up", "", held("MOUS")],
-        ],
-        "thumbs": {
-            "left": ["NAV", "slow mouse"],
-            "right": ["shift", "SYM"],
-        },
-    },
-    {
-        "left": [
             ["œ", held("SPEC"), "ô", "è", "ù"],
             ["î", "æ", "ê", "é", "û"],
             ["²", "•", "¿", "←", "→"],
@@ -120,6 +113,24 @@ KEYMAP = [
         "thumbs": {"left": ["NAV", "'"], "right": ["shift", "SYM"],},
     },
     {
+        "optional": True,
+        "left": [
+            ["", "right onesht", "middle onesht", "left onesht", "bright up"],
+            ["", "right click", "middle click", "left click", "bright down"],
+            ["alt", "super", "shift", "ctrl", "reboot"],
+        ],
+        "right": [
+            ["azerty", "wheel left", "mouse up", "wheel right", ""],
+            ["erglce", "mouse left", "mouse down", "mouse right", ""],
+            ["boot", "wheel up", "wheel down", "", held("MOUS")],
+        ],
+        "thumbs": {
+            "left": ["NAV", "slow mouse"],
+            "right": ["shift", "SYM"],
+        },
+    },
+    {
+        "optional": True,
         "left": [
             ["", "play pause", "vol down", "vol up", "mute"],
             [held("alt"), "super", "shift", "ctrl", ""],
@@ -133,20 +144,22 @@ KEYMAP = [
         "thumbs": {"left": [held("NAV"), ""], "right": ["", ""],},
     },
     {
+        "optional": True,
         "left": [
-            ["", "", "brswr back", "brswr frwrd", "refrsh"],
+            ["", "", "tab prev", "tab next", "refrsh"],
             ["alt", held("super"), "shift", "ctrl", ""],
-            ["", "", "tab prev", "tab next", ""],
+            ["", "", "brswr back", "brswr frwrd", ""],
         ],
         "right": [
             ["", "", "", "", ""],
             ["", "", "", "", ""],
             ["", "", "", "", ""],
         ],
-        "thumbs": {"left": [held("NAV"), ""], "right": ["", ""],},
+        "thumbs": {"left": [held("NAV"), ""], "right": ["", "SYM"],},
     },
-        {
-    "left": [
+    {
+        "optional": True,
+        "left": [
             ["", "save", "close tab", "", ""],
             ["alt", "super", "shift", held("ctrl"), ""],
             ["del", "close app", "term copy", "power off", ""],
@@ -156,7 +169,35 @@ KEYMAP = [
             ["", "", "", "", ""],
             ["", "", "", "", ""],
         ],
-        "thumbs": {"left": [held("NAV"), ""], "right": ["", ""],},
+        "thumbs": {"left": [held("NAV"), ""], "right": ["", "SYM"],},
+    },
+    {
+        "optional": True,
+        "left": [
+            ["", "zoom2 reset", "zoom2 in", "zoom2 out", ""],
+            ["", "zoom reset", "zoom in", "zoom out", ""],
+            ["", "", "", "", ""],
+        ],
+        "right": [
+            ["", "", "", "", ""],
+            ["", "ctrl", held("shift"), "super", "alt"],
+            ["", "", "", "", ""],
+        ],
+        "thumbs": {"left": ["NAV", ""], "right": ["", held("SYM")],},
+    },
+    {
+        "optional": True,
+        "left": [
+            ["", "", "", "", ""],
+            ["alt", "super", held("shift"), "ctrl", ""],
+            ["", "", "", "", ""],
+        ],
+        "right": [
+            ["", "wrksp mv1", "wrksp mv2", "wrksp mv3", "wrksp mv4"],
+            ["", "wrksp go1", "wrksp go2", "wrksp go3", "wrksp go4"],
+            ["", "wrksp go&lt;", "wrksp go&gt;", " wrksp mv&lt;", "wrksp mv&gt;"],
+        ],
+        "thumbs": {"left": [held("NAV"), ""], "right": ["", held("SYM")],},
     },
 ]
 
@@ -167,7 +208,6 @@ HAND_H = 4 * KEYSPACE_H
 LAYER_W = 2 * HAND_W + OUTER_PAD_W
 LAYER_H = HAND_H
 BOARD_W = LAYER_W + 2 * OUTER_PAD_W
-BOARD_H = len(KEYMAP) * (LAYER_H + OUTER_PAD_H) + OUTER_PAD_H
 
 
 def print_key(x, y, key):
@@ -199,7 +239,9 @@ def print_block(x, y, block):
         y += KEYSPACE_H
 
 
-def print_layer(x, y, layer):
+def print_layer(x, y, layer, full):
+    if "optional" in layer and not full:
+        return
     print_block(x, y, layer["left"])
     print_block(
         x + HAND_W + OUTER_PAD_W, y, layer["right"],
@@ -212,17 +254,34 @@ def print_layer(x, y, layer):
     )
 
 
-def print_board(x, y, keymap):
+def print_board(x, y, keymap, full):
     x += OUTER_PAD_W
     for layer in keymap:
         y += OUTER_PAD_H
-        print_layer(x, y, layer)
+        print_layer(x, y, layer, full)
         y += LAYER_H
 
 
-print(
-    f'<svg width="{BOARD_W}" height="{BOARD_H}" viewBox="0 0 {BOARD_W} {BOARD_H}" xmlns="http://www.w3.org/2000/svg">'
-)
-print(f"<style>{STYLE}</style>")
-print_board(0, 0, KEYMAP)
-print("</svg>")
+def print_svg(keymap, full):
+    N_LAYER = len(keymap) if full else sum(not "optional" in layer for layer in keymap)
+    BOARD_H = N_LAYER * (LAYER_H + OUTER_PAD_H) + OUTER_PAD_H
+    print(
+        f'<svg width="{BOARD_W}" height="{BOARD_H}" viewBox="0 0 {BOARD_W} {BOARD_H}" xmlns="http://www.w3.org/2000/svg">'
+    )
+    print(f"<style>{STYLE_FULL if full else ''}{STYLE}</style>")
+    print_board(0, 0, keymap, full)
+    print("</svg>")
+
+
+def main():
+    with open("keymap.svg", "w") as file:
+        with redirect_stdout(file):
+            print_svg(KEYMAP, False)
+
+    with open("keymap_full.svg", "w") as file:
+        with redirect_stdout(file):
+            print_svg(KEYMAP, True)
+
+
+if __name__ == "__main__":
+    main()
