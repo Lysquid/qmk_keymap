@@ -10,10 +10,10 @@ void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record) {
         // Can't use weak mods because it doesn't delete the shift for the
         uint8_t mods = get_mods();
         switch (accent) {
-        case circumflex:
+        case CIRCUMFLEX:
             del_mods(MOD_MASK_SHIFT);
             break;
-        case diaeresis:
+        case DIAERESIS:
             add_mods(MOD_MASK_SHIFT);
             break;
         }

@@ -14,11 +14,15 @@
 #define KF_SAVE             C(KF_S)
 #define KF_CLOSE_TAB        C(KF_W)
 #define KF_CLOSE_APP        A(KC_F4)
+#define KF_TERM_COPY        S(KF_COPY)
+#define KF_TERM_PASTE       S(KF_PASTE)
 
 #define KF_PSTE KF_PASTE
 #define KF_SLCT KF_SELECT_ALL
 #define KF_CL_T KF_CLOSE_TAB
 #define KF_CL_A KF_CLOSE_APP
+#define KF_TCPY KF_TERM_COPY
+#define KF_TPST KF_TERM_PASTE
 
 
 // Zoom
