@@ -8,7 +8,7 @@
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     bool override = false;
 
-    special_layers_clear(keycode, record);
+    clear_special_layers(keycode, record);
     override |= nav_layer_lock(keycode, record);
     override |= oneshot_mouse_buttons(keycode, record);
     override |= overrides_with_unicode(keycode, record);

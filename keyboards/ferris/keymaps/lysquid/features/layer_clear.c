@@ -11,7 +11,7 @@ void cancel_one_shot_hold(uint8_t layer) {
     }
 }
 
-void special_layers_clear(uint16_t keycode, keyrecord_t *record) {
+void clear_special_layers(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode)
         {

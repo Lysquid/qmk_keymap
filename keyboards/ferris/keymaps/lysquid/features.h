@@ -26,7 +26,7 @@ void update_key_tri_layers(uint16_t keycode, keyrecord_t *record);
 void cancel_one_shot_hold(uint8_t layer);
 
 // Clear up higher layers when NAV, SYM or shift are pressed
-void special_layers_clear(uint16_t keycode, keyrecord_t *record);
+void clear_special_layers(uint16_t keycode, keyrecord_t *record);
 
 // Clear mouse layer after switching layout
 void clear_mouse_layer(uint16_t keycode, keyrecord_t *record);

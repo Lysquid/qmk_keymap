@@ -3,8 +3,8 @@
 #include QMK_KEYBOARD_H
 
 typedef enum {
-    circumflex,
-    diaeresis,
+    CIRCUMFLEX,
+    DIAERESIS,
 } accent_t;
 
 void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record);
