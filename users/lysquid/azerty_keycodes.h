@@ -3,6 +3,7 @@
 #include "keymap_french.h"
 #include "unicodes.h"
 
+
 #ifdef FRENCH
 
 // Letters
@@ -109,10 +110,6 @@
 #define KF_CROS SAGR(FR_SCLN)   // ×
 #define KF_DIFF UM(DIFF)        // ≠
 #define KF_PSMS SAGR(FR_9)      // ±
-
-// Custom
-#define KF_ZOOM_IN      C(FR_EQL)
-#define KF_ZOOM_OUT     C(FR_MINS)
 
 #else
 
@@ -227,57 +224,4 @@
 #define KF_DIFF UM(DIFF)    // ≠
 #define KF_PSMS UM(PSMS)    // ±
 
-// Custom
-#define KF_ZOOM_IN      C(KC_PLUS)
-#define KF_ZOOM_OUT     C(KC_MINS)
-
 #endif
-
-// Custom
-#define KF_COPY             C(KF_C)
-#define KF_CUT              C(KF_X)
-#define KF_PASTE            C(KF_V)
-#define KF_SELECT_ALL       C(KF_A)
-#define KF_UNDO             C(KF_Z)
-#define KF_REDO             C(KF_Y)
-#define KF_SAVE             C(KF_S)
-#define KF_CLOSE_TAB        C(KF_W)
-#define KF_CLOSE_APP        A(KC_F4)
-
-#define KF_ZOOM_RESET       C(KF_0)
-#define KF_KP_ZOOM_IN       C(KC_KP_PLUS)
-#define KF_KP_ZOOM_OUT      C(KC_KP_MINUS)
-#define KF_KP_ZOOM_RESET    C(KC_KP_0)
-#define KF_WWW_NEXT     C(KC_PGDN)
-#define KF_WWW_PREV     C(KC_PGUP)
-
-#define KF_GWP1 G(KC_F1)
-#define KF_GWP2 G(KC_F2)
-#define KF_GWP3 G(KC_F3)
-#define KF_GWP4 G(KC_F4)
-#define KF_GWPP G(KC_PGUP)
-#define KF_GWPN G(KC_PGDN)
-#define KF_MWP1 SGUI(KC_F1)
-#define KF_MWP2 SGUI(KC_F2)
-#define KF_MWP3 SGUI(KC_F3)
-#define KF_MWP4 SGUI(KC_F4)
-#define KF_MWPP SGUI(KC_PGUP)
-#define KF_MWPN SGUI(KC_PGDN)
-
-// Shorthands
-#define ZOM1_IN KF_ZOOM_IN
-#define ZOM1_OU KF_ZOOM_OUT
-#define ZOM1_RS KF_ZOOM_RESET
-#define ZOM2_IN KF_KP_ZOOM_IN
-#define ZOM2_OU KF_KP_ZOOM_OUT
-#define ZOM2_RS KF_KP_ZOOM_RESET
-
-#define KF_PSTE KF_PASTE
-#define KF_SLCT KF_SELECT_ALL
-#define KF_CLTB KF_CLOSE_TAB
-#define KF_CLAP KF_CLOSE_APP
-#define KF_ZIN  KF_ZOOM_IN
-#define KF_ZOUT KF_ZOOM_OUT
-#define KF_ZRST KF_ZOOM_RESET
-#define KF_WNXT KF_WWW_NEXT
-#define KF_WPRV KF_WWW_PREV

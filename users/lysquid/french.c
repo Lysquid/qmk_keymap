@@ -47,7 +47,7 @@ void process_uppercase_dk_accents(uint16_t keycode, keyrecord_t *record) {
             (get_mods() & MOD_MASK_SHIFT || is_caps_word_on())) {
         saved_shift_mod = get_mods() & MOD_MASK_SHIFT;
         del_mods(saved_shift_mod);
-        // I don't use tap_code for caps lock because it takes longer, due to Mac compatibility
+        // Not using tap_code for caps lock because it takes longer, due to Mac compatibility
         register_code(KC_CAPS);
         unregister_code(KC_CAPS);
         processing_uppercase_accent = true;
