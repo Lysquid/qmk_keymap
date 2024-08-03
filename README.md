@@ -41,6 +41,7 @@ This my firmware config for the [Sweep keyboard][sweep], a split custom keyboard
 - To do the same shortcut multiple times, the modifier can be held. It stays active even if the layer changes.
 - `caps word` is a [QMK feature][caps word] that enables caps lock for one word only, useful to write constants.
 - Accented letters from the one shot layer can be made uppercase with `shift`.
+- An override is defined to be able to do a quick press of the `super` key, achieved with `super`+`ctrl` on the `NAV` layer
 
 [caps word]: https://docs.qmk.fm/#/feature_caps_word
 
@@ -50,6 +51,15 @@ This my firmware config for the [Sweep keyboard][sweep], a split custom keyboard
 - Alternatively, `shift` and then `NAV` does the same (if shift was not used to make a letter uppercase).
 - Any layer key unlocks the layer, except for `SYM` if a modifier is active, to be able to navigate with `super`+`<number>` on a window manager.
 - Holding `shift` or pressing `caps word` also disables the layer.
+
+### Key tri layers
+
+- This feature is a mix between key overrides and tri layers: activating a layer AND pressing a key activates another layer. This is useful to put many shortcuts on the left split, to be used with the mouse.
+- `NAV`+`alt` activates a media keys layer
+- `NAV`+`super` activates a browser navigation layer
+- `NAV`+`ctrl` activates a shortcuts layer
+- `SYM`+`shift` activates a zoom layer
+- `NUM`+`shift` activates a workspace navigation layer
 
 ### Mouse layer
 
