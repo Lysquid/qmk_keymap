@@ -37,7 +37,7 @@ void update_key_tri_layers(uint16_t keycode, keyrecord_t *record) {
         &sym_sft_key_down, keycode, record, MOD_MASK_CAG
     );
     update_key_tri_layer(NAV, OS_LALT, NAV_ALT,
-        &num_sft_key_down, keycode, record, 0
+        &nav_alt_key_down, keycode, record, 0
     );
     update_key_tri_layer(NAV, OS_LGUI, NAV_GUI,
         &nav_alt_key_down, keycode, record, 0
