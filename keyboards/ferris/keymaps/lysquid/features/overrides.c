@@ -1,14 +1,19 @@
-#include "azerty.h"
 #include "keycodes.h"
+#include "azerty_keycodes.h"
+#include "custom_keycodes.h"
 #include "modifiers.h"
 #include "process_key_override.h"
 #include "quantum_keycodes.h"
+#include "unicodemap.h"
 #include "keymap.h"
+#include "../features.h"
+
 
 #define DEF_MASK (1 << DEF | 1 << DEF2)
 #define NAV_MASK (1 << NAV)
 #define SYM_MASK (1 << SYM)
 #define NUM_MASK (1 << NUM)
+
 
 #define ko_make_no_suppressed_mods_with_options(trigger_mods_, trigger_key, replacement_key, options_) \
     ((const key_override_t){                                                                \
@@ -50,6 +55,7 @@ const key_override_t override_9 = ko_make_no_suppressed_mods_with_options(MOD_MA
 const key_override_t override_0 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_0, FR_AGRV, ko_option_one_mod);
 #endif
 
+
 const key_override_t **key_overrides = (const key_override_t *[]) {
     &comma_override,
     &dot_override,
@@ -70,3 +76,14 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     #endif
     NULL
 };
+
+
+bool overrides_with_unicode(uint16_t keycode, keyrecord_t *record) {
+    if (keycode == KF_QUOT && get_mods() & MOD_MASK_SHIFT && (IS_LAYER_ON(SPC) || IS_LAYER_ON(SPC2))) {
+        if (record->event.pressed) {
+            register_unicodemap(NNBSP);
+        }
+        return true;
+    }
+    return false;
+}

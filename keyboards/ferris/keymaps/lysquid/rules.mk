@@ -6,6 +6,15 @@ UNICODE_ENABLE = no
 UNICODEMAP_ENABLE = yes
 DEBOUNCE_TYPE = sym_eager_pk
 
-SRC += override.c
 SRC += process.c
-SRC += nav_lock.c
+SRC += features/caps_word.c
+SRC += features/french.c
+SRC += features/key_tri_layer.c
+SRC += features/layer_clear.c
+SRC += features/macros.c
+SRC += features/mouse.c
+SRC += features/nav_lock.c
+SRC += features/oneshots.c
+SRC += features/overrides.c
+SRC += features/remove_mods.c
+SRC += features/swappers.c

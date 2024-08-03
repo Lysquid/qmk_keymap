@@ -1,6 +1,9 @@
-#include QMK_KEYBOARD_H
-#include "keymap.h"
+#include "action.h"
+#include "action_layer.h"
 #include "keycodes.h"
+#include "../features.h"
+#include "../keymap.h"
+
 
 static bool lock_nav = false;  // skip process next time MO(NAV) goes up
 static bool nav_down = false;
@@ -61,6 +64,7 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
     }
     return false;
 }
+
 
 static uint16_t key_timer;
 static bool nav_block = false;

@@ -48,9 +48,3 @@ enum keycodes {
     KF_DIAE,
     #endif
 };
-
-// Lock the NAV layer with MO(NAV) + shift
-bool nav_layer_lock(uint16_t keycode, keyrecord_t *record);
-
-// If the NAV key is held too long without using the nav lock, block further keypress
-bool nav_time_block(uint16_t keycode, keyrecord_t *record);
