@@ -1,8 +1,5 @@
-#include "action.h"
-#include "action_layer.h"
-#include "keycodes.h"
-#include "../features.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 void cancel_one_shot_hold(uint8_t layer) {
@@ -10,6 +7,7 @@ void cancel_one_shot_hold(uint8_t layer) {
         clear_oneshot_layer_state(ONESHOT_PRESSED);
     }
 }
+
 
 void clear_special_layers(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
@@ -28,6 +26,7 @@ void clear_special_layers(uint16_t keycode, keyrecord_t *record) {
         }
     }
 }
+
 
 void clear_mouse_layer(uint16_t keycode, keyrecord_t *record) {
     switch (keycode)

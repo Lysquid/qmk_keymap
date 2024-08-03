@@ -1,5 +1,7 @@
 #pragma once
 
+#include QMK_KEYBOARD_H
+
 enum unicode_names {
     AG1,
     AG2,

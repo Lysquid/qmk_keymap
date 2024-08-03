@@ -1,10 +1,5 @@
-#include "swapper.h"
-#include "action.h"
-#include "keycodes.h"
-#include "azerty_keycodes.h"
-#include "custom_keycodes.h"
-#include "../features.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 uint8_t saved_mods;

@@ -1,8 +1,5 @@
-#include "keycodes.h"
-#include "keymap_french.h"
-#include "azerty_keycodes.h"
-#include "french.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 // QMK Callback to choose which key cancels or continue caps word.

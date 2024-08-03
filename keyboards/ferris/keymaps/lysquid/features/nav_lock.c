@@ -1,8 +1,5 @@
-#include "action.h"
-#include "action_layer.h"
-#include "keycodes.h"
-#include "../features.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 static bool lock_nav = false;  // skip process next time MO(NAV) goes up

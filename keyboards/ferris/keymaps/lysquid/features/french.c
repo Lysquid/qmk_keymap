@@ -1,11 +1,5 @@
-#include "french.h"
-#include "unicodes.h"
-#include "azerty_keycodes.h"
-#include "action.h"
-#include "keycodes.h"
-#include "keymap_french.h"
-#include "../features.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
@@ -21,6 +15,7 @@ void dead_key_accents(uint16_t keycode, keyrecord_t *record) {
     case KF_UDIA: dead_key_accent(FR_U, DIAERESIS, record); break;
     }
 }
+
 
 uint16_t diaeresis_conversion(uint16_t keycode, bool lowercase) {
     switch (keycode)

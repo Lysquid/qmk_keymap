@@ -1,4 +1,3 @@
-#include QMK_KEYBOARD_H
 #include "unicodes.h"
 
 const uint32_t unicode_map[] PROGMEM = {

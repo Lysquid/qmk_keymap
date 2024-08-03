@@ -1,7 +1,5 @@
-#include "keycodes.h"
-#include "azerty_keycodes.h"
-#include "french.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 void update_key_tri_layer(

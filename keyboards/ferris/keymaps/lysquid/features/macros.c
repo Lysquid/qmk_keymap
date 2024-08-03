@@ -1,7 +1,5 @@
-#include "action.h"
-#include "keycodes.h"
-#include "../features.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 void half_scroll(uint16_t keycode, keyrecord_t *record) {

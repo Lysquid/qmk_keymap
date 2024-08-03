@@ -1,9 +1,5 @@
 #include "french.h"
-#include "action_util.h"
-#include "caps_word.h"
-#include "keymap_french.h"
-#include "keycodes.h"
-#include "modifiers.h"
+#include "azerty_keycodes.h"
 
 void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record) {
     if (record->event.pressed) {

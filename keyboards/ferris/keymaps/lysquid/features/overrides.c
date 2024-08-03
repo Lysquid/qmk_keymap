@@ -1,11 +1,4 @@
-#include "keycodes.h"
-#include "azerty_keycodes.h"
-#include "custom_keycodes.h"
-#include "modifiers.h"
-#include "process_key_override.h"
-#include "quantum_keycodes.h"
-#include "unicodemap.h"
-#include "keymap.h"
+#include "../keymap.h"
 #include "../features.h"
 
 
