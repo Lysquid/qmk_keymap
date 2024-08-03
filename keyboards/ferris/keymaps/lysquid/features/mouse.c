@@ -1,8 +1,5 @@
-#include "action.h"
-#include "action_layer.h"
-#include "keycodes.h"
-#include "../features.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 bool oneshot_mouse_buttons(uint16_t keycode, keyrecord_t *record) {

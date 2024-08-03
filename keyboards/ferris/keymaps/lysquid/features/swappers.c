@@ -1,8 +1,5 @@
-#include "swapper.h"
-#include "action.h"
-#include "keycodes.h"
-#include "../features.h"
 #include "../keymap.h"
+#include "../features.h"
 
 
 bool sw_tab_active = false;

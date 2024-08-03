@@ -1,5 +1,4 @@
 #include "swapper.h"
-#include "keycodes.h"
 
 void update_swapper(
     bool *active,

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "keycodes.h"
+#include QMK_KEYBOARD_H
 #include "azerty_keycodes.h"
 
 

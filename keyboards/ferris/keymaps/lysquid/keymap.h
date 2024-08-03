@@ -1,7 +1,9 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-#include "config.h"
+#include "../../../../users/lysquid/azerty_keycodes.h"
+#include "../../../../users/lysquid/custom_keycodes.h"
+
 
 enum layers {
     DEF,

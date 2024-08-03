@@ -1,7 +1,4 @@
 #include "keymap.h"
-#include "keycodes.h"
-#include "azerty_keycodes.h"
-#include "custom_keycodes.h"
 #ifdef FRENCH
 #include "sendstring_french.h"
 #endif
