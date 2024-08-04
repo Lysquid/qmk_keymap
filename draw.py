@@ -33,7 +33,7 @@ STYLE = """
 
 STYLE_FULL = """
     svg {
-        background-color: #1f1f1f;
+        background-color: #191a1a;
         margin: auto;
     }
 """
