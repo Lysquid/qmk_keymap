@@ -1,5 +1,7 @@
-#include "../keymap.h"
-#include "../features.h"
+#pragma once
+
+#include QMK_KEYBOARD_H
+#include "keymap.h"
 
 
 #define DEF_MASK (1 << DEF | 1 << DEF2)
@@ -22,6 +24,8 @@
         .enabled                                = NULL                                      \
     })
 
+
+// KEY OVERRIDES
 
 // Layout symbols
 const key_override_t comma_override = ko_make_with_layers(MOD_MASK_SHIFT, KF_COMM, KF_QUES, DEF_MASK);
@@ -50,7 +54,7 @@ const key_override_t override_0 = ko_make_no_suppressed_mods_with_options(MOD_MA
 #endif
 
 
-const key_override_t **key_overrides = (const key_override_t *[]) {
+const key_override_t *key_overrides[] = {
     &comma_override,
     &dot_override,
     &minus_override,
@@ -71,14 +75,3 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
     #endif
     NULL
 };
-
-
-bool overrides_with_unicode(uint16_t keycode, keyrecord_t *record) {
-    if (keycode == KF_QUOT && get_mods() & MOD_MASK_SHIFT && (IS_LAYER_ON(SPC) || IS_LAYER_ON(SPC2))) {
-        if (record->event.pressed) {
-            register_unicodemap(NNBSP);
-        }
-        return true;
-    }
-    return false;
-}

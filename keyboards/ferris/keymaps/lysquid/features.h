@@ -70,7 +70,7 @@ void instant_gui(uint16_t keycode, keyrecord_t *record);
 
 
 
-// OVERRIDES
+// UNICODE OVERRIDES
 
 // Override keys with unicode character (not possible with QMK key override)
 bool overrides_with_unicode(uint16_t keycode, keyrecord_t *record);

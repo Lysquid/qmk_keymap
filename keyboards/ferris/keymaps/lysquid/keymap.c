@@ -1,4 +1,5 @@
 #include "keymap.h"
+#include "overrides.h"
 #ifdef FRENCH
 #include "sendstring_french.h"
 #endif
