@@ -37,18 +37,22 @@
 #define KF_KP_ZOOM_OUT      C(KC_KP_MINUS)
 #define KF_KP_ZOOM_RESET    C(KC_KP_0)
 
-#define ZM_IN_1  KF_ZOOM_IN
+#define ZM_IN_1 KF_ZOOM_IN
 #define ZM_OU_1 KF_ZOOM_OUT
 #define ZM_RS_1 KF_ZOOM_RESET
-#define ZM_IN_2  KF_KP_ZOOM_IN
+#define ZM_IN_2 KF_KP_ZOOM_IN
 #define ZM_OU_2 KF_KP_ZOOM_OUT
 #define ZM_RS_2 KF_KP_ZOOM_RESET
 
 
 // Browser
+#define KF_WWW_BACK         A(KC_LEFT)
+#define KF_WWW_FORWARD      A(KC_RGHT)
 #define KF_WWW_NEXT         C(KC_PGDN)
 #define KF_WWW_PREV         C(KC_PGUP)
 
+#define KF_WBAK KF_WWW_BACK
+#define KF_WFWD KF_WWW_FORWARD
 #define KF_WNXT KF_WWW_NEXT
 #define KF_WPRV KF_WWW_PREV
 

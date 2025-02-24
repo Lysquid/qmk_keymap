@@ -27,6 +27,12 @@ void save_incompatible_mods(uint16_t keycode, keyrecord_t *record) {
             removed_mods = MOD_MASK_CSAG;
         }
         break;
+    case KF_WBAK:
+    case KF_WFWD:
+        if (mod_layer_on) {
+            removed_mods = MOD_MASK_CG;
+        }
+        break;
     case KF_WPRV:
     case KF_WNXT:
         if (mod_layer_on) {
