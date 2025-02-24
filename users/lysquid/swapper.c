@@ -23,6 +23,7 @@ void update_swapper(
     } else if (keycode == reverse_trigger) {
         if (*active) {
             if (record->event.pressed) {
+                del_mods(MOD_MASK_CTRL);
                 register_code(KC_LSFT);
                 register_code(tabish);
             } else {

@@ -32,6 +32,7 @@ enum keycodes {
     OS_BTN1,
     OS_BTN2,
     OS_BTN3,
+    NAV_LCK,
     SW_ESC,
     SW_TAB,
     SW_GRV,

@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [NAV] = LAYOUT(
-    SW_GRV,     SW_ESC,     SW_TAB,     KF_UNDO,    KF_REDO,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
+    SW_GRV,     NAV_LCK,    SW_TAB,     KF_UNDO,    KF_REDO,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
     OS_LALT,    OS_LGUI,    OS_LSFT,    OS_LCTL,    KC_ESC,     KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
     KF_SLCT,    KF_CUT,     KF_COPY,    KF_PSTE,    KC_PSCR,    KC_HSCL,    KC_PGUP,    KC_PGDN,    KC_APP,     TO(MOS),
                                         _______,    _______,    _______,    _______
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [NAV_CTL] = LAYOUT(
-    _______,    KF_SAVE,    KF_CL_T,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    KF_SAVE,    _______,    KF_CL_T,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     KC_DEL,     KF_CL_A,    KF_TCPY,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______

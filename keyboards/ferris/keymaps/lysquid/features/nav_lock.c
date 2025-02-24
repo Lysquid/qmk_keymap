@@ -56,6 +56,16 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
             layer_off(NAV);
         }
         break;
+    case NAV_LCK:
+        if (record->event.pressed) {
+            if (nav_down) {
+                lock_nav = true;
+            } else {
+                layer_off(NAV);
+                return true;
+            }
+        }
+        break;
     default:
         shift_unused = false;
     }
