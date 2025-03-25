@@ -17,7 +17,7 @@ uint8_t keypad_nums[10] = {
 
 const uint8_t _ = -1;
 
-void tap_alt_code(uint8_t n1, uint8_t n2, uint8_t n3, uint8_t n4) {
+static void tap_alt_code(uint8_t n1, uint8_t n2, uint8_t n3, uint8_t n4) {
     uint16_t saved_mods = get_mods() & MOD_MASK_SHIFT;
     del_mods(saved_mods);
     register_code(KC_LALT);
@@ -31,7 +31,7 @@ void tap_alt_code(uint8_t n1, uint8_t n2, uint8_t n3, uint8_t n4) {
 
 bool diaeresis = false;
 
-bool alt_codes(uint16_t keycode, bool shift) {
+static bool alt_codes(uint16_t keycode, bool shift) {
     #ifndef FRENCH
     if (diaeresis) {
         switch (keycode)

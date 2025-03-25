@@ -2,7 +2,7 @@
 #include "../features.h"
 
 
-void update_key_tri_layer(
+static void update_key_tri_layer(
     uint8_t layer,
     uint16_t key,
     uint8_t tri_layer,
