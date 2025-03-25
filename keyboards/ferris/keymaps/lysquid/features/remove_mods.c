@@ -78,7 +78,7 @@ void save_incompatible_mods(uint16_t keycode, keyrecord_t *record) {
     case KF_RAQT:
     case KF_LAQT:
     case KF_EURO:
-    #ifdef FRENCH
+    #ifdef AZERTY
     case KF_RARW:
     case KF_LARW:
     case KF_MDOT:

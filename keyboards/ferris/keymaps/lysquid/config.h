@@ -27,4 +27,4 @@
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 40
 
 // French AZERTY layout compatibility
-#define FRENCH
+#define AZERTY

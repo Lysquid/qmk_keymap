@@ -37,7 +37,7 @@ enum keycodes {
     SW_TAB,
     SW_GRV,
     KC_HSCL,
-    #ifdef FRENCH
+    #ifdef AZERTY
     KF_ACRC,
     KF_ECRC,
     KF_OCRC,

@@ -5,7 +5,7 @@
 #include "unicodes.h"
 
 
-#ifdef FRENCH
+#ifdef AZERTY
 
 // Letters
 #define KF_A    FR_A    // A

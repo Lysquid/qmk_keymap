@@ -14,7 +14,7 @@ bool windows_alt_codes(uint16_t keycode, keyrecord_t *record);
 
 
 
-// FRENCH
+// AZERTY
 
 // Handle all dead key accents
 void dead_key_accents(uint16_t keycode, keyrecord_t *record);

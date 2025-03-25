@@ -16,7 +16,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     instant_gui(keycode, record);
     persistent_default_layer(keycode, record);
 
-    #ifdef FRENCH
+    #ifdef AZERTY
     dead_key_accents(keycode, record);
     override |= french_caps_word_fix(keycode, record);
     process_uppercase_dk_accents(keycode, record);
@@ -31,7 +31,7 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
     restore_incompatible_mods();
     update_key_tri_layers(keycode, record);
     clear_mouse_layer(keycode, record);
-    #ifdef FRENCH
+    #ifdef AZERTY
     post_process_uppercase_dk_accents(keycode, record);
     #endif
 }

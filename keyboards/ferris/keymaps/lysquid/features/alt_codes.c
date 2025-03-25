@@ -32,7 +32,7 @@ static void tap_alt_code(uint8_t n1, uint8_t n2, uint8_t n3, uint8_t n4) {
 bool diaeresis = false;
 
 static bool alt_codes(uint16_t keycode, bool shift) {
-    #ifndef FRENCH
+    #ifndef AZERTY
     if (diaeresis) {
         switch (keycode)
         {
@@ -54,7 +54,7 @@ static bool alt_codes(uint16_t keycode, bool shift) {
     #endif
     switch (keycode)
     {
-    #ifdef FRENCH
+    #ifdef AZERTY
     case KF_AGRV: if (shift) tap_alt_code(0,1,9,2); else return false; break;
     case KF_EACU: if (shift) tap_alt_code(_,1,4,4); else return false; break;
     case KF_EGRV: if (shift) tap_alt_code(0,2,0,0); else return false; break;

@@ -5,7 +5,7 @@
 // QMK Callback to choose which key cancels or continue caps word.
 // Useful to fix caps word for french layout, and add accented letters.
 bool caps_word_press_user(uint16_t keycode) {
-    #ifdef FRENCH
+    #ifdef AZERTY
     // There is a special function to handle dead key accents, so we don't have to apply caps word
     if (is_uppercase_dk_accent(keycode)) {
         return true;
@@ -14,7 +14,7 @@ bool caps_word_press_user(uint16_t keycode) {
     switch (keycode)
     {
     // Keycodes that continue Caps Word, with shift applied.
-    #ifdef FRENCH
+    #ifdef AZERTY
     case KC_A ... KC_L:
     case KC_N ... KC_Z:
     case FR_M:

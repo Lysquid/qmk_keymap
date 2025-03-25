@@ -26,7 +26,7 @@
 
 
 // Zoom
-#ifdef FRENCH
+#ifdef AZERTY
 #define KF_ZOOM_IN          C(FR_EQL)
 #else
 #define KF_ZOOM_IN          C(KC_PLUS)

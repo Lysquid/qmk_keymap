@@ -1,6 +1,6 @@
 #include "keymap.h"
 #include "overrides.h"
-#ifdef FRENCH
+#ifdef AZERTY
 #include "sendstring_french.h"
 #endif
 
