@@ -15,6 +15,7 @@ SRC += features/macros.c
 SRC += features/mouse.c
 SRC += features/nav_lock.c
 SRC += features/oneshots.c
+SRC += features/default_layer.c
 SRC += features/unicode_overrides.c
 SRC += features/remove_mods.c
 SRC += features/swappers.c

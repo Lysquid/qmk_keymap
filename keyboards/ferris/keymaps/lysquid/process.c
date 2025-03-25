@@ -13,6 +13,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     update_swappers(keycode, record);
     half_scroll(keycode, record);
     instant_gui(keycode, record);
+    persistent_default_layer(keycode, record);
 
     #ifdef FRENCH
     dead_key_accents(keycode, record);
