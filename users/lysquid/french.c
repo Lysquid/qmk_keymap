@@ -1,20 +1,23 @@
 #include "french.h"
 #include "azerty_keycodes.h"
+#include "os_detection.h"
 
 void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record) {
     if (record->event.pressed) {
-        // Can't use weak mods because it doesn't delete the shift for the
-        uint8_t mods = get_mods();
-        switch (accent) {
+        // Can't use weak mods because it doesn't delete the shift for the circumflex
+        uint8_t mods;
+        switch (accent)
+        {
         case CIRCUMFLEX:
-            del_mods(MOD_MASK_SHIFT);
+            mods = get_mods() & MOD_MASK_SHIFT;
+            del_mods(mods);
+            tap_code(FR_CIRC);
+            set_mods(mods);
             break;
         case DIAERESIS:
-            add_mods(MOD_MASK_SHIFT);
+            tap_code16(FR_DIAE);
             break;
         }
-        tap_code(FR_CIRC);
-        set_mods(mods);
         if (is_caps_word_on()) {
             add_weak_mods(MOD_BIT_LSHIFT);
         }
@@ -40,7 +43,8 @@ static uint8_t saved_shift_mod;
 
 void process_uppercase_dk_accents(uint16_t keycode, keyrecord_t *record) {
     if (is_uppercase_dk_accent(keycode) && record->event.pressed &&
-            (get_mods() & MOD_MASK_SHIFT || is_caps_word_on())) {
+            (get_mods() & MOD_MASK_SHIFT || is_caps_word_on()) &&
+            detected_host_os() == OS_LINUX) {
         saved_shift_mod = get_mods() & MOD_MASK_SHIFT;
         del_mods(saved_shift_mod);
         // Not using tap_code for caps lock because it takes longer, due to Mac compatibility

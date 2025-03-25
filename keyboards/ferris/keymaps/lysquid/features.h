@@ -7,6 +7,13 @@
 #include "../../../../users/lysquid/unicodes.h"
 
 
+// ALT CODES
+
+// Use alt codes on Windows to input special characters such as accented letters
+bool windows_alt_codes(uint16_t keycode, keyrecord_t *record);
+
+
+
 // FRENCH
 
 // Handle all dead key accents
@@ -67,6 +74,14 @@ void update_oneshots(uint16_t keycode, keyrecord_t *record);
 
 // Instantly trigger Gui key when Gui+Ctrl one shot mods are pressed on NAV layer
 void instant_gui(uint16_t keycode, keyrecord_t *record);
+
+
+
+// DEFAULT LAYER
+
+// Permanently set the default layer,
+// unlike DF(LAYER) that sets it until next reboot
+void persistent_default_layer(uint16_t keycode, keyrecord_t *record);
 
 
 

@@ -9,6 +9,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     override |= nav_layer_lock(keycode, record);
     override |= oneshot_mouse_buttons(keycode, record);
     override |= overrides_with_unicode(keycode, record);
+    override |= windows_alt_codes(keycode, record);
     update_oneshots(keycode, record);
     update_swappers(keycode, record);
     half_scroll(keycode, record);

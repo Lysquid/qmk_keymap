@@ -84,8 +84,8 @@
 #define KF_BSLS FR_BSLS // (backslash)
 
 // Dead keys
-#define KF_DIAE FR_DIAE // ¨
 #define KF_DCRC FR_CIRC // ^
+#define KF_DIAE FR_DIAE // ¨
 
 // Specials
 #define KF_AGRV FR_AGRV         // à
@@ -193,8 +193,8 @@
 #define KF_BSLS KC_BSLS // (backslash)
 
 // Dead keys
-#define KF_DIAE ALGR(KC_QUOT)   // ¨
 #define KF_DCRC ALGR(KC_6)      // ^
+#define KF_DIAE ALGR(KC_QUOT)   // ¨
 
 // Specials
 #define KF_AGRV ALGR(KC_A)      // à
@@ -229,7 +229,7 @@
 #define KF_RARW UM(RAROW)       // →
 #define KF_DEG  SAGR(KC_QUOT)   // °
 #define KF_CROS UM(CROSS)       // ×
-#define KF_DIFF UM(DIFF)        // ≠
 #define KF_PSMS UM(PSMS)        // ±
+#define KF_DIFF UM(DIFF)        // ≠
 
 #endif

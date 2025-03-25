@@ -16,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SPC] = LAYOUT(
     KF_OE,      KF_DIAE,    KF_OCRC,    KF_EGRV,    KF_UGRV,    KF_LAQT,    KF_RAQT,    KF_MDOT,    KF_CCED,    KF_DEG,
     KF_ICRC,    KF_AE,      KF_ECRC,    KF_EACU,    KF_UCRC,    KF_EURO,    KF_AGRV,    KF_ACRC,    KF_UNDS,    CW_TOGG,
-    KF_SUP2,    KF_BDOT,    KF_IQES,    KF_LARW,    KF_RARW,    KF_LDQT,    KF_RDQT,    KF_MICR,    KF_DIFF,    KF_CROS,
+    KF_SUP2,    KF_BDOT,    KF_IQES,    KF_LARW,    KF_RARW,    KF_LDQT,    KF_RDQT,    KF_MICR,    KF_PSMS,    KF_CROS,
                                         _______,    KF_QUOT,    _______,    _______
 ),
 
@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [SPC2] = LAYOUT(
-    KF_AE,      KF_EACU,    KF_EGRV,    KF_SUP2,    KF_LDQT,    KF_RDQT,     KF_UGRV,    KF_DIFF,    KF_OE,      KF_DEG,
+    KF_AE,      KF_EACU,    KF_EGRV,    KF_SUP2,    KF_LDQT,    KF_RDQT,     KF_UGRV,    KF_PSMS,    KF_OE,      KF_DEG,
     KF_AGRV,    KF_ACRC,    KF_ECRC,    KF_EURO,    KF_LAQT,    KF_RAQT,     KF_UCRC,    KF_ICRC,    KF_OCRC,    KF_IQES,
     KF_PSMS,    KF_CROS,    KF_CCED,    KF_UNDS,    KF_LARW,    KF_RARW,     KF_MICR,    KF_MDOT,    KF_BDOT,    KF_DIAE,
                                         _______,    KF_QUOT,    _______,     _______

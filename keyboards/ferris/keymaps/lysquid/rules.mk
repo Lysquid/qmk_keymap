@@ -1,12 +1,14 @@
 LTO_ENABLE = yes
 KEY_OVERRIDE_ENABLE = yes
 CAPS_WORD_ENABLE = yes
+OS_DETECTION_ENABLE = yes
 UNICODE_COMMON = yes
 UNICODE_ENABLE = no
 UNICODEMAP_ENABLE = yes
 DEBOUNCE_TYPE = sym_eager_pk
 
 SRC += process.c
+SRC += features/alt_codes.c
 SRC += features/caps_word.c
 SRC += features/french.c
 SRC += features/key_tri_layer.c
