@@ -39,21 +39,23 @@ bool is_swapper_ignored_key(uint16_t keycode, keyrecord_t *record) {
 }
 
 
-void update_swappers(uint16_t keycode, keyrecord_t *record) {
-    update_swapper(
+bool update_swappers(uint16_t keycode, keyrecord_t *record) {
+    bool override = false;
+    override |= update_swapper(
         &sw_tab_active, KC_LALT, KC_TAB, SW_TAB, KF_CL_T,
         keycode, record
     );
     if (!sw_tab_active) {
-        update_swapper(
+        override |= update_swapper(
             &sw_esc_active, KC_LALT, KC_ESC, SW_ESC, KF_SAVE,
             keycode, record
         );
     }
     if (!sw_esc_active) {
-        update_swapper(
+        override |= update_swapper(
             &sw_grv_active, KC_LALT, KC_GRV, SW_GRV, XXXXXXX,
             keycode, record
         );
     }
+    return override;
 }

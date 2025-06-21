@@ -10,8 +10,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     override |= oneshot_mouse_buttons(keycode, record);
     override |= overrides_with_unicode(keycode, record);
     override |= windows_alt_codes(keycode, record);
+    override |= update_swappers(keycode, record);
     update_oneshots(keycode, record);
-    update_swappers(keycode, record);
     half_scroll(keycode, record);
     instant_gui(keycode, record);
     persistent_default_layer(keycode, record);

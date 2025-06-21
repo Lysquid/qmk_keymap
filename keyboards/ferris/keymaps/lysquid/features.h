@@ -107,4 +107,4 @@ void restore_incompatible_mods(void);
 // SWAPPERS
 
 // Update all swappers, providing Alt+Tab like behavior with one key
-void update_swappers(uint16_t keycode, keyrecord_t *record);
+bool update_swappers(uint16_t keycode, keyrecord_t *record);
