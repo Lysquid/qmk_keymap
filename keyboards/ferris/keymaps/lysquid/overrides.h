@@ -28,13 +28,14 @@
 // KEY OVERRIDES
 
 // Layout symbols
-const key_override_t comma_override = ko_make_with_layers(MOD_MASK_SHIFT, KF_COMM, KF_QUES, DEF_MASK);
-const key_override_t dot_override   = ko_make_with_layers(MOD_MASK_SHIFT, KF_DOT,  KF_EXLM, DEF_MASK);
-const key_override_t minus_override = ko_make_with_layers(MOD_MASK_SHIFT, KF_MINS, KF_UNDS, DEF_MASK);
+const key_override_t comma_override     = ko_make_with_layers(MOD_MASK_SHIFT, KF_COMM, KF_QUES, DEF_MASK);
+const key_override_t dot_override       = ko_make_with_layers(MOD_MASK_SHIFT, KF_DOT,  KF_EXLM, DEF_MASK);
+const key_override_t minus_override     = ko_make_with_layers(MOD_MASK_SHIFT, KF_MINS, KF_UNDS, DEF_MASK);
 
 // NAV combinations
-const key_override_t power_override = ko_make_with_layers(MOD_MASK_CS,  KF_PSTE, KC_PWR,  NAV_MASK);
-const key_override_t sleep_override = ko_make_with_layers(MOD_MASK_CS,  KF_UNDO, KC_SLEP,  NAV_MASK);
+const key_override_t power_override     = ko_make_with_layers(MOD_MASK_CS,    KF_PSTE, KC_PWR,  NAV_MASK);
+const key_override_t sleep_override     = ko_make_with_layers(MOD_MASK_CS,    KF_UNDO, KC_SLEP, NAV_MASK);
+const key_override_t close_app_override = ko_make_with_layers(MOD_MASK_SG,    KF_U,    KF_CL_A, DEF_MASK);
 
 #ifdef AZERTY
 // Keypad variant to fix some shortcuts
@@ -60,6 +61,7 @@ const key_override_t *key_overrides[] = {
     &minus_override,
     &power_override,
     &sleep_override,
+    &close_app_override,
     #ifdef AZERTY
     &slash_override,
     &override_1,

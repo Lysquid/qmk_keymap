@@ -554,7 +554,7 @@
 <text text-anchor="middle" dominant-baseline="middle" x="438.5" y="1723.5">SYM</text>
 <rect rx="6" ry="6" x="29.5" y="1772.5" width="55" height="45" class="" />
 <rect rx="6" ry="6" x="88.5" y="1772.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1795.0">save</text>
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1795.0">del</text>
 <rect rx="6" ry="6" x="147.5" y="1772.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1786.0">close</text>
 <text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1804.0">tab</text>
@@ -570,10 +570,8 @@
 <text text-anchor="middle" dominant-baseline="middle" x="234.0" y="1844.0">ctrl</text>
 <rect rx="6" ry="6" x="265.5" y="1821.5" width="55" height="45" class="" />
 <rect rx="6" ry="6" x="29.5" y="1870.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="57.0" y="1893.0">del</text>
 <rect rx="6" ry="6" x="88.5" y="1870.5" width="55" height="45" class="" />
-<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1884.0">close</text>
-<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1902.0">app</text>
+<text text-anchor="middle" dominant-baseline="middle" x="116.0" y="1893.0">save</text>
 <rect rx="6" ry="6" x="147.5" y="1870.5" width="55" height="45" class="" />
 <text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1884.0">term</text>
 <text text-anchor="middle" dominant-baseline="middle" x="175.0" y="1902.0">copy</text>

@@ -98,7 +98,6 @@ bool overrides_with_unicode(uint16_t keycode, keyrecord_t *record);
 // It should be placed near the end of the process function.
 void save_incompatible_mods(uint16_t keycode, keyrecord_t *record);
 
-
 // Restore the incompatible mods after the key has been pressed without it
 void restore_incompatible_mods(void);
 
