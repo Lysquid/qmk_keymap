@@ -25,7 +25,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     {
     case MO(SYM):
     case MO(NAV):
-    case OSL(SPC):
+    case OSL(SPC): // because you might want to do one shot shift + special character
     case KC_LSFT:
     case KC_RSFT:
     case OC_LSFT:
@@ -79,4 +79,17 @@ void instant_gui(uint16_t keycode, keyrecord_t *record) {
         oc_lgui_state = oc_down_used;
         oc_lctl_state = oc_down_used;
     }
+}
+
+bool is_any_oneshot_in_state(oneshot_state state) {
+    return (
+        oc_lsft_state == state ||
+        oc_rsft_state == state ||
+        oc_lctl_state == state ||
+        oc_rctl_state == state ||
+        oc_lalt_state == state ||
+        oc_ralt_state == state ||
+        oc_lgui_state == state ||
+        oc_rgui_state == state
+    );
 }

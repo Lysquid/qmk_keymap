@@ -62,6 +62,9 @@ bool oneshot_mouse_buttons(uint16_t keycode, keyrecord_t *record);
 // Lock the NAV layer with MO(NAV) + shift
 bool nav_layer_lock(uint16_t keycode, keyrecord_t *record);
 
+// Returns true if NAV lock isn't blocking the tri layer update
+bool nav_lock_allows_tri_layer(layer_state_t state);
+
 // If the NAV key is held too long without using the nav lock, block further keypress
 bool nav_time_block(uint16_t keycode, keyrecord_t *record);
 
@@ -74,6 +77,9 @@ void update_oneshots(uint16_t keycode, keyrecord_t *record);
 
 // Instantly trigger Gui key when Gui+Ctrl one shot mods are pressed on NAV layer
 void instant_gui(uint16_t keycode, keyrecord_t *record);
+
+// Utility function to know if any mod is in the given state
+bool is_any_oneshot_in_state(oneshot_state state);
 
 
 

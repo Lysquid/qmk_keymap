@@ -1,75 +1,106 @@
 #include "../keymap.h"
 #include "../features.h"
 
-
-static bool lock_nav = false;  // skip process next time MO(NAV) goes up
+static bool nav_locked = false;
 static bool nav_down = false;
-static bool shift_unused = false;  // whether shift was used for a letter, so it does not lock the layer accidentally
+static bool shift_down_unused = false;  // whether shift was used for a letter, so it does not lock the layer accidentally
 
 bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
     switch (keycode)
     {
     case KC_RSFT:
         if (record->event.pressed) {
-            if (IS_LAYER_ON(NAV)) {
-                if (nav_down) {
-                    // If shift is pressed while NAV is down, lock the layer
-                    lock_nav = true;
-                    return true;
-                } else {
-                    // If shift is pressed while the layer is locked, exit the layer
-                    layer_off(NAV);
-                    lock_nav = false;
-                    shift_unused = true;
-                }
+            // SHIFT DOWN
+            if (nav_down) {
+                // If shift is pressed while NAV is down, lock the layer (NAV UP will be skipped)
+                nav_locked = true;
+                return true;        // Don't actually shift
             } else {
-                shift_unused = true;
+                if (nav_locked) {
+                    // If shift is pressed while the layer is locked, exit the layer
+                    // layer_off(NAV);
+                    // nav_locked = false;
+                }
+                // Mark shift as unused: if the next key is NAV, it will lock the layer
+                // Any other key will mark it as used
+                shift_down_unused = true;
             }
+        } else {
+            // SHIFT UP
+            shift_down_unused = false;
         }
         break;
     case MO(NAV):
         nav_down = record->event.pressed;
         if (record->event.pressed) {
-            if (shift_unused) {
+            // NAV DOWN
+            if (shift_down_unused) {
                 // If NAV is pressed while shift is down and was not used for any letter, lock the layer
-                lock_nav = true;
+                nav_locked = true;
                 unregister_code(KC_RSFT);
             }
         } else {
-            if (lock_nav) {
-                // If NAV is pressed while the layer is locked, unlock the layer
-                lock_nav = false;
-                return true;
+            // NAV UP
+            if (nav_locked) {
+                if (is_any_oneshot_in_state(oc_up_queued) || is_any_oneshot_in_state(oc_down_unused)) {
+                    // If NAV is released and a oneshot mod is queued on down, momentarily disable the layer for the mod
+                } else {
+                    // NAV is locked, so we don't want it to be turned off -> skip NAV UP
+                    return true;
+                }
             }
         }
         break;
     case MO(SYM):
-        if (IS_LAYER_ON(NAV) && !nav_down && !get_mods() && record->event.pressed) {
-            // If SYM is pressed while the layer is locked and no mods are down, unlock the layer
-            layer_off(NAV);
+        if (!record->event.pressed) {
+            // SYM UP
+            if (nav_locked && (is_any_oneshot_in_state(oc_up_queued) || is_any_oneshot_in_state(oc_down_unused))) {
+                // If SYM is released and a oneshot mod is queued or down, momentarily disable the layer for the mod
+                layer_off(NAV);
+            }
         }
-        // If a mod is down, keep the layer down (useful for window manager navigation)
+        break;
+    case NAV_LCK:
+        if (record->event.pressed) {
+            // NAV LOCK DOWN
+            if (nav_down) {
+                nav_locked = true;
+            } else {
+                layer_off(NAV);
+                nav_locked = false;
+                // Override to prevent the underlying DEF key to be down
+                return true;
+            }
+        }
         break;
     case CW_TOGG:
         if (IS_LAYER_ON(NAV) && !nav_down) {
             // If caps word is pressed while the layer is locked, exit the layer
             layer_off(NAV);
-        }
-        break;
-    case NAV_LCK:
-        if (record->event.pressed) {
-            if (nav_down) {
-                lock_nav = true;
-            } else {
-                layer_off(NAV);
-                return true;
-            }
+            nav_locked = false;
         }
         break;
     default:
-        shift_unused = false;
+        // Any other key marks shift as used (if shift was down)
+        shift_down_unused = false;
     }
+
+    // If NAV layer has been momentarily unlocked for a oneshot mod and it's done, turn the layer back on
+    if (nav_locked && IS_LAYER_OFF(NAV) &&
+        !is_any_oneshot_in_state(oc_up_queued) &&
+        !is_any_oneshot_in_state(oc_down_unused) &&
+        !is_any_oneshot_in_state(oc_down_used)
+    ) {
+        layer_on(NAV);
+    }
+
     return false;
+}
+
+
+bool nav_lock_allows_tri_layer(layer_state_t state) {
+    // FIXME: release NAV when NAV locked and SYM down -> NUM instead of SYM
+    return !nav_locked || (nav_locked && nav_down) || IS_LAYER_ON_STATE(state, NUM);
 }
 
 

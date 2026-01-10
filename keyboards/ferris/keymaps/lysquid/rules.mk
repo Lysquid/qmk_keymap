@@ -6,6 +6,7 @@ UNICODE_COMMON = yes
 UNICODE_ENABLE = no
 UNICODEMAP_ENABLE = yes
 DEBOUNCE_TYPE = sym_eager_pk
+CONSOLE_ENABLE = no
 
 SRC += process.c
 SRC += features/alt_codes.c

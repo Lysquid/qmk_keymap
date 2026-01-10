@@ -43,5 +43,10 @@ void oneshot_layer_changed_user(uint8_t layer) {
 
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, SYM, NAV, NUM);
+    if (nav_lock_allows_tri_layer(state)) {
+        return update_tri_layer_state(state, SYM, NAV, NUM);
+    } else {
+        return state;
+   }
 }
+

@@ -34,20 +34,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______,    KF_QUOT,    _______,     _______
 ),
 
-[SYM] = LAYOUT(
-    KF_PERC,    KF_PLUS,    KF_LBRC,    KF_RBRC,    KF_HASH,    KF_CIRC,    KF_COLN,    KF_DQUO,    KF_QUOT,    KF_DLR,
-    KF_LCBR,    KF_LPRN,    KF_RPRN,    KF_RCBR,    KF_SLSH,    KF_EQL,     OC_RCTL,    OC_RSFT,    OC_RGUI,    OC_LALT,
-    KF_TILD,    KF_BSLS,    KF_LABK,    KF_RABK,    KF_AMPR,    KF_PIPE,    KF_SCLN,    KF_ASTR,    KF_GRV,     KF_AT,
-                                        _______,    _______,    _______,    _______
-),
-
-[SYM_SFT] = LAYOUT(
-    _______,    ZM_RS_2,    ZM_OU_2,    ZM_IN_2,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    ZM_RS_1,    ZM_OU_1,    ZM_IN_1,    _______,    _______,    _______,    _______,    _______,    _______,
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
-                                        _______,    _______,    _______,    _______
-),
-
 [NAV] = LAYOUT(
     SW_GRV,     NAV_LCK,    SW_TAB,     KF_UNDO,    KF_REDO,    KC_HOME,    KC_BSPC,    KC_UP,      KC_DEL,     KC_END,
     OC_LALT,    OC_LGUI,    OC_LSFT,    OC_LCTL,    KC_ESC,     KC_TAB,     KC_LEFT,    KC_DOWN,    KC_RIGHT,   KC_ENT,
@@ -73,6 +59,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,    KC_DEL,     KF_CL_T,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
     _______,    KF_SAVE,    KF_TCPY,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    _______,    _______
+),
+
+[SYM] = LAYOUT(
+    KF_PERC,    KF_PLUS,    KF_LBRC,    KF_RBRC,    KF_HASH,    KF_CIRC,    KF_COLN,    KF_DQUO,    KF_QUOT,    KF_DLR,
+    KF_LCBR,    KF_LPRN,    KF_RPRN,    KF_RCBR,    KF_SLSH,    KF_EQL,     OC_RCTL,    OC_RSFT,    OC_RGUI,    OC_LALT,
+    KF_TILD,    KF_BSLS,    KF_LABK,    KF_RABK,    KF_AMPR,    KF_PIPE,    KF_SCLN,    KF_ASTR,    KF_GRV,     KF_AT,
+                                        _______,    _______,    _______,    _______
+),
+
+[SYM_SFT] = LAYOUT(
+    _______,    ZM_RS_2,    ZM_OU_2,    ZM_IN_2,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    ZM_RS_1,    ZM_OU_1,    ZM_IN_1,    _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,
                                         _______,    _______,    _______,    _______
 ),
 
