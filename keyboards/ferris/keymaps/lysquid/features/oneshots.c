@@ -28,14 +28,14 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case OSL(SPC):
     case KC_LSFT:
     case KC_RSFT:
-    case OS_LSFT:
-    case OS_RSFT:
-    case OS_LCTL:
-    case OS_RCTL:
-    case OS_LALT:
-    case OS_RALT:
-    case OS_LGUI:
-    case OS_RGUI:
+    case OC_LSFT:
+    case OC_RSFT:
+    case OC_LCTL:
+    case OC_RCTL:
+    case OC_LALT:
+    case OC_RALT:
+    case OC_LGUI:
+    case OC_RGUI:
         return true;
     default:
         return false;
@@ -43,31 +43,31 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
 }
 
 
-oneshot_state os_lsft_state = os_up_unqueued;
-oneshot_state os_rsft_state = os_up_unqueued;
-oneshot_state os_lctl_state = os_up_unqueued;
-oneshot_state os_rctl_state = os_up_unqueued;
-oneshot_state os_lalt_state = os_up_unqueued;
-oneshot_state os_ralt_state = os_up_unqueued;
-oneshot_state os_lgui_state = os_up_unqueued;
-oneshot_state os_rgui_state = os_up_unqueued;
+oneshot_state oc_lsft_state = oc_up_unqueued;
+oneshot_state oc_rsft_state = oc_up_unqueued;
+oneshot_state oc_lctl_state = oc_up_unqueued;
+oneshot_state oc_rctl_state = oc_up_unqueued;
+oneshot_state oc_lalt_state = oc_up_unqueued;
+oneshot_state oc_ralt_state = oc_up_unqueued;
+oneshot_state oc_lgui_state = oc_up_unqueued;
+oneshot_state oc_rgui_state = oc_up_unqueued;
 
 // Custom oneshot mod implementation with no timers
 void update_oneshots(uint16_t keycode, keyrecord_t *record) {
-    update_oneshot(&os_lsft_state, KC_LSFT, OS_LSFT, keycode, record);
-    update_oneshot(&os_rsft_state, KC_RSFT, OS_RSFT, keycode, record);
-    update_oneshot(&os_lctl_state, KC_LCTL, OS_LCTL, keycode, record);
-    update_oneshot(&os_rctl_state, KC_RCTL, OS_RCTL, keycode, record);
-    update_oneshot(&os_lalt_state, KC_LALT, OS_LALT, keycode, record);
-    update_oneshot(&os_ralt_state, KC_RALT, OS_RALT, keycode, record);
-    update_oneshot(&os_lgui_state, KC_LGUI, OS_LGUI, keycode, record);
-    update_oneshot(&os_rgui_state, KC_RGUI, OS_RGUI, keycode, record);
+    update_oneshot(&oc_lsft_state, KC_LSFT, OC_LSFT, keycode, record);
+    update_oneshot(&oc_rsft_state, KC_RSFT, OC_RSFT, keycode, record);
+    update_oneshot(&oc_lctl_state, KC_LCTL, OC_LCTL, keycode, record);
+    update_oneshot(&oc_rctl_state, KC_RCTL, OC_RCTL, keycode, record);
+    update_oneshot(&oc_lalt_state, KC_LALT, OC_LALT, keycode, record);
+    update_oneshot(&oc_ralt_state, KC_RALT, OC_RALT, keycode, record);
+    update_oneshot(&oc_lgui_state, KC_LGUI, OC_LGUI, keycode, record);
+    update_oneshot(&oc_rgui_state, KC_RGUI, OC_RGUI, keycode, record);
 }
 
 
 void instant_gui(uint16_t keycode, keyrecord_t *record) {
 
-    if (os_lgui_state == os_down_unused && os_lctl_state == os_down_unused) {
+    if (oc_lgui_state == oc_down_unused && oc_lctl_state == oc_down_unused) {
         unregister_code(KC_LCTL);
         unregister_code(KC_LGUI);
         uint8_t saved_shift = get_mods() & MOD_BIT_LSHIFT;
@@ -76,7 +76,7 @@ void instant_gui(uint16_t keycode, keyrecord_t *record) {
         add_mods(saved_shift);
         register_code(KC_LCTL);
         register_code(KC_LGUI);
-        os_lgui_state = os_down_used;
-        os_lctl_state = os_down_used;
+        oc_lgui_state = oc_down_used;
+        oc_lctl_state = oc_down_used;
     }
 }

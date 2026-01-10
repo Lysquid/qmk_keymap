@@ -32,16 +32,16 @@ bool nav_gui_key_down = false;
 bool nav_ctl_key_down = false;
 
 void update_key_tri_layers(uint16_t keycode, keyrecord_t *record) {
-    update_key_tri_layer(SYM, OS_RSFT, SYM_SFT,
+    update_key_tri_layer(SYM, OC_RSFT, SYM_SFT,
         &sym_sft_key_down, keycode, record, MOD_MASK_CAG
     );
-    update_key_tri_layer(NAV, OS_LALT, NAV_ALT,
+    update_key_tri_layer(NAV, OC_LALT, NAV_ALT,
         &nav_alt_key_down, keycode, record, 0
     );
-    update_key_tri_layer(NAV, OS_LGUI, NAV_GUI,
+    update_key_tri_layer(NAV, OC_LGUI, NAV_GUI,
         &nav_gui_key_down, keycode, record, 0
     );
-    update_key_tri_layer(NAV, OS_LCTL, NAV_CTL,
+    update_key_tri_layer(NAV, OC_LCTL, NAV_CTL,
         &nav_ctl_key_down, keycode, record, 0
     );
     // Cannot do a layer for NUM+Shift for Keypad numbers because certain

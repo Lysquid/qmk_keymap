@@ -44,8 +44,8 @@ static bool alt_codes(uint16_t keycode, bool shift) {
         case KF_Y: if (shift) tap_alt_code(0,1,5,9); else tap_alt_code(_,1,5,2); break;
         case KC_LSFT: return false;
         case KC_RSFT: return false;
-        case OS_LSFT: return false;
-        case OS_RSFT: return false;
+        case OC_LSFT: return false;
+        case OC_RSFT: return false;
         default: diaeresis = false; return false;
         }
         diaeresis = false;

@@ -21,14 +21,14 @@ enum layers {
 };
 
 enum keycodes {
-    OS_LSFT = SAFE_RANGE,
-    OS_RSFT,
-    OS_LCTL,
-    OS_RCTL,
-    OS_LALT,
-    OS_RALT,
-    OS_LGUI,
-    OS_RGUI,
+    OC_LSFT = SAFE_RANGE,
+    OC_RSFT,
+    OC_LCTL,
+    OC_RCTL,
+    OC_LALT,
+    OC_RALT,
+    OC_LGUI,
+    OC_RGUI,
     OS_BTN1,
     OS_BTN2,
     OS_BTN3,

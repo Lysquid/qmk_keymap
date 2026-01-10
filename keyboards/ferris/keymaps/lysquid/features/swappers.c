@@ -11,14 +11,14 @@ bool is_swapper_ignored_key(uint16_t keycode, keyrecord_t *record) {
     {
     case KC_LSFT:
     case KC_RSFT:
-    case OS_LSFT:
-    case OS_RSFT:
-    case OS_LCTL:
-    case OS_RCTL:
-    case OS_LALT:
-    case OS_RALT:
-    case OS_LGUI:
-    case OS_RGUI:
+    case OC_LSFT:
+    case OC_RSFT:
+    case OC_LCTL:
+    case OC_RCTL:
+    case OC_LALT:
+    case OC_RALT:
+    case OC_LGUI:
+    case OC_RGUI:
     case KC_LEFT:
     case KC_RIGHT:
     case KC_UP:
