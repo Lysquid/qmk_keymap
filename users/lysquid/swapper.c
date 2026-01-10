@@ -26,9 +26,9 @@ bool update_swapper(
                 del_mods(MOD_MASK_CTRL);
                 register_code(KC_LSFT);
                 register_code(tabish);
+                unregister_code(KC_LSFT);
                 return true;
             } else {
-                unregister_code(KC_LSFT);
                 unregister_code(tabish);
             }
         }
