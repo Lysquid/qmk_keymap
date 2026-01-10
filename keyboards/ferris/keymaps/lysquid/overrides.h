@@ -1,5 +1,6 @@
 #pragma once
 
+#include "modifiers.h"
 #include QMK_KEYBOARD_H
 #include "keymap.h"
 
@@ -10,10 +11,10 @@
 #define NUM_MASK (1 << NUM)
 
 
-#define ko_make_no_suppressed_mods_with_options(trigger_mods_, trigger_key, replacement_key, options_) \
+#define ko_make_no_suppressed_mods_with_options(trigger_mods_, trigger_key, replacement_key, layers_, options_) \
     ((const key_override_t){                                                                \
         .trigger_mods                           = (trigger_mods_),                          \
-        .layers                                 = ~0,                                       \
+        .layers                                 = (layers_),                                \
         .suppressed_mods                        = 0,                                        \
         .options                                = (options_),                               \
         .negative_mod_mask                      = 0,                                        \
@@ -38,20 +39,22 @@ const key_override_t sleep_override     = ko_make_with_layers(MOD_MASK_CS,    KF
 const key_override_t close_app_override = ko_make_with_layers(MOD_MASK_SG,    KF_U,    KF_CL_A, DEF_MASK);
 
 #ifdef AZERTY
-// Keypad variant to fix some shortcuts
+// Fix ctrl+shift+/ on Jetbrains IDEs (comment code)
 const key_override_t slash_override = ko_make_with_layers(MOD_MASK_SHIFT, FR_SLSH, KC_PSLS, SYM_MASK);
+// Fix ctrl+backtick on VSCode (focus terminal)
+const key_override_t backtick_override = ko_make_no_suppressed_mods_with_options(MOD_MASK_CTRL, FR_GRV, KC_GRV, SYM_MASK, 0);
 
-// Azerty window manager compatibility
-const key_override_t override_1 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_1, FR_AMPR, ko_option_one_mod);
-const key_override_t override_2 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_2, FR_EACU, ko_option_one_mod);
-const key_override_t override_3 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_3, FR_DQUO, ko_option_one_mod);
-const key_override_t override_4 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_4, FR_QUOT, ko_option_one_mod);
-const key_override_t override_5 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_5, FR_LPRN, ko_option_one_mod);
-const key_override_t override_6 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_6, FR_MINS, ko_option_one_mod);
-const key_override_t override_7 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_7, FR_EGRV, ko_option_one_mod);
-const key_override_t override_8 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_8, FR_UNDS, ko_option_one_mod);
-const key_override_t override_9 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_9, FR_CCED, ko_option_one_mod);
-const key_override_t override_0 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_0, FR_AGRV, ko_option_one_mod);
+// Fix ctrl+shift+number on window managers (change workspace)
+const key_override_t override_1 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_1, FR_AMPR, NUM_MASK, ko_option_one_mod);
+const key_override_t override_2 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_2, FR_EACU, NUM_MASK, ko_option_one_mod);
+const key_override_t override_3 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_3, FR_DQUO, NUM_MASK, ko_option_one_mod);
+const key_override_t override_4 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_4, FR_QUOT, NUM_MASK, ko_option_one_mod);
+const key_override_t override_5 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_5, FR_LPRN, NUM_MASK, ko_option_one_mod);
+const key_override_t override_6 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_6, FR_MINS, NUM_MASK, ko_option_one_mod);
+const key_override_t override_7 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_7, FR_EGRV, NUM_MASK, ko_option_one_mod);
+const key_override_t override_8 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_8, FR_UNDS, NUM_MASK, ko_option_one_mod);
+const key_override_t override_9 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_9, FR_CCED, NUM_MASK, ko_option_one_mod);
+const key_override_t override_0 = ko_make_no_suppressed_mods_with_options(MOD_MASK_CAG, FR_0, FR_AGRV, NUM_MASK, ko_option_one_mod);
 #endif
 
 
@@ -64,6 +67,7 @@ const key_override_t *key_overrides[] = {
     &close_app_override,
     #ifdef AZERTY
     &slash_override,
+    &backtick_override,
     &override_1,
     &override_2,
     &override_3,
