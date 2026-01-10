@@ -10,7 +10,7 @@ void update_oneshot(
     if (keycode == trigger) {
         if (record->event.pressed) {
             // Trigger keydown
-            if (*state == oc_up_unqueued) {
+            if (*state == oc_up_unqueued || *state == oc_up_queued) {
                 register_code(mod);
             }
             *state = oc_down_unused;
@@ -20,6 +20,7 @@ void update_oneshot(
             case oc_down_unused:
                 // If we didn't use the mod while trigger was held, queue it.
                 *state = oc_up_queued;
+                unregister_code(mod);
                 break;
             case oc_down_used:
                 // If we did use the mod while trigger was held, unregister it.
@@ -45,6 +46,7 @@ void update_oneshot(
                     break;
                 case oc_up_queued:
                     *state = oc_up_to_unqueued;
+                    register_code(mod);
                     break;
                 case oc_up_to_unqueued:
                     *state = oc_up_unqueued;
