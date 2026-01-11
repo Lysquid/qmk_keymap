@@ -1,5 +1,7 @@
 #include "../keymap.h"
 #include "../features.h"
+#include "../../../../users/lysquid/custom_keycodes.h"
+#include "../../../../users/lysquid/swapper.h"
 
 
 bool sw_tab_active = false;

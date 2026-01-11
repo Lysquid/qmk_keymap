@@ -1,11 +1,8 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-#include "../../../../users/lysquid/french.h"
-#include "../../../../users/lysquid/oneshot.h"
-#include "../../../../users/lysquid/swapper.h"
-#include "../../../../users/lysquid/unicodes.h"
 
+#include "../../../../users/lysquid/oneshot.h"
 
 // ALT CODES
 

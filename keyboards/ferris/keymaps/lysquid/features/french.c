@@ -1,5 +1,7 @@
 #include "../keymap.h"
 #include "../features.h"
+#include "keymap_french.h"
+#include "../../../../users/lysquid/french.h"
 
 
 void dead_key_accents(uint16_t keycode, keyrecord_t *record) {

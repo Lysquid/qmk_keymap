@@ -1,6 +1,7 @@
 #include "keymap.h"
 #include "features.h"
 
+#include "../../../../users/lysquid/french.h"
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     bool override = false;

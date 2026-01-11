@@ -1,5 +1,6 @@
 #include "../keymap.h"
-#include "../features.h"
+#include "../../../../users/lysquid/french.h"
+#include "../../../../users/lysquid/azerty_keycodes.h"
 
 
 // QMK Callback to choose which key cancels or continue caps word.

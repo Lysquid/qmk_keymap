@@ -1,6 +1,7 @@
-#include "../keymap.h"
 #include "../features.h"
 #include "os_detection.h"
+#include "../../../../users/lysquid/azerty_keycodes.h"
+
 
 uint8_t keypad_nums[10] = {
     KC_KP_0,

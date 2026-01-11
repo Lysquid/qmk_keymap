@@ -1,4 +1,7 @@
 #include "keymap.h"
+#include "../../../../users/lysquid/azerty_keycodes.h"
+#include "../../../../users/lysquid/custom_keycodes.h"
+
 #include "overrides.h"
 #ifdef AZERTY
 #include "sendstring_french.h"

@@ -1,9 +1,10 @@
 #pragma once
 
-#include "modifiers.h"
 #include QMK_KEYBOARD_H
-#include "keymap.h"
 
+#include "keymap.h"
+#include "../../../../users/lysquid/azerty_keycodes.h"
+#include "../../../../users/lysquid/custom_keycodes.h"
 
 #define DEF_MASK (1 << DEF | 1 << DEF2)
 #define NAV_MASK (1 << NAV)

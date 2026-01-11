@@ -1,5 +1,5 @@
 #include "french.h"
-#include "azerty_keycodes.h"
+#include "keymap_french.h"
 #include "os_detection.h"
 
 void dead_key_accent(uint16_t keycode, accent_t accent, keyrecord_t *record) {
