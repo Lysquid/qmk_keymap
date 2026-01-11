@@ -9,7 +9,6 @@
 typedef enum {
     oc_up_unqueued,
     oc_up_queued,
-    oc_up_to_unqueued,
     oc_down_unused,
     oc_down_used,
 } oneshot_state;

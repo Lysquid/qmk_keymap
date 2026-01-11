@@ -1,4 +1,5 @@
 #include "oneshot.h"
+#include "action_util.h"
 
 void update_oneshot(
     oneshot_state *state,
@@ -36,7 +37,6 @@ void update_oneshot(
             if (is_oneshot_cancel_key(keycode) && *state != oc_up_unqueued) {
                 // Cancel oneshot on designated cancel keydown.
                 *state = oc_up_unqueued;
-                unregister_code(mod);
             }
             if (!is_oneshot_ignored_key(keycode)) {
                 // On non-ignored keydown, consider the oneshot used.
@@ -45,24 +45,8 @@ void update_oneshot(
                     *state = oc_down_used;
                     break;
                 case oc_up_queued:
-                    *state = oc_up_to_unqueued;
-                    register_code(mod);
-                    break;
-                case oc_up_to_unqueued:
                     *state = oc_up_unqueued;
-                    unregister_code(mod);
-                    break;
-                default:
-                    break;
-                }
-            }
-        } else {
-            if (!is_oneshot_ignored_key(keycode)) {
-                // On non-ignored keyup, consider the oneshot used.
-                switch (*state) {
-                case oc_up_to_unqueued:
-                    *state = oc_up_unqueued;
-                    unregister_code(mod);
+                    set_oneshot_mods(get_oneshot_mods() | MOD_BIT(mod));
                     break;
                 default:
                     break;
