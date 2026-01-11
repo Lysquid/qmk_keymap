@@ -43,12 +43,11 @@ A QMK keymap for the [Sweep][sweep], a split keyboard with 34 keys. It makes ext
 
 [caps word]: https://docs.qmk.fm/#/feature_caps_word
 
-### Navigation lock
+### Navigation toggle
 
-- Because it is used very often, the `NAV` layer can be locked by pressing `shift` with the thumb when on the layer.
-- Alternatively, `shift` and then `NAV` does the same (if shift was not used to make a letter uppercase).
-- Any layer key unlocks the layer, except for `SYM` if a modifier is active, to be able to navigate with `super`+`<number>` on a window manager.
-- Holding `shift` or pressing `caps word` also disables the layer.
+- Because it is used very often, the `NAV` layer can be toggle on by pressing `NAV` and `shift` together, or the dedicated `toggle nav` key. `NAV` can then be released and the layer stays active.
+- One shot mods still work (the layer is momentarily turned off for the shortcut).
+- The `toggle nav` key toggles off the layer.
 
 ### Key tri layers
 

@@ -72,7 +72,7 @@ KEYMAP = [
     },
     {
         "left": [
-            ["alt grave", "alt esc", "alt tab", "undo", "redo"],
+            ["alt grave", "toggl nav", "alt tab", "undo", "redo"],
             ["alt", "super", "shift", "ctrl", "esc"],
             ["selct all", "cut", "copy", "paste", "prnt scrn"],
         ],
