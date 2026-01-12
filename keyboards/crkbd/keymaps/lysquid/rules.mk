@@ -1,0 +1,23 @@
+KEY_OVERRIDE_ENABLE = yes
+CAPS_WORD_ENABLE = yes
+OS_DETECTION_ENABLE = yes
+UNICODE_COMMON = yes
+UNICODE_ENABLE = no
+UNICODEMAP_ENABLE = yes
+DEBOUNCE_TYPE = sym_eager_pk
+CONSOLE_ENABLE = no
+
+SRC += ../../../ferris/keymaps/lysquid/process.c
+SRC += ../../../ferris/keymaps/lysquid/features/alt_codes.c
+SRC += ../../../ferris/keymaps/lysquid/features/caps_word.c
+SRC += ../../../ferris/keymaps/lysquid/features/french.c
+SRC += ../../../ferris/keymaps/lysquid/features/key_tri_layer.c
+SRC += ../../../ferris/keymaps/lysquid/features/layer_clear.c
+SRC += ../../../ferris/keymaps/lysquid/features/macros.c
+SRC += ../../../ferris/keymaps/lysquid/features/mouse.c
+SRC += ../../../ferris/keymaps/lysquid/features/nav_lock.c
+SRC += ../../../ferris/keymaps/lysquid/features/oneshots.c
+SRC += ../../../ferris/keymaps/lysquid/features/default_layer.c
+SRC += ../../../ferris/keymaps/lysquid/features/unicode_overrides.c
+SRC += ../../../ferris/keymaps/lysquid/features/remove_mods.c
+SRC += ../../../ferris/keymaps/lysquid/features/swappers.c
