@@ -36,6 +36,7 @@ void update_oneshot(
         }
     } else {
         if (record->event.pressed) {
+            // Any other keydown
             if (is_oneshot_cancel_key(keycode) && *state != oc_up_unqueued) {
                 // Cancel oneshot on designated cancel keydown.
                 *state = oc_up_unqueued;
@@ -54,12 +55,24 @@ void update_oneshot(
                     }
                     break;
                 case oc_up_used:
+                    // If another key is pressed while the mod is being used, unregister the mod
                     *state = oc_up_unqueued;
                     unregister_code(mod);
                     break;
                 default:
                     break;
                 }
+            }
+        } else {
+            // Any other keyup
+            switch (*state) {
+            case oc_up_used:
+                // If the same key that the mod was being applied to is released, unregister the mod
+                *state = oc_up_unqueued;
+                unregister_code(mod);
+                break;
+            default:
+                break;
             }
         }
     }
