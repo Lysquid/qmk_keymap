@@ -1,12 +1,12 @@
 #include "oneshot.h"
-#include "action_util.h"
 
 void update_oneshot(
     oneshot_state *state,
     uint16_t mod,
     uint16_t trigger,
     uint16_t keycode,
-    keyrecord_t *record
+    keyrecord_t *record,
+    bool held_when_queued
 ) {
     if (keycode == trigger) {
         if (record->event.pressed) {
@@ -21,7 +21,9 @@ void update_oneshot(
             case oc_down_unused:
                 // If we didn't use the mod while trigger was held, queue it.
                 *state = oc_up_queued;
-                unregister_code(mod);
+                if (!held_when_queued) {
+                    unregister_code(mod);
+                }
                 break;
             case oc_down_used:
                 // If we did use the mod while trigger was held, unregister it.
@@ -46,8 +48,14 @@ void update_oneshot(
                     *state = oc_down_used;
                     break;
                 case oc_up_queued:
+                    *state = oc_up_used;
+                    if (!held_when_queued) {
+                        register_code(mod);
+                    }
+                    break;
+                case oc_up_used:
                     *state = oc_up_unqueued;
-                    set_oneshot_mods(get_oneshot_mods() | MOD_BIT(mod));
+                    unregister_code(mod);
                     break;
                 default:
                     break;

@@ -5,10 +5,11 @@
 // Based on Callum's keymap:
 // https://github.com/qmk/qmk_firmware/tree/user-keymaps-still-present/users/callum
 
-// Represents the four states a oneshot key can be in
+// Represents the five states a oneshot key can be in
 typedef enum {
     oc_up_unqueued,
     oc_up_queued,
+    oc_up_used,
     oc_down_unused,
     oc_down_used,
 } oneshot_state;
@@ -21,7 +22,8 @@ void update_oneshot(
     uint16_t mod,
     uint16_t trigger,
     uint16_t keycode,
-    keyrecord_t *record
+    keyrecord_t *record,
+    bool held_when_queued
 );
 
 // To be implemented by the consumer. Defines keys to cancel oneshot mods.

@@ -54,14 +54,14 @@ oneshot_state oc_rgui_state = oc_up_unqueued;
 
 // Custom oneshot mod implementation with no timers
 void update_oneshots(uint16_t keycode, keyrecord_t *record) {
-    update_oneshot(&oc_lsft_state, KC_LSFT, OC_LSFT, keycode, record);
-    update_oneshot(&oc_rsft_state, KC_RSFT, OC_RSFT, keycode, record);
-    update_oneshot(&oc_lctl_state, KC_LCTL, OC_LCTL, keycode, record);
-    update_oneshot(&oc_rctl_state, KC_RCTL, OC_RCTL, keycode, record);
-    update_oneshot(&oc_lalt_state, KC_LALT, OC_LALT, keycode, record);
-    update_oneshot(&oc_ralt_state, KC_RALT, OC_RALT, keycode, record);
-    update_oneshot(&oc_lgui_state, KC_LGUI, OC_LGUI, keycode, record);
-    update_oneshot(&oc_rgui_state, KC_RGUI, OC_RGUI, keycode, record);
+    update_oneshot(&oc_lsft_state, KC_LSFT, OC_LSFT, keycode, record, false);
+    update_oneshot(&oc_rsft_state, KC_RSFT, OC_RSFT, keycode, record, false);
+    update_oneshot(&oc_lctl_state, KC_LCTL, OC_LCTL, keycode, record, false);
+    update_oneshot(&oc_rctl_state, KC_RCTL, OC_RCTL, keycode, record, false);
+    update_oneshot(&oc_lalt_state, KC_LALT, OC_LALT, keycode, record, false);
+    update_oneshot(&oc_ralt_state, KC_RALT, OC_RALT, keycode, record, false);
+    update_oneshot(&oc_lgui_state, KC_LGUI, OC_LGUI, keycode, record, true);
+    update_oneshot(&oc_rgui_state, KC_RGUI, OC_RGUI, keycode, record, true);
 }
 
 
