@@ -75,7 +75,7 @@ bool french_caps_word_fix(uint16_t keycode, keyrecord_t *record) {
             unregister_code(FR_UNDS);
         }
         add_mods(saved_shift_mod);
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }

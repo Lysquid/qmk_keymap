@@ -14,7 +14,7 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
             if (nav_down) {
                 // If shift is pressed while NAV is down, lock the layer (NAV UP will be skipped)
                 nav_locked = true;
-                return true;        // Don't actually shift
+                return false;        // Don't actually shift
             } else {
                 if (nav_locked) {
                     // If shift is pressed while the layer is locked, exit the layer
@@ -46,7 +46,7 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
                     // If NAV is released and a oneshot mod is queued on down, momentarily disable the layer for the mod
                 } else {
                     // NAV is locked, so we don't want it to be turned off -> skip NAV UP
-                    return true;
+                    return false;
                 }
             }
         }
@@ -69,7 +69,7 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
                 layer_off(NAV);
                 nav_locked = false;
                 // Override to prevent the underlying DEF key to be down
-                return true;
+                return false;
             }
         }
         break;
@@ -94,7 +94,7 @@ bool nav_layer_lock(uint16_t keycode, keyrecord_t *record) {
         layer_on(NAV);
     }
 
-    return false;
+    return true;
 }
 
 
@@ -131,8 +131,8 @@ bool nav_time_block(uint16_t keycode, keyrecord_t *record) {
             nav_block = false;
         } else {
             // If any other key is pressed while the block is active, ignore it
-            return true;
+            return false;
         }
     }
-    return false;
+    return true;
 }

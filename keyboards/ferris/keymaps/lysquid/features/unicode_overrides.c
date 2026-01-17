@@ -7,7 +7,7 @@ bool overrides_with_unicode(uint16_t keycode, keyrecord_t *record) {
         if (record->event.pressed) {
             register_unicodemap(NNBSP);
         }
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }

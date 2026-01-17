@@ -43,24 +43,24 @@ static bool alt_codes(uint16_t keycode, bool shift) {
         case KF_O: if (shift) tap_alt_code(_,1,5,3); else tap_alt_code(_,1,4,8); break;
         case KF_U: if (shift) tap_alt_code(_,1,5,4); else tap_alt_code(_,1,2,9); break;
         case KF_Y: if (shift) tap_alt_code(0,1,5,9); else tap_alt_code(_,1,5,2); break;
-        case KC_LSFT: return false;
-        case KC_RSFT: return false;
-        case OC_LSFT: return false;
-        case OC_RSFT: return false;
-        default: diaeresis = false; return false;
+        case KC_LSFT: return true;
+        case KC_RSFT: return true;
+        case OC_LSFT: return true;
+        case OC_RSFT: return true;
+        default: diaeresis = false; return true;
         }
         diaeresis = false;
-        return true;
+        return false;
     }
     #endif
     switch (keycode)
     {
     #ifdef AZERTY
-    case KF_AGRV: if (shift) tap_alt_code(0,1,9,2); else return false; break;
-    case KF_EACU: if (shift) tap_alt_code(_,1,4,4); else return false; break;
-    case KF_EGRV: if (shift) tap_alt_code(0,2,0,0); else return false; break;
-    case KF_UGRV: if (shift) tap_alt_code(0,2,1,7); else return false; break;
-    case KF_CCED: if (shift) tap_alt_code(_,1,2,8); else return false; break;
+    case KF_AGRV: if (shift) tap_alt_code(0,1,9,2); else return true; break;
+    case KF_EACU: if (shift) tap_alt_code(_,1,4,4); else return true; break;
+    case KF_EGRV: if (shift) tap_alt_code(0,2,0,0); else return true; break;
+    case KF_UGRV: if (shift) tap_alt_code(0,2,1,7); else return true; break;
+    case KF_CCED: if (shift) tap_alt_code(_,1,2,8); else return true; break;
     #else
     case KF_AGRV: if (shift) tap_alt_code(0,1,9,2); else tap_alt_code(_,1,3,3); break;
     case KF_EACU: if (shift) tap_alt_code(_,1,4,4); else tap_alt_code(_,1,3,0); break;
@@ -96,9 +96,9 @@ static bool alt_codes(uint16_t keycode, bool shift) {
     case KF_CROS: tap_alt_code(0,2,1,5); break;
     case KF_PSMS: tap_alt_code(0,1,7,7); break;
     case KF_DIFF: break;
-    default: return false;
+    default: return true;
     }
-    return true;
+    return false;
 }
 
 bool windows_alt_codes(uint16_t keycode, keyrecord_t *record) {
@@ -108,5 +108,5 @@ bool windows_alt_codes(uint16_t keycode, keyrecord_t *record) {
             return alt_codes(keycode, shift);
         }
     }
-    return false;
+    return true;
 }

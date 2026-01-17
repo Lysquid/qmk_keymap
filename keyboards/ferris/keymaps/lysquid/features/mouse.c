@@ -19,7 +19,7 @@ bool oneshot_mouse_buttons(uint16_t keycode, keyrecord_t *record) {
     if (btn_code && record->event.pressed) {
         tap_code(btn_code);
         layer_off(MOS);
-        return true;
+        return false;
     }
-    return false;
+    return true;
 }

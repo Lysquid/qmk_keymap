@@ -27,7 +27,7 @@ bool update_swapper(
                 register_code(KC_LSFT);
                 register_code(tabish);
                 unregister_code(KC_LSFT);
-                return true;
+                return false;
             } else {
                 unregister_code(tabish);
             }
@@ -38,5 +38,5 @@ bool update_swapper(
             *active = false;
         }
     }
-    return false;
+    return true;
 }

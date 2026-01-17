@@ -4,14 +4,14 @@
 #include "../../../../users/lysquid/french.h"
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    bool override = false;
+    bool continue_processing = true;
 
     clear_special_layers(keycode, record);
-    override |= nav_layer_lock(keycode, record);
-    override |= oneshot_mouse_buttons(keycode, record);
-    override |= overrides_with_unicode(keycode, record);
-    override |= windows_alt_codes(keycode, record);
-    override |= update_swappers(keycode, record);
+    continue_processing &= nav_layer_lock(keycode, record);
+    continue_processing &= oneshot_mouse_buttons(keycode, record);
+    continue_processing &= overrides_with_unicode(keycode, record);
+    continue_processing &= windows_alt_codes(keycode, record);
+    continue_processing &= update_swappers(keycode, record);
     update_oneshots(keycode, record);
     half_scroll(keycode, record);
     instant_gui(keycode, record);
@@ -19,12 +19,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     #ifdef AZERTY
     dead_key_accents(keycode, record);
-    override |= french_caps_word_fix(keycode, record);
+    continue_processing &= french_caps_word_fix(keycode, record);
     process_uppercase_dk_accents(keycode, record);
     #endif
 
     save_incompatible_mods(keycode, record);
-    return !override;
+    return continue_processing;
 }
 
 
