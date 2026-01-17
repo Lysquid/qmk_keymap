@@ -37,6 +37,7 @@ void update_oneshot(
             if (is_oneshot_cancel_key(keycode) && *state != oc_up_unqueued) {
                 // Cancel oneshot on designated cancel keydown.
                 *state = oc_up_unqueued;
+                unregister_code(mod);
             }
             if (!is_oneshot_ignored_key(keycode)) {
                 // On non-ignored keydown, consider the oneshot used.
